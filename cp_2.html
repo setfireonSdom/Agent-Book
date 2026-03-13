@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; 智能体发展史 – Agent Book</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./cp_3.html" rel="next">
+<link href="./cp_1.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Agent Book</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">初识智能体</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">大语言模型基础</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">智能体经典范式构建</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>基于低代码平台的智能体搭建</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>框架开发实践</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>构建你的智能体框架</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>记忆与检索</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>上下文工程</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>智能体通信协议</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>智能体性能评估</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><strong>智能旅行助手</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><strong>自动化深度研究智能体</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><strong>构建赛博小镇</strong></span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#基于符号与逻辑的早期智能体" id="toc-基于符号与逻辑的早期智能体" class="nav-link active" data-scroll-target="#基于符号与逻辑的早期智能体"><span class="header-section-number">2.1</span> <strong>基于符号与逻辑的早期智能体</strong></a>
+  <ul class="collapse">
+  <li><a href="#物理符号系统假说" id="toc-物理符号系统假说" class="nav-link" data-scroll-target="#物理符号系统假说"><span class="header-section-number">2.1.1</span> <strong>物理符号系统假说</strong></a></li>
+  <li><a href="#专家系统" id="toc-专家系统" class="nav-link" data-scroll-target="#专家系统"><span class="header-section-number">2.1.2</span> <strong>专家系统</strong></a></li>
+  <li><a href="#shrdlu" id="toc-shrdlu" class="nav-link" data-scroll-target="#shrdlu"><span class="header-section-number">2.1.3</span> <strong>SHRDLU</strong></a></li>
+  <li><a href="#符号主义面临的根本性挑战" id="toc-符号主义面临的根本性挑战" class="nav-link" data-scroll-target="#符号主义面临的根本性挑战"><span class="header-section-number">2.1.4</span> <strong>符号主义面临的根本性挑战</strong></a></li>
+  </ul></li>
+  <li><a href="#构建基于规则的聊天机器人" id="toc-构建基于规则的聊天机器人" class="nav-link" data-scroll-target="#构建基于规则的聊天机器人"><span class="header-section-number">2.2</span> <strong>构建基于规则的聊天机器人</strong></a>
+  <ul class="collapse">
+  <li><a href="#eliza-的设计思想" id="toc-eliza-的设计思想" class="nav-link" data-scroll-target="#eliza-的设计思想"><span class="header-section-number">2.2.1</span> <strong>ELIZA 的设计思想</strong></a></li>
+  <li><a href="#模式匹配与文本替换" id="toc-模式匹配与文本替换" class="nav-link" data-scroll-target="#模式匹配与文本替换"><span class="header-section-number">2.2.2</span> <strong>模式匹配与文本替换</strong></a></li>
+  <li><a href="#核心逻辑的实现" id="toc-核心逻辑的实现" class="nav-link" data-scroll-target="#核心逻辑的实现"><span class="header-section-number">2.2.3</span> <strong>核心逻辑的实现</strong></a></li>
+  </ul></li>
+  <li><a href="#马文明斯基的心智社会" id="toc-马文明斯基的心智社会" class="nav-link" data-scroll-target="#马文明斯基的心智社会"><span class="header-section-number">2.3</span> <strong>马文·明斯基的心智社会</strong></a>
+  <ul class="collapse">
+  <li><a href="#对单一整体智能模型的反思" id="toc-对单一整体智能模型的反思" class="nav-link" data-scroll-target="#对单一整体智能模型的反思"><span class="header-section-number">2.3.1</span> <strong>对单一整体智能模型的反思</strong></a></li>
+  <li><a href="#作为协作体的智能" id="toc-作为协作体的智能" class="nav-link" data-scroll-target="#作为协作体的智能"><span class="header-section-number">2.3.2</span> <strong>作为协作体的智能</strong></a></li>
+  <li><a href="#对多智能体系统的理论启发" id="toc-对多智能体系统的理论启发" class="nav-link" data-scroll-target="#对多智能体系统的理论启发"><span class="header-section-number">2.3.3</span> <strong>对多智能体系统的理论启发</strong></a></li>
+  </ul></li>
+  <li><a href="#学习范式的演进与现代智能体" id="toc-学习范式的演进与现代智能体" class="nav-link" data-scroll-target="#学习范式的演进与现代智能体"><span class="header-section-number">2.4</span> <strong>学习范式的演进与现代智能体</strong></a>
+  <ul class="collapse">
+  <li><a href="#从符号到联结" id="toc-从符号到联结" class="nav-link" data-scroll-target="#从符号到联结"><span class="header-section-number">2.4.1</span> <strong>从符号到联结</strong></a></li>
+  <li><a href="#基于强化学习的智能体" id="toc-基于强化学习的智能体" class="nav-link" data-scroll-target="#基于强化学习的智能体"><span class="header-section-number">2.4.2</span> <strong>基于强化学习的智能体</strong></a></li>
+  <li><a href="#基于大规模数据的预训练" id="toc-基于大规模数据的预训练" class="nav-link" data-scroll-target="#基于大规模数据的预训练"><span class="header-section-number">2.4.3</span> <strong>基于大规模数据的预训练</strong></a></li>
+  <li><a href="#基于大语言模型的智能体" id="toc-基于大语言模型的智能体" class="nav-link" data-scroll-target="#基于大语言模型的智能体"><span class="header-section-number">2.4.4</span> <strong>基于大语言模型的智能体</strong></a></li>
+  <li><a href="#智能体发展关键节点概览" id="toc-智能体发展关键节点概览" class="nav-link" data-scroll-target="#智能体发展关键节点概览"><span class="header-section-number">2.4.5</span> <strong>智能体发展关键节点概览</strong></a></li>
+  </ul></li>
+  <li><a href="#本章小结" id="toc-本章小结" class="nav-link" data-scroll-target="#本章小结"><span class="header-section-number">2.5</span> <strong>本章小结</strong></a></li>
+  <li><a href="#本章代码" id="toc-本章代码" class="nav-link" data-scroll-target="#本章代码"><span class="header-section-number">2.6</span> 本章代码</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="基于符号与逻辑的早期智能体" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="基于符号与逻辑的早期智能体"><span class="header-section-number">2.1</span> <strong>基于符号与逻辑的早期智能体</strong></h2>
+<p>在深度学习出现之前，人工智能主要依赖<strong>符号表示（symbolic representation）+ 形式逻辑推理（formal logic reasoning）</strong>来构建“智能体”。</p>
+<p>“智能体”这个词，早期更多叫 <strong>symbolic AI systems / expert systems / rule-based systems</strong>，不一定都以“agent”形态出现（比如没有环境交互、没有规划 loop）。当时更多是规则系统/专家系统，今天也常被归入早期 agent 的谱系。</p>
+<p>它属于 AI 发展史中的早期主导范式之一，通常被称为符号主义 AI（Symbolic AI），也常被戏称为Good Old-Fashioned AI（GOFAI）</p>
+<blockquote class="blockquote">
+<ol type="1">
+<li>Human(Socrates)</li>
+<li>∀x (Human(x) → Mortal(x))</li>
+<li>∴ Mortal(Socrates)</li>
+</ol>
+<p>这就是符号主义怎么运作的，逻辑演绎。苏格拉底是人，人都会死，苏格拉底会死。系统通过<strong>推理引擎（inference engine）</strong>，一步步推出结论。</p>
+</blockquote>
+<p>所以很好理解，这个时候用用符号表示世界，并通过逻辑规则一步步推导出结论。</p>
+<p>符号主义 AI 认为只要我们把知识写成足够完整的逻辑规则，机器就可以像数学证明一样推导出答案。在这种AI的身上，规则是确定的，推理是可证明的，智能是逻辑运算。它理论主张认为只要我们把世界写成符号规则，机器就能产生智能。</p>
+<p>这个时代的智能体，其“智慧”主要来源于设计者预先编码的知识与规则，而非通过自主学习获得。</p>
+<p>举个例子：</p>
+<pre><code>IF 发烧 AND 白细胞升高
+THEN 可能是细菌感染</code></pre>
+<p>你输入症状，系统按规则匹配。</p>
+<p>我有个困惑，你这个符号系统AI，到底是不是一堆的if else语句？</p>
+<p>符号主义 AI 内部通常就是三样东西： 一个知识库（规则库+事实库）、一个推理引擎（算法）、一个循环（不停推导）</p>
+<p>在机器层面，它本质就是条件判断、状态更新、循环。与普通程序不同之处在于，规则通常以数据形式存储，并由通用推理机制操作。</p>
+<p>规则预先写好，用户输入事实，系统根据规则返回判断。</p>
+<blockquote class="blockquote">
+<p>物理符号系统假说是哲学基础， 专家系统和 SHRDLU 是它的实践结果。</p>
+</blockquote>
+<section id="物理符号系统假说" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="物理符号系统假说"><span class="header-section-number">2.1.1</span> <strong>物理符号系统假说</strong></h3>
+<blockquote class="blockquote">
+<p>The Physical Symbol System Hypothesis (PSSH), formulated by Allen Newell and Herbert A. Simon, proposes that a physical symbol system—a machine that manipulates symbols representing information—has the necessary and sufficient means for general intelligent action.</p>
+</blockquote>
+<p>它到底在说什么？</p>
+<p>这不仅是在说“符号系统可以实现智能”，而是在说“任何智能系统本质上都必须是符号系统”。这是理论上最激进的地方。</p>
+<blockquote class="blockquote">
+<p>“physical”指的是在真实物理机器中实现的符号系统。</p>
+</blockquote>
+<p>Newell 和 Simon 的假说包含两个断言：</p>
+<ul>
+<li><p>充分性（Sufficient）：如果一个系统是物理符号系统 → 它可以实现一般智能。</p></li>
+<li><p>必要性（Necessary）：PSSH 提出了强形式主张，认为符号操作不仅足以，而且是实现一般智能的必要条件。该观点在后续认知科学与联结主义发展中受到广泛争议。</p></li>
+</ul>
+<p>物理符号系统拥有实现一般智能行为的充分且必要的“手段”（means）。翻成人话就是只要一个系统能够存储和操作符号结构，它就可以实现智能。</p>
+<blockquote class="blockquote">
+<p>符号是用来代表某个东西的离散标记。比如“人”、“张三”、“红色”、Human(x)、Mortal(Socrates)</p>
+<p>这些都不是现实本身，它们是对现实的表示。</p>
+<p>在计算机里就是字符串、变量。</p>
+</blockquote>
+<p>简而言之，PSSH大胆地宣称：智能的本质，就是符号的计算与处理。</p>
+</section>
+<section id="专家系统" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="专家系统"><span class="header-section-number">2.1.2</span> <strong>专家系统</strong></h3>
+<p>你大概知道符号主义AI跟条件判断有点关系，就先简单理解成它就是比较高级的if else。</p>
+<p>一个典型的专家系统通常由知识库（Knowledge Base）、推理引擎（Inference Engine）、解释系统（Explanation Facility）、用户界面（User Interface）等几个核心部分构成。</p>
+<p>专家系统假设：专家的能力主要来自“显式知识 + 规则推理”。</p>
+<section id="经典例子" class="level4" data-number="2.1.2.1">
+<h4 data-number="2.1.2.1" class="anchored" data-anchor-id="经典例子"><span class="header-section-number">2.1.2.1</span> 经典例子</h4>
+<ol type="1">
+<li>MYCIN</li>
+</ol>
+<p>领域：血液感染诊断</p>
+<p>使用约 600 条规则</p>
+<p>使用后向推理</p>
+<p>在特定场景下接近医生水平</p>
+<p>在实验评估中，其诊断建议质量在特定测试场景下接近专家水平（它从未在真实临床大规模部署）。</p>
+<ol start="2" type="1">
+<li>DENDRAL</li>
+</ol>
+<p>领域：有机化学结构分析</p>
+<p>通过规则生成分子结构假设</p>
+</section>
+</section>
+<section id="shrdlu" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="shrdlu"><span class="header-section-number">2.1.3</span> <strong>SHRDLU</strong></h3>
+<p>SHRDLU 是 1970 年由 <strong>Terry Winograd</strong> 在 MIT 开发的自然语言理解系统。它运行在一个极其受限的“方块世界（Blocks World）”中。世界里只有方块、圆锥、桌面、堆叠关系。</p>
+<p>用户可以输入英文指令，例如：<br>
+<code>Put the red block on the green cube. Is there anything which is bigger than every pyramid but is not as wide as the thing that supports it?</code></p>
+<p>SHRDLU 能解析语法、解析指代（it / the one）、执行动作、进行逻辑推理、回答问题。</p>
+<p>在 1970 年，这几乎是“魔法”。</p>
+<p>然而，SHRDLU 有致命的限制。它的世界极度封闭，它只在 Blocks World 中有效。一旦脱离这个微型世界，它立即失效。</p>
+<p>而且所有知识是手写的世界规则、物理规则、语法规则、逻辑规则全部人工构造，无法扩展。</p>
+<p>它的语义依赖完全精确的符号映射，而现实世界是模糊的。Blocks World 是完美离散的，这不是同一个问题。</p>
+<p>SHRDLU 是符号主义 AI 的巅峰展示。它证明在封闭、结构化世界中符号系统可以表现出强大的语言能力。但它也暴露了符号系统对真实世界的扩展极其困难。</p>
+</section>
+<section id="符号主义面临的根本性挑战" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="符号主义面临的根本性挑战"><span class="header-section-number">2.1.4</span> <strong>符号主义面临的根本性挑战</strong></h3>
+<p>符号主义的基本结构是现实 → 离散符号表示 → 规则操作 → 结论。</p>
+<p>问题出在“现实 → 符号”这一步。在 Blocks World 里，物体数量有限，属性有限，关系也有限，而现实世界呢，实体无数，关系无数，属性不知道有多少，用规则覆盖现实不太可能，非要做的话规则数量指数增长，这就是“组合爆炸”。</p>
+<blockquote class="blockquote">
+<p>严格来说，并非数学证明的指数增长，而是“组合复杂度爆炸”这一类比。</p>
+</blockquote>
+<p>其次呢，现实理解依赖海量默认知识。例如“把杯子放在桌子上”，这简单一句话隐含的前提就有杯子是可移动的、桌子能承重、重力存在、桌子在地面上……这些常识无法完全穷举写出。这被称为常识知识工程问题。</p>
+<blockquote class="blockquote">
+<p>“知识工程”是计算机科学的一个分支领域，它主要研究如何将人类的知识进行有效的表示、获取、管理和应用。</p>
+</blockquote>
+<p>还有一个，框架问题（Frame Problem），这是更深层的理论问题。</p>
+<p>当一个动作发生时，哪些事实改变？哪些事实保持不变？例如“把红色方块移动到桌子上”，改变了方块的位置，没改变它的颜色、形状、其他物体状态。但系统如何知道哪些“不变”？如果每次都显式写颜色不变、材质不变、重量不变……规则会爆炸。这就是 Frame Problem。</p>
+<blockquote class="blockquote">
+<p>“Frame Problem”是人工智能领域的一个经典问题。它指的是在人工智能系统中，当一个事件发生时，如何确定该事件对其他事物的影响范围，以及如何高效地更新系统对世界状态的认知。</p>
+<p>例如，在一个机器人所在的环境中，机器人拿起一个物体，这个动作会改变物体的位置状态，但同时系统也需要考虑这个动作是否会对周围其他物体或者环境因素产生影响，以及如何更新对整个场景的认知。如果简单地认为所有其他事物的状态都未改变，可能会忽略一些重要的连锁反应；但如果过度更新，又会导致计算资源的浪费。Frame Problem就是关于如何在这些之间找到平衡，准确且高效地处理状态更新的问题。</p>
+</blockquote>
+<p>符号主义假设世界已经被正确离散化为符号。但现实中感知是连续的、模糊的。如何从视觉、声音中抽取离散符号？这是符号主义几乎无法解决的。</p>
+</section>
+</section>
+<section id="构建基于规则的聊天机器人" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="构建基于规则的聊天机器人"><span class="header-section-number">2.2</span> <strong>构建基于规则的聊天机器人</strong></h2>
+<p>复现ELIZA，一个实战</p>
+<section id="eliza-的设计思想" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="eliza-的设计思想"><span class="header-section-number">2.2.1</span> <strong>ELIZA 的设计思想</strong></h3>
+</section>
+<section id="模式匹配与文本替换" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="模式匹配与文本替换"><span class="header-section-number">2.2.2</span> <strong>模式匹配与文本替换</strong></h3>
+</section>
+<section id="核心逻辑的实现" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="核心逻辑的实现"><span class="header-section-number">2.2.3</span> <strong>核心逻辑的实现</strong></h3>
+</section>
+</section>
+<section id="马文明斯基的心智社会" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="马文明斯基的心智社会"><span class="header-section-number">2.3</span> <strong>马文·明斯基的心智社会</strong></h2>
+<p>《心智社会》（1986）是 <strong>Marvin Minsky</strong> 提出的一种认知理论。它的核心观点是：心智不是一个统一的东西，而是大量简单“代理”（agents）的社会。</p>
+<p>这些 agent 不是今天的大模型 agent，它们是极简单的功能模块，每个 agent 能做的事情很有限。</p>
+<p>智能不是一个“大脑核心模块”，而是很多小机制之间的组织结果。</p>
+<p>它隐含地反对两种思路单一智能机制、纯符号主义的中心控制模型。</p>
+<p>它诞生在一个关键时刻：1970s–1980s符号主义出现问题，SHRDLU 等系统难以扩展。</p>
+<p>Minsky提出，问题可能不是规则数量不够，而是结构组织方式错了。他想解决的问题是，如何从简单机制涌现出复杂智能？</p>
+<p>Minsky 本身属于符号主义阵营。但《心智社会》做了一次内部修正，从“规则系统”转向“多机制组织系统”，它不是放弃符号，而是改变组织方式。</p>
+<p>它没有工程实现，更像一个思维框架，因为它提出两个非常现代的思想：</p>
+<ol type="1">
+<li>智能可能是多模块并行</li>
+<li>高层控制可能是低层机制的涌现</li>
+</ol>
+<p>今天的多模块架构、Mixture-of-Experts、多 Agent 系统都能看到它的影子。</p>
+<section id="对单一整体智能模型的反思" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="对单一整体智能模型的反思"><span class="header-section-number">2.3.1</span> <strong>对单一整体智能模型的反思</strong></h3>
+<p>早期人工智能研究，尤其是在符号主义阶段，隐含一个假设：智能是一个统一的、中心化的机制。</p>
+<p>无论是逻辑推理系统，还是专家系统，结构上都倾向于一个知识库、一个推理引擎、一个控制核心。</p>
+<p>这是一种“中央处理器式”的心智模型。但现实认知现象并不支持这种统一性假设。</p>
+<p>人类思维表现出冲突（理性与情绪）、迟滞（知道却做不到）、多重目标竞争、局部策略优先级切换。</p>
+<p>如果存在一个完备、统一、全知的中心推理器，这些现象很难解释。</p>
+<p>《心智社会》提出的反思是：也许我们错误地把“系统一致性”当成“认知真实结构”。</p>
+<p>智能表现出协调性，并不意味着它内部是统一的。</p>
+<p>类似于一个国家表面上有决策，实际上是多部门博弈的结果。</p>
+<p>Minsky 的挑战在于把“智能是一个整体”改写为“整体只是表象”。这是一种结构上的去中心化。</p>
+</section>
+<section id="作为协作体的智能" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="作为协作体的智能"><span class="header-section-number">2.3.2</span> <strong>作为协作体的智能</strong></h3>
+<p>如果否定单一中心机制，那么替代模型是什么？《心智社会》的回答是：智能是大量简单机制之间的协作与竞争结构。</p>
+<p>这里的“agent”并不是完整理性个体。它们可能极其简单。单个 agent 没有“智能”。但当这些 agent 以层级和网络形式组织起来时，智能就出现了。它成为一种“组织现象”。关键点在于它没有全局全知，没有统一意志，没有单一逻辑核心。</p>
+</section>
+<section id="对多智能体系统的理论启发" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="对多智能体系统的理论启发"><span class="header-section-number">2.3.3</span> <strong>对多智能体系统的理论启发</strong></h3>
+<p><u>The Society of Mind</u>提出的核心观点是：所谓“智能”，并非来自一个统一、全能的中心，而是源于大量简单机制之间的协同运作。每个“代理”（agent）本身能力有限，但通过组织结构与交互关系，可以形成更高层级的智能行为。</p>
+<p>这一思想为后来的<u>Distributed Artificial Intelligence</u>（DAI）与<u>Multi-Agent Systems</u>（MAS）提供了重要的概念启发。其理论影响主要体现在以下几个方面。</p>
+<ol type="1">
+<li>去中心化控制（Decentralized Control）</li>
+<li>涌现与结构层级（Emergence and Hierarchy）</li>
+<li>智能体的社会属性（Agent Sociality）</li>
+<li>研究范式的转向</li>
+</ol>
+</section>
+</section>
+<section id="学习范式的演进与现代智能体" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="学习范式的演进与现代智能体"><span class="header-section-number">2.4</span> <strong>学习范式的演进与现代智能体</strong></h2>
+<p>在“心智社会”所开启的分布式智能视角之后，人工智能研究逐渐面临一个更为根本的问题：</p>
+<blockquote class="blockquote">
+<p>如果智能不是一个可以完全手工设计的规则体系，那么它是否必须通过学习获得？</p>
+</blockquote>
+<p>早期符号主义依赖专家编码知识库与逻辑推理机制，其优势在于结构清晰、可解释性强，但在真实世界的不确定性、噪声与规模复杂性面前逐渐显露局限。系统越复杂，规则维护成本越高，泛化能力越弱。这一困境促使研究重心从“知识表示”转向“知识获取”。</p>
+<p>由此，人工智能进入以“学习”为核心的范式演进阶段。</p>
+<section id="从符号到联结" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="从符号到联结"><span class="header-section-number">2.4.1</span> <strong>从符号到联结</strong></h3>
+<p>符号主义将智能视为规则系统；联结主义则将智能视为可训练结构。在联结主义（Connectionism）框架下，知识不再以符号形式存储，而是分布在网络参数之中。学习过程通过调整连接权重，使系统逐渐形成稳定的映射能力。</p>
+<p>这一转向意味着：智能不再等于逻辑推理，智能等于参数空间中的函数近似。符号主义强调“知识表示”，联结主义强调“知识获得”。</p>
+<p>这为后续一切学习方法奠定了基础——智能可以通过优化过程产生。</p>
+<p>但这一阶段的学习主要解决的是“感知映射”问题。系统可以识别图像、理解语音、处理文本，却仍然缺乏在环境中行动的能力。</p>
+</section>
+<section id="基于强化学习的智能体" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="基于强化学习的智能体"><span class="header-section-number">2.4.2</span> <strong>基于强化学习的智能体</strong></h3>
+<p>如果联结主义解决的是“如何表示世界”，那么强化学习（Reinforcement Learning）解决的是“如何在世界中行动”。强化学习将智能形式化为一个闭环结构：智能体、环境、状态、行动、奖励。</p>
+<p>智能的目标从“最小化误差”转变为“最大化长期回报”。这一阶段的重要意义在于引入了序贯决策、长期规划、环境交互。</p>
+<p>智能开始被定义为“策略优化能力”。例如AlphaGo通过自我对弈不断更新策略，在并非通过人工书写棋局策略规则的前提下获得超越人类水平的决策能力。然而，强化学习通常依赖特定任务环境。智能体在开始时缺乏广泛的背景知识，需要大量交互才能形成有效策略。这暴露出新的问题：能否在行动之前，就让智能体具备对世界的广泛理解？</p>
+<blockquote class="blockquote">
+<p>符号主义、联结主义、行为主义，这三个是“智能观”的层面，是关于“智能是什么”的立场。</p>
+<p>思想层：符号主义、联结主义、行为主义。</p>
+<p>方法层：逻辑推理系统、神经网络、强化学习算法。<br>
+</p>
+<p>工程层：具体系统，比如MYCIN、AlphaGo、GPT。</p>
+</blockquote>
+</section>
+<section id="基于大规模数据的预训练" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="基于大规模数据的预训练"><span class="header-section-number">2.4.3</span> <strong>基于大规模数据的预训练</strong></h3>
+<p>预训练范式的提出改变了模型学习的起点。在预训练—微调框架下，模型首先在海量数据上进行自监督学习，获得对语言和世界结构的广泛表示能力，然后再针对具体任务进行适配。这一范式带来了两个关键变化：</p>
+<ol type="1">
+<li>模型不再从零开始学习</li>
+<li>知识被编码为高维参数中的隐式结构</li>
+</ol>
+<p>当模型规模达到一定阈值时，开始出现涌现能力，例如：</p>
+<ol type="1">
+<li>上下文学习</li>
+<li>零样本迁移</li>
+<li>多步推理</li>
+</ol>
+<p>大型语言模型由此成为“通用表示平台”，而不仅仅是单一任务模型。此时，智能的定义进一步扩展，不仅能感知，还能迁移，并在一定程度上推理。但模型仍然只是一个预测器。它缺乏主动结构和持续行动能力。</p>
+</section>
+<section id="基于大语言模型的智能体" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="基于大语言模型的智能体"><span class="header-section-number">2.4.4</span> <strong>基于大语言模型的智能体</strong></h3>
+<p>现代智能体的出现，标志着学习范式进入结构整合阶段。在这一阶段，大语言模型（LLM）不再只是文本生成器，而是被嵌入一个完整的行为循环中。以<u>OpenAI</u>推出的GPT-4等模型为代表，LLM成为认知核心，典型的现代 LLM Agent 架构通常包含：</p>
+<ol type="1">
+<li>感知模块</li>
+<li>记忆模块</li>
+<li>规划模块</li>
+<li>工具调用接口</li>
+<li>执行模块</li>
+</ol>
+<p>智能体的工作方式可以抽象为一个持续迭代的闭环：感知 → 思考 → 行动 → 反馈 → 更新</p>
+<p>与强化学习的差异在于，它的推理能力来自预训练知识，工具调用扩展了外部能力，记忆机制增强长期一致性。智能不再只是策略优化，而是在复杂环境中持续运行的结构化行为系统。</p>
+</section>
+<section id="智能体发展关键节点概览" class="level3" data-number="2.4.5">
+<h3 data-number="2.4.5" class="anchored" data-anchor-id="智能体发展关键节点概览"><span class="header-section-number">2.4.5</span> <strong>智能体发展关键节点概览</strong></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>阶段</th>
+<th>智能核心</th>
+<th>关键问题</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>符号主义</td>
+<td>规则推理</td>
+<td>如何表达知识</td>
+</tr>
+<tr class="even">
+<td>联结主义</td>
+<td>参数学习</td>
+<td>如何获得表示</td>
+</tr>
+<tr class="odd">
+<td>强化学习（行为主义）</td>
+<td>策略优化</td>
+<td>如何在环境中决策</td>
+</tr>
+<tr class="even">
+<td>预训练模型</td>
+<td>通用知识</td>
+<td>如何跨任务泛化</td>
+</tr>
+<tr class="odd">
+<td>LLM智能体</td>
+<td>结构整合</td>
+<td>如何形成持续行为</td>
+</tr>
+</tbody>
+</table>
+<p>从宏观角度看，这是一条三次跃迁的路径：</p>
+<ol type="1">
+<li>从“设计规则”到“优化参数”</li>
+<li>从“静态预测”到“动态决策”</li>
+<li>从“单一模型”到“系统结构”</li>
+</ol>
+<p>理解AI agents的格局</p>
+<blockquote class="blockquote">
+<p>Although we see a lot of agent stack and agent market maps, we tend to disagree with their categorizations, and find they rarely reflect what we observe actually being used by developers. The agent software ecosystem has developed significantly in the past few months with progress in memory, tool usage, secure execution, and deployment, so we decided it was time to share our own “agent stack” based on our own learnings from working on open source AI for over a year and AI research for 7+ years.</p>
+</blockquote>
+<p><img src="images/clipboard-1788421254.png" class="img-fluid"></p>
+<blockquote class="blockquote">
+<p>The AI agents stack in late 2024, organized into three key layers: agent hosting/serving, agent frameworks, and LLM models &amp; storage.</p>
+</blockquote>
+</section>
+</section>
+<section id="本章小结" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="本章小结"><span class="header-section-number">2.5</span> <strong>本章小结</strong></h2>
+<p>这一章整体讲的是智能体范式如何一步步演化，而不是简单的技术时间线。最早的人工智能主要建立在符号主义之上，认为只要把世界用离散符号表示清楚，并用逻辑规则进行推理，机器就可以实现智能。这个阶段的系统通常包含知识库、推理引擎和控制循环，典型代表包括专家系统如 MYCIN 和 DENDRAL，以及自然语言系统 SHRDLU。它们在封闭、结构清晰的环境中表现出很强能力，但在现实世界中遇到严重扩展问题，例如组合复杂度爆炸、常识知识难以穷举以及框架问题等。物理符号系统假说则为这一阶段提供了理论基础，主张符号操作是实现一般智能的充分且必要条件，但这一立场后来受到挑战。</p>
+<p>随着符号系统难以扩展，研究逐渐转向学习范式。联结主义认为智能不是规则推理，而是通过参数训练获得的函数近似，知识分布在网络权重之中。强化学习进一步引入环境交互与长期回报优化，使智能被重新定义为策略优化能力。预训练模型的出现则改变了学习起点，使模型通过大规模自监督训练获得广泛表示能力，并在规模扩大后展现出跨任务迁移与推理能力。最终，大语言模型被嵌入完整结构中形成现代智能体系统，不再只是预测器，而是通过感知、记忆、规划、工具调用和执行模块形成持续闭环行为。</p>
+<p>从宏观来看，这一发展经历了三次重要跃迁：从人工设计规则到通过优化学习参数，从静态预测到动态决策，从单一模型到系统级结构整合。整条路径反映的核心不是单一技术替代，而是智能结构组织方式的变化，即从中心化逻辑核心逐渐演化为多模块协作的复杂系统。</p>
+</section>
+<section id="本章代码" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="本章代码"><span class="header-section-number">2.6</span> 本章代码</h2>
+<p>这一章的代码就这些。它定义一个规则列表，列表里面的key是用来匹配的表达式。</p>
+<p>用户输入内容，然后用re包以及这些key进行比对，最后选中一个规则，从规则对应的value列表里面随机选择一个回复。</p>
+<p>它还进行了一些词汇的替换。</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 定义规则库:模式(正则表达式) -&gt; 响应模板列表</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>rules <span class="op">=</span> {</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="vs">r'I need </span><span class="kw">(</span><span class="dv">.</span><span class="op">*</span><span class="kw">)</span><span class="vs">'</span>: [</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Why do you need </span><span class="sc">{0}</span><span class="st">?"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Would it really help you to get </span><span class="sc">{0}</span><span class="st">?"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Are you sure you need </span><span class="sc">{0}</span><span class="st">?"</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="vs">r'Why don</span><span class="ch">\'</span><span class="vs">t you </span><span class="kw">(</span><span class="dv">.</span><span class="op">*</span><span class="kw">)</span><span class="ch">\?</span><span class="vs">'</span>: [</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Do you really think I don't </span><span class="sc">{0}</span><span class="st">?"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Perhaps eventually I will </span><span class="sc">{0}</span><span class="st">."</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Do you really want me to </span><span class="sc">{0}</span><span class="st">?"</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="vs">r'Why can</span><span class="ch">\'</span><span class="vs">t I </span><span class="kw">(</span><span class="dv">.</span><span class="op">*</span><span class="kw">)</span><span class="ch">\?</span><span class="vs">'</span>: [</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Do you think you should be able to </span><span class="sc">{0}</span><span class="st">?"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"If you could </span><span class="sc">{0}</span><span class="st">, what would you do?"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"I don't know -- why can't you </span><span class="sc">{0}</span><span class="st">?"</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="vs">r'I am </span><span class="kw">(</span><span class="dv">.</span><span class="op">*</span><span class="kw">)</span><span class="vs">'</span>: [</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Did you come to me because you are </span><span class="sc">{0}</span><span class="st">?"</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"How long have you been </span><span class="sc">{0}</span><span class="st">?"</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"How do you feel about being </span><span class="sc">{0}</span><span class="st">?"</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="vs">r'</span><span class="dv">.</span><span class="op">*</span><span class="vs"> mother </span><span class="dv">.</span><span class="op">*</span><span class="vs">'</span>: [</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Tell me more about your mother."</span>,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"What was your relationship with your mother like?"</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"How do you feel about your mother?"</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="vs">r'</span><span class="dv">.</span><span class="op">*</span><span class="vs"> father </span><span class="dv">.</span><span class="op">*</span><span class="vs">'</span>: [</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Tell me more about your father."</span>,</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"How did your father make you feel?"</span>,</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">"What has your father taught you?"</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="vs">r'</span><span class="dv">.</span><span class="op">*</span><span class="vs">'</span>: [</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Please tell me more."</span>,</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Let's change focus a bit... Tell me about your family."</span>,</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Can you elaborate on that?"</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co"># 定义代词转换规则</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>pronoun_swap <span class="op">=</span> {</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    <span class="st">"i"</span>: <span class="st">"you"</span>, <span class="st">"you"</span>: <span class="st">"i"</span>, <span class="st">"me"</span>: <span class="st">"you"</span>, <span class="st">"my"</span>: <span class="st">"your"</span>,</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="st">"am"</span>: <span class="st">"are"</span>, <span class="st">"are"</span>: <span class="st">"am"</span>, <span class="st">"was"</span>: <span class="st">"were"</span>, <span class="st">"i'd"</span>: <span class="st">"you would"</span>,</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    <span class="st">"i've"</span>: <span class="st">"you have"</span>, <span class="st">"i'll"</span>: <span class="st">"you will"</span>, <span class="st">"yours"</span>: <span class="st">"mine"</span>,</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="st">"mine"</span>: <span class="st">"yours"</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> swap_pronouns(phrase):</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co">    对输入短语中的代词进行第一/第二人称转换</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> phrase.lower().split()</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    swapped_words <span class="op">=</span> [pronoun_swap.get(word, word) <span class="cf">for</span> word <span class="kw">in</span> words]</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">" "</span>.join(swapped_words)</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> respond(user_input):</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="co">    根据规则库生成响应</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> pattern, responses <span class="kw">in</span> rules.items():</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>        match <span class="op">=</span> re.search(pattern, user_input, re.IGNORECASE)</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> match:</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>            <span class="co"># 捕获匹配到的部分</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>            captured_group <span class="op">=</span> match.group(<span class="dv">1</span>) <span class="cf">if</span> match.groups() <span class="cf">else</span> <span class="st">''</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">'captured_group:'</span>,captured_group)</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>            <span class="co"># 进行代词转换</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>            swapped_group <span class="op">=</span> swap_pronouns(captured_group)</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">'captured_group:'</span>,captured_group)</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>            <span class="co"># 从模板中随机选择一个并格式化</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>            response <span class="op">=</span> random.choice(responses).<span class="bu">format</span>(swapped_group)</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> response</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 如果没有匹配任何特定规则，使用最后的通配符规则</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> random.choice(rules[<span class="vs">r'</span><span class="dv">.</span><span class="op">*</span><span class="vs">'</span>])</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="co"># 主聊天循环</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Therapist: Hello! How can I help you today?"</span>)</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>        user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">"You: "</span>)</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> user_input.lower() <span class="kw">in</span> [<span class="st">"quit"</span>, <span class="st">"exit"</span>, <span class="st">"bye"</span>]:</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Therapist: Goodbye. It was nice talking to you."</span>)</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> respond(user_input)</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Therapist: </span><span class="sc">{</span>response<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./cp_1.html" class="pagination-link" aria-label="初识智能体">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">初识智能体</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./cp_3.html" class="pagination-link" aria-label="大语言模型基础">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">大语言模型基础</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

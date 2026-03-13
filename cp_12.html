@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; Agent Evaluation – Agent Book</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./cp_11.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_12.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agent Evaluation</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Agent Book</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">初识智能体</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">大语言模型基础</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">智能体经典范式构建</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>框架开发实践</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Memory <strong>and</strong> Retrieval</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>上下文工程</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Agent Communication Protocols</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_12.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agent Evaluation</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-agent-evaluation-is-hard" id="toc-why-agent-evaluation-is-hard" class="nav-link active" data-scroll-target="#why-agent-evaluation-is-hard"><span class="header-section-number">10.1</span> Why Agent Evaluation Is Hard</a></li>
+  <li><a href="#what-should-be-evaluated-in-an-agent" id="toc-what-should-be-evaluated-in-an-agent" class="nav-link" data-scroll-target="#what-should-be-evaluated-in-an-agent"><span class="header-section-number">10.2</span> What Should Be Evaluated in an Agent</a></li>
+  <li><a href="#evaluation-methods-for-agents" id="toc-evaluation-methods-for-agents" class="nav-link" data-scroll-target="#evaluation-methods-for-agents"><span class="header-section-number">10.3</span> Evaluation Methods for Agents</a>
+  <ul class="collapse">
+  <li><a href="#llm-as-a-judge-evaluation" id="toc-llm-as-a-judge-evaluation" class="nav-link" data-scroll-target="#llm-as-a-judge-evaluation"><span class="header-section-number">10.3.1</span> LLM-as-a-Judge Evaluation</a></li>
+  <li><a href="#rule-based-and-programmatic-evaluation" id="toc-rule-based-and-programmatic-evaluation" class="nav-link" data-scroll-target="#rule-based-and-programmatic-evaluation"><span class="header-section-number">10.3.2</span> Rule-Based and Programmatic Evaluation</a></li>
+  </ul></li>
+  <li><a href="#agent-evaluation-frameworks" id="toc-agent-evaluation-frameworks" class="nav-link" data-scroll-target="#agent-evaluation-frameworks"><span class="header-section-number">10.4</span> Agent Evaluation Frameworks</a></li>
+  <li><a href="#observability-and-tracing-for-agents" id="toc-observability-and-tracing-for-agents" class="nav-link" data-scroll-target="#observability-and-tracing-for-agents"><span class="header-section-number">10.5</span> Observability and Tracing for Agents</a></li>
+  <li><a href="#building-an-agent-evaluation-pipeline" id="toc-building-an-agent-evaluation-pipeline" class="nav-link" data-scroll-target="#building-an-agent-evaluation-pipeline"><span class="header-section-number">10.6</span> Building an Agent Evaluation Pipeline</a></li>
+  <li><a href="#challenges-in-evaluating-agents" id="toc-challenges-in-evaluating-agents" class="nav-link" data-scroll-target="#challenges-in-evaluating-agents"><span class="header-section-number">10.7</span> Challenges in Evaluating Agents</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agent Evaluation</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="why-agent-evaluation-is-hard" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="why-agent-evaluation-is-hard"><span class="header-section-number">10.1</span> Why Agent Evaluation Is Hard</h2>
+<p>Evaluating intelligent agents is significantly more difficult than evaluating traditional machine learning models. While many models can be assessed using fixed datasets and well-defined metrics, agent systems operate in dynamic environments where behavior unfolds over multiple steps. As a result, measuring agent performance requires evaluating not only final outputs but also the processes that lead to those outputs.</p>
+<p>One major challenge is that agent tasks are often <strong>multi-step and sequential</strong>. An agent may retrieve information, call external tools, analyze intermediate results, and then produce a final answer. Even if the final output is correct, the intermediate steps may reveal inefficient reasoning, incorrect tool usage, or unnecessary operations. Traditional evaluation methods that focus only on final answers may fail to capture these issues.</p>
+<p>Another difficulty arises from <strong>environment interaction</strong>. Agents frequently operate within external systems such as APIs, databases, web environments, or software tools. Their performance depends not only on reasoning ability but also on their ability to navigate these environments effectively. Because the environment may change over time, evaluation results can vary depending on external conditions.</p>
+<p>Agent behavior is also <strong>non-deterministic</strong>. Modern language models often produce slightly different outputs for the same input due to sampling and probabilistic generation. This means that evaluating a single run of an agent may not accurately reflect its overall performance. Reliable evaluation often requires multiple runs and statistical aggregation.</p>
+<p>Furthermore, many agent tasks involve <strong>open-ended objectives</strong>. Unlike classification tasks with clearly defined labels, real-world tasks may have multiple valid solutions. For example, an agent tasked with writing a report, planning a workflow, or analyzing data may produce answers that differ in structure or style while still being correct. Designing evaluation methods that fairly assess such outputs is challenging.</p>
+<p>Another complication is the <strong>combination of heterogeneous capabilities</strong> within an agent system. Agents may rely on retrieval systems, tool invocation, reasoning chains, memory components, and external APIs. Failures can occur in any part of this pipeline. Determining whether a failure was caused by the model, the retrieval system, the tool interface, or the reasoning process is often difficult.</p>
+<p>Because of these factors, agent evaluation typically requires a combination of approaches. Benchmark tasks, automated evaluation metrics, LLM-based judges, and system tracing tools are often used together to obtain a more complete picture of agent behavior. Designing reliable evaluation strategies therefore becomes an essential part of building robust agent systems.</p>
+</section>
+<section id="what-should-be-evaluated-in-an-agent" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="what-should-be-evaluated-in-an-agent"><span class="header-section-number">10.2</span> What Should Be Evaluated in an Agent</h2>
+<p>Unlike traditional machine learning models, agents are not evaluated solely based on the correctness of their outputs. Agent systems operate through a sequence of actions that involve reasoning, tool usage, and interaction with external environments. As a result, evaluation must consider multiple aspects of agent behavior.</p>
+<p>First, the <strong>task outcome</strong> must be evaluated. The most basic question is whether the agent successfully completed the task it was given. In many benchmarks this is measured using metrics such as accuracy, exact match, or task success rate.</p>
+<p>Second, the <strong>reasoning and action trajectory</strong> should be examined. Agents often perform multi-step reasoning and invoke external tools during problem solving. Evaluating only the final answer may hide inefficient reasoning or incorrect tool usage.</p>
+<p>Third, the <strong>tool interaction behavior</strong> must be assessed. Modern agents frequently rely on external APIs or software tools. Evaluation therefore includes checking whether the agent selected the correct tool, constructed valid tool calls, and used the tool results appropriately.</p>
+<p>Finally, <strong>efficiency and reliability</strong> are also important considerations. Agents may produce correct answers but require excessive tokens, repeated tool calls, or unnecessary steps. Practical evaluation therefore often includes metrics such as response time, token consumption, and failure rates.</p>
+</section>
+<section id="evaluation-methods-for-agents" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="evaluation-methods-for-agents"><span class="header-section-number">10.3</span> Evaluation Methods for Agents</h2>
+<p>In practice, most agent systems rely on three complementary evaluation methods: benchmark evaluation, LLM-based evaluation, and rule-based evaluation.</p>
+<p>Benchmark evaluation measures agent performance on predefined tasks. These tasks simulate realistic scenarios where agents must perform reasoning, tool usage, or environment interaction.</p>
+<p>Examples of widely used agent benchmarks include:</p>
+<ul>
+<li><p>GAIA<br>
+A benchmark designed to evaluate general-purpose AI assistants on real-world tasks requiring reasoning, tool usage, and multi-step problem solving.</p></li>
+<li><p>AgentBench<br>
+A collection of environments designed to test the capabilities of autonomous agents across multiple domains.</p></li>
+<li><p>WebArena<br>
+A benchmark for evaluating agents that interact with websites and perform tasks in simulated web environments.</p></li>
+</ul>
+<p>Benchmarks provide standardized comparisons between different agent systems. However, they often cover only a limited set of scenarios and may not fully reflect real-world deployments.</p>
+<section id="llm-as-a-judge-evaluation" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="llm-as-a-judge-evaluation"><span class="header-section-number">10.3.1</span> LLM-as-a-Judge Evaluation</h3>
+<p>LLM-based evaluation has become increasingly popular in recent years. Instead of relying solely on predefined metrics, another language model is used to evaluate the quality of an agent’s output.</p>
+<p>In this approach, the evaluator model receives the task description, the agent’s output, and sometimes a reference answer. The model then produces a score or qualitative judgment based on criteria such as correctness, relevance, and clarity.</p>
+<p>Several frameworks implement this approach, including:</p>
+<ul>
+<li><p>Ragas</p></li>
+<li><p>DeepEval</p></li>
+<li><p>TruLens</p></li>
+<li><p>Promptfoo</p></li>
+</ul>
+<p>LLM-based evaluation is particularly useful for tasks where outputs are open-ended and difficult to measure with strict rules, such as report generation or reasoning explanations.</p>
+<p>However, this method also introduces potential biases because the evaluator itself is another language model.</p>
+</section>
+<section id="rule-based-and-programmatic-evaluation" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="rule-based-and-programmatic-evaluation"><span class="header-section-number">10.3.2</span> Rule-Based and Programmatic Evaluation</h3>
+<p>For many tasks, evaluation can be performed using deterministic rules or automated scripts. This method is particularly useful when the correctness of an output can be verified programmatically.</p>
+<p>Examples include:</p>
+<ul>
+<li><p>validating structured tool calls</p></li>
+<li><p>checking whether generated code executes successfully</p></li>
+<li><p>verifying that an API response matches a schema</p></li>
+<li><p>measuring whether a task was completed within system constraints</p></li>
+</ul>
+<p>Rule-based evaluation is widely used in engineering environments because it is deterministic, reproducible, and inexpensive to run.</p>
+</section>
+</section>
+<section id="agent-evaluation-frameworks" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="agent-evaluation-frameworks"><span class="header-section-number">10.4</span> Agent Evaluation Frameworks</h2>
+<p>Agent evaluation frameworks provide structured tools for running evaluation experiments and analyzing results. These frameworks integrate datasets, evaluation metrics, and experiment tracking into unified systems.</p>
+<p>Commonly used frameworks include <strong>LangSmith</strong>, <strong>TruLens</strong>, <strong>DeepEval</strong>, and <strong>Arize Phoenix</strong>. These platforms allow developers to run evaluation suites, compare model versions, and analyze agent performance across multiple tasks.</p>
+<p>By automating evaluation workflows, these frameworks make it easier to test new agent configurations and track improvements over time.</p>
+</section>
+<section id="observability-and-tracing-for-agents" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="observability-and-tracing-for-agents"><span class="header-section-number">10.5</span> Observability and Tracing for Agents</h2>
+<p>In complex agent systems, understanding how an agent arrived at an answer is often as important as the answer itself. Observability tools record the full trajectory of an agent’s execution, including reasoning steps, tool calls, intermediate outputs, and final responses.</p>
+<p>Tracing systems help developers diagnose failures and identify inefficiencies in agent workflows. For example, a failure might occur because of incorrect retrieval results, a malformed tool call, or an error in reasoning.</p>
+<p>Platforms such as <strong>LangSmith</strong>, <strong>Helicone</strong>, and <strong>Arize Phoenix</strong> provide tracing capabilities that allow developers to visualize agent execution paths and analyze system behavior in detail.</p>
+</section>
+<section id="building-an-agent-evaluation-pipeline" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="building-an-agent-evaluation-pipeline"><span class="header-section-number">10.6</span> Building an Agent Evaluation Pipeline</h2>
+<p>In practical systems, agent evaluation is usually implemented as a pipeline rather than a single metric.</p>
+<p>A typical evaluation workflow includes the following steps:</p>
+<ol type="1">
+<li>Task dataset</li>
+<li>Agent execution</li>
+<li>Trajectory logging</li>
+<li>Evaluation stage</li>
+<li>Reporting and analysis</li>
+</ol>
+<p>This pipeline allows developers to systematically compare agent versions and track improvements across iterations.</p>
+</section>
+<section id="challenges-in-evaluating-agents" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="challenges-in-evaluating-agents"><span class="header-section-number">10.7</span> Challenges in Evaluating Agents</h2>
+<p>Despite the growing ecosystem of evaluation tools, evaluating intelligent agents remains an open problem.</p>
+<p>One challenge is that real-world tasks are often open-ended, making it difficult to define objective metrics. Different solutions may be equally valid but vary in style or reasoning approach.</p>
+<p>Another difficulty is that agent systems involve many interacting components. Failures may originate from the language model, the retrieval system, the tool interface, or the environment itself. Identifying the root cause of errors can therefore be complex.</p>
+<p>Finally, agents may exhibit stochastic behavior due to probabilistic generation. This means that evaluation results may vary across different runs, making consistent measurement difficult.</p>
+<p>For these reasons, reliable agent evaluation typically requires a combination of benchmarks, automated metrics, LLM-based judgments, and system tracing. Together, these methods provide a more comprehensive view of agent performance.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./cp_11.html" class="pagination-link" aria-label="**Agentic-RL**">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

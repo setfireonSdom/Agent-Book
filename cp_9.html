@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; 上下文工程 – Agent Book</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./cp_10.html" rel="next">
+<link href="./cp_8.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_9.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>上下文工程</strong></span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Agent Book</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">初识智能体</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">大语言模型基础</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">智能体经典范式构建</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>框架开发实践</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Memory <strong>and</strong> Retrieval</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_9.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>上下文工程</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Agent Communication Protocols</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agent Evaluation</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-nature-of-context" id="toc-the-nature-of-context" class="nav-link active" data-scroll-target="#the-nature-of-context"><span class="header-section-number">7.1</span> The Nature of Context</a>
+  <ul class="collapse">
+  <li><a href="#context-as-the-operational-environment" id="toc-context-as-the-operational-environment" class="nav-link" data-scroll-target="#context-as-the-operational-environment"><span class="header-section-number">7.1.1</span> Context as the Operational Environment</a></li>
+  <li><a href="#context-as-the-interface-to-external-knowledge" id="toc-context-as-the-interface-to-external-knowledge" class="nav-link" data-scroll-target="#context-as-the-interface-to-external-knowledge"><span class="header-section-number">7.1.2</span> Context as the Interface to External Knowledge</a></li>
+  <li><a href="#context-as-a-computational-constraint" id="toc-context-as-a-computational-constraint" class="nav-link" data-scroll-target="#context-as-a-computational-constraint"><span class="header-section-number">7.1.3</span> Context as a Computational Constraint</a></li>
+  <li><a href="#context-as-a-first-class-design-element" id="toc-context-as-a-first-class-design-element" class="nav-link" data-scroll-target="#context-as-a-first-class-design-element"><span class="header-section-number">7.1.4</span> Context as a First-Class Design Element</a></li>
+  </ul></li>
+  <li><a href="#the-limits-of-model-context-windows" id="toc-the-limits-of-model-context-windows" class="nav-link" data-scroll-target="#the-limits-of-model-context-windows"><span class="header-section-number">7.2</span> The Limits of Model Context Windows</a>
+  <ul class="collapse">
+  <li><a href="#finite-context-capacity" id="toc-finite-context-capacity" class="nav-link" data-scroll-target="#finite-context-capacity"><span class="header-section-number">7.2.1</span> Finite Context Capacity</a></li>
+  <li><a href="#information-competition" id="toc-information-competition" class="nav-link" data-scroll-target="#information-competition"><span class="header-section-number">7.2.2</span> Information Competition</a></li>
+  <li><a href="#attention-distribution" id="toc-attention-distribution" class="nav-link" data-scroll-target="#attention-distribution"><span class="header-section-number">7.2.3</span> Attention Distribution</a></li>
+  <li><a href="#latency-and-computational-cost" id="toc-latency-and-computational-cost" class="nav-link" data-scroll-target="#latency-and-computational-cost"><span class="header-section-number">7.2.4</span> Latency and Computational Cost</a></li>
+  <li><a href="#context-windows-and-system-design" id="toc-context-windows-and-system-design" class="nav-link" data-scroll-target="#context-windows-and-system-design"><span class="header-section-number">7.2.5</span> Context Windows and System Design</a></li>
+  </ul></li>
+  <li><a href="#sources-of-context" id="toc-sources-of-context" class="nav-link" data-scroll-target="#sources-of-context"><span class="header-section-number">7.3</span> Sources of Context</a></li>
+  <li><a href="#context-construction" id="toc-context-construction" class="nav-link" data-scroll-target="#context-construction"><span class="header-section-number">7.4</span> Context Construction</a></li>
+  <li><a href="#context-optimization" id="toc-context-optimization" class="nav-link" data-scroll-target="#context-optimization"><span class="header-section-number">7.5</span> Context Optimization</a></li>
+  <li><a href="#context-in-agent-systems" id="toc-context-in-agent-systems" class="nav-link" data-scroll-target="#context-in-agent-systems"><span class="header-section-number">7.6</span> Context in Agent Systems</a></li>
+  <li><a href="#evaluating-context-quality" id="toc-evaluating-context-quality" class="nav-link" data-scroll-target="#evaluating-context-quality"><span class="header-section-number">7.7</span> Evaluating Context Quality</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>上下文工程</strong></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="the-nature-of-context" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="the-nature-of-context"><span class="header-section-number">7.1</span> The Nature of Context</h2>
+<p>Context is the information that a model uses to interpret a task and produce a response. In language models and agent systems, context defines the immediate environment within which reasoning occurs. Without context, a model has only its pretrained parameters, which encode general statistical knowledge but do not specify the situation, task, or knowledge required for a particular interaction.</p>
+<p>In practical terms, context is the <strong>input information available to the model at inference time</strong>. It includes everything the model can read before generating an output. The model’s behavior is therefore not determined solely by its architecture or training data, but also by the structure and content of the context it receives.</p>
+<section id="context-as-the-operational-environment" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="context-as-the-operational-environment"><span class="header-section-number">7.1.1</span> Context as the Operational Environment</h3>
+<p>A useful way to understand context is to think of it as the operational environment of the model. Just as human reasoning depends on the information available at a given moment, model reasoning depends on the tokens present in its context window.</p>
+<p>For a language model, context may include:</p>
+<ul>
+<li><p>the user’s query</p></li>
+<li><p>system instructions or policies</p></li>
+<li><p>retrieved knowledge from external memory</p></li>
+<li><p>prior conversation history</p></li>
+<li><p>intermediate reasoning steps</p></li>
+</ul>
+<p>Together, these elements form the informational setting within which the model performs its computation.</p>
+</section>
+<section id="context-as-the-interface-to-external-knowledge" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="context-as-the-interface-to-external-knowledge"><span class="header-section-number">7.1.2</span> Context as the Interface to External Knowledge</h3>
+<p>Although large language models contain vast amounts of knowledge encoded in their parameters, they cannot directly access new information after training. Context provides the mechanism for introducing external knowledge into the reasoning process.</p>
+<p>When documents, facts, or structured data are inserted into the model’s input, they effectively become part of the model’s temporary knowledge base for that interaction. In this way, context acts as the bridge between the model’s internal capabilities and external sources of information.</p>
+<p>This property is fundamental to modern AI systems. Retrieval systems, memory stores, and tool outputs all contribute information that becomes part of the context. The model then reasons over this combined information to produce an answer.</p>
+</section>
+<section id="context-as-a-computational-constraint" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="context-as-a-computational-constraint"><span class="header-section-number">7.1.3</span> Context as a Computational Constraint</h3>
+<p>Context is not only an informational resource but also a constraint. Every language model has a fixed context window, which limits the number of tokens it can process at once. As a result, only a limited amount of information can be presented to the model during a single reasoning step.</p>
+<p>Because of this limitation, the design of context becomes a critical engineering task. Systems must decide:</p>
+<ul>
+<li><p>which information to include</p></li>
+<li><p>how to organize that information</p></li>
+<li><p>how to remain within the token budget</p></li>
+</ul>
+<p>This constraint transforms context from a passive input into an actively designed structure.</p>
+</section>
+<section id="context-as-a-first-class-design-element" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="context-as-a-first-class-design-element"><span class="header-section-number">7.1.4</span> Context as a First-Class Design Element</h3>
+<p>In modern AI systems, context is no longer treated as a simple prompt string. Instead, it is constructed dynamically from multiple information sources and carefully structured to guide the model’s reasoning process.</p>
+<p>This shift marks the transition from prompt engineering to context engineering. Rather than crafting a single instruction, system designers assemble a structured informational environment that includes instructions, retrieved knowledge, task state, and other relevant signals.</p>
+<p>The quality of this environment strongly influences the quality of the model’s output. A model with excellent training but poorly designed context may produce unreliable results, while a well-constructed context can significantly enhance reasoning accuracy and task performance.</p>
+<p>For this reason, context should be understood as a <strong>first-class component of intelligent systems</strong>. It is the medium through which models perceive tasks, access knowledge, and perform reasoning. Designing that medium effectively is the central challenge of context engineering.</p>
+<p>For this reason, context should be understood as a <strong>first-class component of intelligent systems</strong>. It is the medium through which models perceive tasks, access knowledge, and perform reasoning. Designing that medium effectively is the central challenge of context engineering.</p>
+</section>
+</section>
+<section id="the-limits-of-model-context-windows" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="the-limits-of-model-context-windows"><span class="header-section-number">7.2</span> The Limits of Model Context Windows</h2>
+<p>Language models perform reasoning within a bounded input space known as the context window. The context window defines the maximum number of tokens a model can process in a single inference. Everything the model reads—system instructions, user queries, retrieved documents, and conversation history—must fit within this limit.</p>
+<p>Although modern models support increasingly large context windows, the constraint remains fundamental. The model cannot attend to information that lies outside this window. As a result, intelligent systems must carefully decide what information to include and what to omit.</p>
+<section id="finite-context-capacity" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="finite-context-capacity"><span class="header-section-number">7.2.1</span> Finite Context Capacity</h3>
+<p>The size of the context window varies across models. Some models support only a few thousand tokens, while more recent architectures may allow hundreds of thousands or even millions. Despite these advances, the window remains finite relative to the amount of information available in real-world applications.</p>
+<p>For example, a software repository, a corporate knowledge base, or a collection of research papers may contain millions of tokens. Even a single long document can exceed the context limit of many models. This means that it is impossible to provide all potentially relevant information at once.</p>
+<p>Consequently, the system must treat context as a scarce resource. Only a small portion of the available information can be selected for each interaction.</p>
+</section>
+<section id="information-competition" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="information-competition"><span class="header-section-number">7.2.2</span> Information Competition</h3>
+<p>Because the context window is limited, different types of information must compete for space within it. A typical prompt may include system instructions, retrieved knowledge, conversation history, and the user’s query. Each of these components consumes tokens.</p>
+<p>When the context grows too large, important information may be truncated or excluded. Conversely, including too much irrelevant information can dilute the signal that the model should focus on. This competition forces system designers to prioritize the most useful information for the current task.</p>
+<p>The effectiveness of a system therefore depends not only on what information is available, but also on how efficiently it is allocated within the context window.</p>
+</section>
+<section id="attention-distribution" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="attention-distribution"><span class="header-section-number">7.2.3</span> Attention Distribution</h3>
+<p>Even when information fits within the context window, models do not process all tokens equally. The attention mechanism distributes focus across tokens, and long contexts may cause attention to spread thinly over many pieces of information.</p>
+<p>In practice, this means that placing too much material in the prompt can reduce clarity rather than improve it. Relevant passages may become harder for the model to identify when surrounded by excessive or loosely related text.</p>
+<p>For this reason, simply increasing context size does not automatically improve reasoning quality. The structure and relevance of the context remain critical factors.</p>
+</section>
+<section id="latency-and-computational-cost" class="level3" data-number="7.2.4">
+<h3 data-number="7.2.4" class="anchored" data-anchor-id="latency-and-computational-cost"><span class="header-section-number">7.2.4</span> Latency and Computational Cost</h3>
+<p>Larger contexts also introduce practical constraints related to performance. Processing long sequences requires more computation and increases latency during inference. In many production systems, this additional cost can become significant when handling large volumes of requests.</p>
+<p>As the number of tokens grows, both memory usage and processing time increase. This creates a trade-off between providing more context and maintaining efficient system performance.</p>
+<p>Systems must therefore balance the benefits of additional information against the operational cost of processing longer prompts.</p>
+</section>
+<section id="context-windows-and-system-design" class="level3" data-number="7.2.5">
+<h3 data-number="7.2.5" class="anchored" data-anchor-id="context-windows-and-system-design"><span class="header-section-number">7.2.5</span> Context Windows and System Design</h3>
+<p>Because context windows are limited, intelligent systems cannot rely on the model alone to manage information. Instead, they must incorporate mechanisms that select and organize context dynamically.</p>
+<p>Retrieval systems identify relevant documents from large memory stores. Chunking strategies divide documents into manageable passages. Context construction pipelines assemble selected pieces into a structured prompt.</p>
+<p>These mechanisms allow systems to operate over knowledge bases that are far larger than the model’s context window. Rather than attempting to fit all information into the model, the system retrieves and supplies only the portions that are necessary for the current task.</p>
+<p>In this way, the limitation of context windows becomes a central design constraint that shapes the architecture of modern AI systems.</p>
+</section>
+</section>
+<section id="sources-of-context" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sources-of-context"><span class="header-section-number">7.3</span> Sources of Context</h2>
+<p>In intelligent systems, context does not originate from a single source. Instead, it is assembled from multiple streams of information that together define the environment in which the model performs reasoning. Understanding these sources is essential for designing systems that provide the model with the right information at the right time.</p>
+<p>The most direct source of context is the <strong>user query</strong>. The query defines the immediate task or question that the model must address. It establishes the primary objective of the interaction and often determines what additional information must be retrieved or included.</p>
+<p>Another important source is <strong>system instructions</strong>. These instructions define the behavioral constraints of the model, including formatting requirements, reasoning strategies, safety policies, or task-specific guidelines. System instructions shape how the model interprets the query and how it structures its response.</p>
+<p>A third source is <strong>retrieved knowledge</strong> from external memory systems. Retrieval pipelines may provide relevant documents, passages, or structured records that expand the model’s available knowledge for the current task. These retrieved elements allow the model to incorporate information that lies beyond its pretrained parameters.</p>
+<p>Context may also include <strong>conversation history</strong>. In interactive systems, previous exchanges between the user and the model help maintain continuity and coherence across multiple turns. Conversation history provides temporal context that informs how the model should interpret follow-up questions or references.</p>
+<p>In more complex systems, context can include <strong>intermediate outputs from tools or other components</strong>. Results produced by search engines, calculators, code execution environments, or other agents may be inserted into the prompt as additional information. These outputs extend the model’s capabilities by introducing external computation results into the reasoning process.</p>
+<p>Together, these elements form the informational landscape of the model’s current interaction. Context engineering involves identifying which of these sources are relevant for a given task and integrating them into a coherent structure that supports effective reasoning.</p>
+</section>
+<section id="context-construction" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="context-construction"><span class="header-section-number">7.4</span> Context Construction</h2>
+<p>Context construction is the process of assembling the various sources of information into a structured input for the language model. Rather than presenting raw information in an arbitrary order, systems must organize context in a way that allows the model to interpret it clearly and reason effectively.</p>
+<p>A well-constructed context typically includes several distinct components. System instructions often appear at the beginning of the prompt, establishing the role and expectations for the model. Retrieved knowledge may follow, providing relevant background information or supporting evidence. The user’s query then specifies the task that the model must address using the provided context.</p>
+<p>The ordering and structure of these elements can significantly influence the model’s behavior. Clear separation between instructions, retrieved information, and the query helps the model distinguish between guidance and content. Structured prompts may use headings, labels, or delimiters to indicate the function of each segment.</p>
+<p>Context construction also involves selecting an appropriate amount of information. Including too little context may leave the model without sufficient knowledge to answer accurately, while including too much may introduce irrelevant details that obscure the most important signals. Effective context construction balances completeness with clarity.</p>
+<p>In modern systems, context construction is often performed dynamically. Retrieval results, conversation history, and tool outputs may vary from one interaction to another. The system must therefore assemble a new context for each request, adapting the prompt structure to the information available at that moment.</p>
+<p>Through this process, context becomes a deliberately engineered artifact rather than a simple prompt string. The design of this artifact directly shapes how the model interprets the task and how effectively it can produce a useful response.</p>
+</section>
+<section id="context-optimization" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="context-optimization"><span class="header-section-number">7.5</span> Context Optimization</h2>
+<p>Because context windows are limited and computational resources are finite, context must be optimized to ensure that the most relevant information occupies the available space. Context optimization refers to the process of refining the constructed prompt so that it maximizes informational value while remaining within token and performance constraints.</p>
+<p>One aspect of optimization is <strong>relevance filtering</strong>. Not all available information should be included in the final context. Systems must identify which pieces of retrieved knowledge are most useful for the task and exclude content that contributes little to the model’s reasoning.</p>
+<p>Another aspect is <strong>redundancy reduction</strong>. Retrieved passages may contain overlapping or repeated information. Removing redundant material allows the system to preserve more unique knowledge within the same token budget.</p>
+<p>Optimization may also involve <strong>compression</strong>. Long passages can sometimes be summarized or shortened without losing their essential meaning. By condensing information, the system can include more relevant content within the context window.</p>
+<p>Token budget management is another important consideration. Every element of the prompt—including instructions, retrieved content, and conversation history—consumes tokens. Systems must allocate this limited budget carefully so that essential information remains visible to the model.</p>
+<p>Through these strategies, context optimization ensures that the information presented to the model is both concise and relevant. The goal is not to maximize the amount of context, but to maximize the usefulness of the information contained within it.</p>
+</section>
+<section id="context-in-agent-systems" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="context-in-agent-systems"><span class="header-section-number">7.6</span> Context in Agent Systems</h2>
+<p>In agent-based architectures, context plays an even more central role because the model must coordinate multiple steps of reasoning and action. Rather than responding to a single query, an agent may plan tasks, interact with tools, retrieve information, and update its state over a sequence of operations.</p>
+<p>In such systems, context often includes not only external knowledge but also <strong>internal task state</strong>. The agent may track objectives, intermediate results, or pending actions that must be considered during subsequent reasoning steps. This state information becomes part of the context presented to the model.</p>
+<p>Agents also incorporate <strong>tool outputs</strong> into their context. When the agent invokes an external tool—such as a search engine, database query, or code execution environment—the results returned by that tool are inserted into the model’s context so that the model can interpret and use them.</p>
+<p>Another important component is the <strong>execution history</strong> of the agent. Previous decisions, actions, and observations may influence the next step in the agent’s workflow. Maintaining this history within the context allows the model to reason consistently across multiple stages of a task.</p>
+<p>Because agent systems involve iterative reasoning, the context may evolve continuously. Each step may introduce new information while older information becomes less relevant. Managing this evolving context is one of the key challenges in building reliable agents.</p>
+<p>In this setting, context is not merely an input prompt but a dynamic representation of the agent’s current knowledge, goals, and environment.</p>
+</section>
+<section id="evaluating-context-quality" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="evaluating-context-quality"><span class="header-section-number">7.7</span> Evaluating Context Quality</h2>
+<p>The effectiveness of a context engineering system ultimately depends on the quality of the context it provides to the model. Evaluating context quality therefore becomes an essential part of system design and improvement.</p>
+<p>One important criterion is <strong>relevance</strong>. The context should contain information that directly supports the task at hand. Irrelevant or loosely related content can distract the model and reduce response accuracy.</p>
+<p>Another criterion is <strong>coverage</strong>. The context should include enough information to allow the model to address the query fully. Missing key facts or instructions may cause incomplete or incorrect responses.</p>
+<p><strong>Clarity and organization</strong> also affect context quality. Well-structured prompts help the model distinguish between instructions, background knowledge, and the user’s request. Poorly organized context can obscure relationships between pieces of information.</p>
+<p>In retrieval-based systems, context quality is also linked to the effectiveness of upstream components such as chunking, embedding models, and ranking mechanisms. Weak retrieval quality often propagates directly into weak context quality.</p>
+<p>Finally, context evaluation may consider <strong>efficiency</strong>. High-quality context should use tokens efficiently, providing maximum informational value without unnecessary verbosity.</p>
+<p>By measuring these factors—relevance, coverage, clarity, and efficiency—system designers can iteratively refine their context construction pipelines. In doing so, they improve the informational environment in which the model performs its reasoning.</p>
+<p>There are some useful tools:</p>
+<pre><code>a.Ragas
+ragas
+Purpose:Evaluation framework specifically designed for RAG systems.
+What it evaluates?
+context relevance、context precision、context recall、answer faithfulness、answer correctness.
+It evaluates whether the retrieved context actually supports the answer.
+
+b.TruLens
+trulens
+Purpose:Observability and evaluation tool for LLM applications.
+What it evaluates?
+context relevance、groundedness (answer supported by context)、 answer relevance.
+Allows real-time monitoring of RAG pipelines.
+
+c.DeepEval
+deepeval
+Purpose:Testing framework for LLM systems similar to unit testing.
+What it evaluates?
+context precision、hallucination detection
+answer correctness、retrieval quality.
+Provides pytest-style tests for LLM applications.
+
+d.LlamaIndex Evaluation
+llama-index
+Purpose:Evaluation tools integrated into the LlamaIndex RAG framework.
+What it evaluates?
+context relevance、answer correctness、response similarity.
+Evaluate retrieval and generation quality within LlamaIndex pipelines.
+
+e.LangChain Evaluation
+langchain
+Purpose:Evaluation utilities built into the LangChain ecosystem.
+What it evaluates?
+answer correctness、reasoning quality、comparison between model outputs.
+
+f.BEIR
+BEIR
+Purpose:Benchmark framework for retrieval systems.
+What it evaluates?
+retrieval precision、recall、ranking quality.
+Used mostly in retrieval research.</code></pre>
+<p>Most RAG teams today primarily use:</p>
+<pre><code>Ragas
++
+TruLens</code></pre>
+<p>because they directly measure:</p>
+<pre><code>context relevance
+answer faithfulness
+retrieval quality</code></pre>
+<p>Context quality in retrieval-augmented systems can be evaluated using frameworks such as <strong>Ragas, TruLens, and DeepEval</strong>, which measure metrics like context relevance, faithfulness, and retrieval precision.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./cp_8.html" class="pagination-link" aria-label="Memory **and** Retrieval">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Memory <strong>and</strong> Retrieval</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./cp_10.html" class="pagination-link" aria-label="Agent Communication Protocols">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Agent Communication Protocols</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

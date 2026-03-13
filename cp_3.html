@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; 大语言模型基础 – Agent Book</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./cp_4.html" rel="next">
+<link href="./cp_2.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">大语言模型基础</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Agent Book</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">初识智能体</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">大语言模型基础</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">智能体经典范式构建</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>框架开发实践</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Memory <strong>and</strong> Retrieval</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>上下文工程</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Agent Communication Protocols</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cp_12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agent Evaluation</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#语言模型与-transformer-架构" id="toc-语言模型与-transformer-架构" class="nav-link active" data-scroll-target="#语言模型与-transformer-架构"><span class="header-section-number">3.1</span> 语言模型与 Transformer 架构</a>
+  <ul class="collapse">
+  <li><a href="#从-n-gram-到-rnn" id="toc-从-n-gram-到-rnn" class="nav-link" data-scroll-target="#从-n-gram-到-rnn"><span class="header-section-number">3.1.1</span> <strong>从 N-gram 到 RNN</strong></a></li>
+  <li><a href="#transformer-架构解析" id="toc-transformer-架构解析" class="nav-link" data-scroll-target="#transformer-架构解析"><span class="header-section-number">3.1.2</span> <strong>Transformer 架构解析</strong></a></li>
+  <li><a href="#decoder-only-架构" id="toc-decoder-only-架构" class="nav-link" data-scroll-target="#decoder-only-架构"><span class="header-section-number">3.1.3</span> Decoder-Only 架构</a></li>
+  </ul></li>
+  <li><a href="#与大语言模型交互" id="toc-与大语言模型交互" class="nav-link" data-scroll-target="#与大语言模型交互"><span class="header-section-number">3.2</span> <strong>与大语言模型交互</strong></a>
+  <ul class="collapse">
+  <li><a href="#提示工程" id="toc-提示工程" class="nav-link" data-scroll-target="#提示工程"><span class="header-section-number">3.2.1</span> <strong>提示工程</strong></a></li>
+  <li><a href="#文本分词" id="toc-文本分词" class="nav-link" data-scroll-target="#文本分词"><span class="header-section-number">3.2.2</span> <strong>文本分词</strong></a></li>
+  <li><a href="#调用开源大语言模型" id="toc-调用开源大语言模型" class="nav-link" data-scroll-target="#调用开源大语言模型"><span class="header-section-number">3.2.3</span> <strong>调用开源大语言模型</strong></a></li>
+  <li><a href="#模型的选择" id="toc-模型的选择" class="nav-link" data-scroll-target="#模型的选择"><span class="header-section-number">3.2.4</span> <strong>模型的选择</strong></a></li>
+  </ul></li>
+  <li><a href="#大语言模型的缩放法则与局限性" id="toc-大语言模型的缩放法则与局限性" class="nav-link" data-scroll-target="#大语言模型的缩放法则与局限性"><span class="header-section-number">3.3</span> <strong>大语言模型的缩放法则与局限性</strong></a>
+  <ul class="collapse">
+  <li><a href="#缩放法则" id="toc-缩放法则" class="nav-link" data-scroll-target="#缩放法则"><span class="header-section-number">3.3.1</span> <strong>缩放法则</strong></a></li>
+  <li><a href="#模型幻觉" id="toc-模型幻觉" class="nav-link" data-scroll-target="#模型幻觉"><span class="header-section-number">3.3.2</span> <strong>模型幻觉</strong></a></li>
+  </ul></li>
+  <li><a href="#本章小结" id="toc-本章小结" class="nav-link" data-scroll-target="#本章小结"><span class="header-section-number">3.4</span> <strong>本章小结</strong></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">大语言模型基础</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><img src="images/clipboard-3691529878.png" class="img-fluid"></p>
+<p>语言模型，指的就是一个函数（或规则）， 它接收“已经出现的 token 序列”， 输出“下一个 token 的概率分布”。 也就是对<span class="math inline">\(P(\text{下一个 token} \mid \text{已有 token})\)</span>这个条件概率的建模。</p>
+<p>你可以把“语言模型”想成一个补全机器，你给它一句话的前半截：我今天去___</p>
+<p>它要猜后面更可能出现什么：上班/学校/医院…</p>
+<p>这件事在现实中很常见：输入法联想、语音识别、机器翻译、聊天机器人——都需要“下一词更像什么”。</p>
+<p>这样就很好理解了，从 n-gram 到神经网络再到 Transformer，本质都是在近似同一个条件概率映射；差别在于近似器的<strong>表示能力、参数共享方式、以及对长程依赖的处理</strong>。</p>
+<p>大语言模型的核心，就是在做一个高维条件概率函数<span class="math inline">\(P(t_i \mid t_1, \ldots, t_{i-1})\)</span>的函数近似。从 n-gram → 神经网络 → Transformer，本质上从来没变过目标函数，只是在不断升级「函数近似器的能力与结构」。</p>
+<p>n-gram是 <strong>查表式近似，</strong>直接存答案，这和 RL 里的 <strong>tabular Q-learning</strong> 是一模一样的思想。神经网络做的不是“算得更快”，而是<strong>换了一种存在方式，</strong>不再为每个上下文单独存一个概率分布，而是学习一个能在上下文空间上连续泛化的函数。</p>
+<p>这一步，<strong>和强化学习从 Q-table → DQN 是同一件事</strong>。</p>
+<p><img src="images/clipboard-1002435664.png" class="img-fluid"></p>
+<section id="语言模型与-transformer-架构" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="语言模型与-transformer-架构"><span class="header-section-number">3.1</span> 语言模型与 Transformer 架构</h2>
+<section id="从-n-gram-到-rnn" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="从-n-gram-到-rnn"><span class="header-section-number">3.1.1</span> <strong>从 N-gram 到 RNN</strong></h3>
+<p>大语言模型的语言建模思想，沿着「统计语言模型 → 神经语言模型（RNN / CNN） → 基于注意力的神经语言模型（Transformer）」逐步演化。</p>
+<p>语言模型的根本目标是，为任意一个词序列定义一个联合概率。</p>
+<p>P(t1​,t2​,…,tn​)</p>
+<p>而它在实现上，是通过不断输出“下一个 token 的条件概率分布”来完成这件事的。</p>
+<blockquote class="blockquote">
+<p>联合概率（joint probability）<strong>指的是多个随机事件“同时发生”的概率。</strong></p>
+</blockquote>
+<p>所谓“统计语言模型”（Statistical Language Model），本质上就是一句话：<strong>把语言当成一个概率问题来处理</strong>。它要解决的核心问题只有一个：在已经出现了一段文字的情况下，所有可能的下一个词，各自出现的概率是多少？</p>
+<p>更具体的说，语言模型本身在解决的问题是：给定一段已出现的序列 x₁…xₙ，对词表中每一个候选 token t，计算条件概率 P(t | x₁…xₙ)。</p>
+<blockquote class="blockquote">
+<p>条件概率公式：<span class="math inline">\(P(A \mid B) = \frac{P(A, B)}{P(B)}, \quad P(B) &gt; 0\)</span></p>
+<p>条件概率 = 联合概率 ÷ 条件本身的概率</p>
+</blockquote>
+<p>从 n-gram 到 RNN，再到 Transformer，本质上都是在做同一件事——输出一个“下一个 token 的概率分布”。</p>
+<p>到这里为止，是语言模型的<strong>全部职责</strong>。它的输出是一个概率分布，而不是一个 token。</p>
+<p>它并不负责选择某个概率最大的token，然后接到已出现token的尾部。</p>
+<p>**语言模型本身是一个“概率分布定义器（probability estimator）”，<br>
+</p>
+<p>而不是一个“文本生成器”。**</p>
+<p>文本生成是一个<strong>额外的过程</strong>，</p>
+<p>它需要在语言模型给出的条件概率分布之上，再引入采样、贪心、top-k、top-p 等解码策略。</p>
+<p>为什么语言模型要把语言当成一个概率问题？</p>
+<p>把语言当成概率问题，并不是在说“语言的本质就是概率”，而是在说<strong>这是一个人为选择的建模视角，不是事实陈述。</strong></p>
+<p>一旦你选择了“概率”这个视角，p(xi | x1, …, x(i−1))公式不是“语言模型的选择”，而是<strong>概率论强制你必须遵守的结构约束</strong>。</p>
+<p>而概率论里有一条铁律，“一连串事件按顺序发生的可能性”，那你唯一合法的组合方式就是，联合概率 = 条件概率 × 条件概率 × …</p>
+<p>需要强调的是，联合概率是语言模型在数学上的“定义目标”，而不是模型在运行时的“计算对象”。在实际实现中，联合概率仅通过链式法则被隐式定义，模型只显式建模和计算条件概率：</p>
+<p><span class="math inline">\(P(t_i \mid t_1, \ldots, t_{i-1})\)</span></p>
+<p>这不是“语言模型用的公式”，这是“任何顺序事件模型”都逃不开的规则。</p>
+<p>在语言模型中， 每一个 token 的生成都可以被视为一次随机事件， 整个句子对应的是一串有序随机事件的联合概率。</p>
+<p>你可能觉得，一个序列，他们同时出现的概率不应该是：p(t1) * p(t2) * … * p(tn)吗。</p>
+<p>如果你这么写，那你在<strong>隐含地假设一件事</strong>，这些 token <strong>彼此独立</strong>。而语言里，这个假设<strong>不成立</strong>，所以不能这么算，语言中的 token 之间有极强的依赖关系。</p>
+<p>从最底层的概率论说起，假设你有一串按顺序发生的事件：X1​,X2​,…,Xn​</p>
+<p>你问的问题是“这一整串事件发生的概率是多少？”，那么在<strong>概率论里，没有第二种合法写法</strong>：P(X1​,…,Xn​)=P(X1​)⋅P(X2​∣X1​)⋅⋯⋅P(Xn​∣X1​,…,Xn−1​)</p>
+<p>这是联合概率在顺序事件下的定义性展开，只有在“完全独立”的极端假设下，链式法则才会退化成简单乘积。也就是说链式法则永远成立 “独立”只是一个 特殊、退化的情况。</p>
+<p>所以选择了将语言建模成概率问题，就必须遵守链式法则，那么语言模型的“唯一自由度”在哪里？</p>
+<p>答案是，<strong>如何近似每一个条件概率项</strong>：P(ti​∣t1​,…,ti−1​)</p>
+<ol type="1">
+<li>n-gram：截断历史</li>
+<li>RNN：把历史压缩成状态</li>
+<li>Transformer：对历史做显式条件化（attention）</li>
+</ol>
+<section id="n-gram语言建模的起点统计时代" class="level4" data-number="3.1.1.1">
+<h4 data-number="3.1.1.1" class="anchored" data-anchor-id="n-gram语言建模的起点统计时代"><span class="header-section-number">3.1.1.1</span> 1 n-gram：语言建模的起点（统计时代）</h4>
+<p><strong>虽然链式法则在数学上永远成立，但“直接用它计算”在语言建模中是原则上不可行的。它</strong>不只是算得慢，而是<strong>你连要算什么都无法枚举</strong>。</p>
+<p>链式法则写成：<span class="math inline">\(P(x_1, \ldots, x_n) = \prod_{i=1}^{n} P(x_i \mid x_1, \ldots, x_{i-1})\)</span></p>
+<p>问题在于，每一个条件概率项的条件空间是天文级别的。</p>
+<p>为什么？因为词表大小为<span class="math inline">\(|V|\)</span> ，长度为<span class="math inline">\(k\)</span>的前缀可能性是：</p>
+<p><span class="math inline">\(|V|^k\)</span></p>
+<p>也就是说，第 i 个条件概率</p>
+<p>理论上需要为</p>
+<p><span class="math inline">\(|V|^{i-1}\)</span></p>
+<p>种不同上下文各存一个分布，状态空间无限增长，无法穷举。</p>
+<blockquote class="blockquote">
+<p>词表是什么？</p>
+<p>词表（vocabulary，简称 vocab）就是： 一个语言模型“允许出现的所有最小符号（Token）的清单”。</p>
+<p>词表大 → 表达更细，词表小 → 序列更长、组合更多</p>
+</blockquote>
+<p>我们现实中实现的所有语言模型，都是近似，真实语言的“完整概率模型”在理论上不可实现。</p>
+<p>n-gram 正是为了处理“链式法则在语言中不可直接计算”这个问题而出现的，但n-gram 并没有解决“链式法则不可直接计算”的问题， 它只是把这个问题缩小到一个人类能处理的规模。</p>
+<p><img src="images/clipboard-2993008553.png" class="img-fluid"></p>
+<p>它引入了马尔可夫假设，但它≠马尔可夫假设本身。n-gram把语言问题， 在“马尔可夫假设”之下做了一个具体实现。</p>
+<blockquote class="blockquote">
+<p>马尔可夫假设，即未来的状态，只依赖于最近的若干个过去状态，而与更早的历史无关。</p>
+<p>翻成人话就是说，我不记得全部过去，只记住“最近这点”。</p>
+</blockquote>
+<p>具体是什么意思呢，之前我们提到过，语言模型要做的事情本质上就是给定一个序列，然后输出下一个token概率分布。</p>
+<p>在没有可泛化的函数近似器之前，条件概率函数无法在高维上下文空间中被有效表示与泛化， 因此只能通过引入马尔可夫假设， 用 n-gram 对条件概率进行结构性简化。</p>
+<blockquote class="blockquote">
+<p>这就有点像强化学习的Q-learning面临的情况，当状态和动作空间是连续的时候，Q(S,A)这个表格变难以应对，这个时候需要深度神经网络。</p>
+<p>即当状态 / 条件空间巨大或连续时， “查表式”的概率 / 价值函数定义会彻底失效， 必须引入函数近似。</p>
+</blockquote>
+<p>n-gram假设只看最近 n−1 个词，更早的，统统当不存在。数学上就是一个 <strong>(n−1) 阶马尔可夫假设</strong>：</p>
+<p><span id="eq-markov-assumption"><span class="math display">\[
+P(w_t \mid w_1, \ldots, w_{t-1}) \approx P(w_t \mid w_{t-(n-1)}, \ldots, w_{t-1})
+\tag{3.1}\]</span></span></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">n</th>
+<th style="text-align: left;">模型</th>
+<th style="text-align: left;">依赖关系</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Bigram</td>
+<td style="text-align: left;"><span class="math inline">\(P(w_t \mid w_{t-1})\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Trigram</td>
+<td style="text-align: left;"><span class="math inline">\(P(w_t \mid w_{t-2}, w_{t-1})\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">n</td>
+<td style="text-align: left;">n-gram</td>
+<td style="text-align: left;"><span class="math inline">\(P(w_t \mid w_{t-(n-1)}, \ldots, w_{t-1})\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>也就是说，如果n等于2，当前token的前一个token就能完全决定当前token。</p>
+<p>这个时候，下一token的概率分布怎么计算呢？</p>
+<p>这些概率可以通过在大型语料库中进行<strong>最大似然估计(Maximum Likelihood Estimation,MLE)</strong> 来计算。这个术语听起来很复杂，但其思想非常直观：最可能出现的，就是我们在数据中看到次数最多的。</p>
+<p>例如，假设n为2，条件概率函数利用最大似然估计，可以近似为：</p>
+<p><span id="eq-mle"><span class="math display">\[
+P(w \mid h) = \frac{\mathrm{count}(h, w)}{\sum_{w'} \mathrm{count}(h, w')}
+\tag{3.2}\]</span></span></p>
+<ul>
+<li><p>h ：历史上下文（history），即前面的 n-1 个词</p></li>
+<li><p>w ：下一个词</p></li>
+<li><p>count(h,w) ：序列 (h,w) 在语料中出现的次数</p></li>
+<li><p>分母：所有以 h 开头的序列出现次数之和（即 h 出现的总次数）</p></li>
+</ul>
+<p><strong>具体例子（Bigram）：</strong></p>
+<p>语料：“I am Sam. I am Tom. I am happy.”</p>
+<p>计算<span class="math inline">\(P(am \mid I)\)</span>：</p>
+<p>count(I,am)=3，count(I)=3，所以<span class="math inline">\(P(am \mid I)\)</span> = 3/3 = 1。</p>
+<p>假设要计算<span class="math inline">\(P(Sam \mid am)\)</span>，结果为1/3。</p>
+<p>n-gram有什么特点呢，它的特点是，对“语料中出现过的每一个上下文”提前算好了，它本质上学到了一章张表，你可以把它想象成这个（bigram模型）：</p>
+<pre><code>history = "I"   → { am: 1.0, like: 0.0, ... }
+history = "am"  → { Sam: 0.33, Tom: 0.33, happy: 0.33, ... }
+history = "Sam" → { .: 1.0 }
+...</code></pre>
+<p>因为它要通通提前算一遍，一旦token过多，上下文过长，它就难以招架了。</p>
+<blockquote class="blockquote">
+<p>更严格地说，n-gram 存的是条件频数，概率由频数估计得到。</p>
+<p>实际系统中通常会使用平滑技术，避免未见事件概率为 0。</p>
+</blockquote>
+<p><strong>N-gram的局限</strong>：</p>
+<ol type="1">
+<li><p>稀疏问题（没见过 ≈ 不可能）<br>
+语言组合爆炸多。即使你有海量文本，很多 上下文 → 下一词 的组合仍然没出现过。</p>
+<p>n-gram 的计数：没见过就是 0 次 → 概率接近 0</p>
+<p>现实：没见过不代表不合理，只是数据不够</p>
+<p>这会导致模型很“保守”，不敢生成新组合。</p></li>
+<li><p>相似词完全不共享信息<br>
+n-gram 只把词当“ID”，cat 和 dog 在它眼里毫无关系。</p>
+<p>你见过：I have a cat</p>
+<p>但没见过：I have a dog</p>
+<p>n-gram 可能就给 dog 很低概率（因为计数不够）</p>
+<p>它不会“举一反三”。</p></li>
+<li><p>上下文窗口固定且短（看不远）<br>
+tri-gram 只看 2 个词。你想看更远？n 变大，组合更爆炸，稀疏更严重，参数表更大。你会看到人们做“补丁”，这就是所谓的“平滑”（smoothing），给没见过的组合也分一点点概率，别让它变 0。</p></li>
+</ol>
+</section>
+<section id="前馈神经网络语言模型-feedforward-neural-network-language-model" class="level4" data-number="3.1.1.2">
+<h4 data-number="3.1.1.2" class="anchored" data-anchor-id="前馈神经网络语言模型-feedforward-neural-network-language-model"><span class="header-section-number">3.1.1.2</span> 2 <strong>前馈神经网络语言模型 (Feedforward Neural Network Language Model)</strong></h4>
+<p>为了n-gram的局限，才逐步演化出前馈神经网络语言模型（FNN LM）。之前说过，n-gram 的两个致命洞：</p>
+<ol type="1">
+<li>稀疏：很多上下文没见过 → 计数为 0</li>
+<li>不懂相似：dog 和 cat 完全不共享经验</li>
+</ol>
+<p>所以最原始的改进想法是：“能不能把词从‘ID’变成‘带含义的向量’，让相似词离得近，这样就算没见过也能猜得出来？”</p>
+<p>这就引出了 <strong>词向量/词嵌入（embedding）</strong>，以及 <strong>用一个函数（神经网络）去输出概率</strong>。</p>
+<blockquote class="blockquote">
+<p>词嵌入（embedding）</p>
+<p>把每个词映射成一个小向量，比如 50 维、100 维。</p>
+<p>cat → 一串数字</p>
+<p>dog → 另一串数字</p>
+<p>训练后它们会变得“接近”（在某种空间里）</p>
+<p>这样子，模型能够了解词与词之间的相似性。</p>
+</blockquote>
+<p>正如之前提到过的，语言模型的核心就是要表示条件概率函数P，函数的输入是已有序列，输出是下一token的概率分布。</p>
+<p>在n-gram方法里面，是以填表的形式近似该函数，而这个时候，使用神经网络来近似P函数。</p>
+<p>此时的输入为<strong>词向量，</strong>因为计算机只认识数字，它看不懂你的自然语言。</p>
+<p><img src="images/clipboard-944902498.png" class="img-fluid"></p>
+<p>从n-gram到前馈神经网络语言模型，其中思路没有区别，输入都是token序列，只不过后者的token被表示为向量，模型是训练得来的，而前者是通过提前计算频率得到概率分布。</p>
+<p>我觉得这个P函数非常的重要。</p>
+<p>它怎么训练呢？</p>
+<p>如果完全不用“训练”这个概念，会发生什么？</p>
+<p>如果你只是随机初始化一个 FNN，不训练，直接用，那它的行为就是每个词概率几乎随机，而且和真实语言毫无关系。</p>
+<p>所以你一定需要一个机制，让模型做一次预测，被现实纠正，然后稍微变好，再重复无数次。</p>
+<p>这就引出了训练的三要素：数据 + 目标 + 纠错机制。</p>
+<p>人们最早是如何一步步想到“怎么训练”的？</p>
+<p>逻辑其实很自然，我们有大量文本（小说、新闻、网页），文本天然是一个“顺序”，顺序天然包含一个监督信号，即前面的词 → 后面的词。语言模型的训练数据，是“免费自带答案的”。你不用人工标注。</p>
+<p>为了解决它，引入的最原始训练思路是什么？</p>
+<p>使用监督学习：模型先猜，真实答案在后面，错了就改。</p>
+<p>输入：前面的几个词（上下文）</p>
+<p>正确答案：真实文本里的下一个词</p>
+<p>它替代了人工规则、人工打分这些旧做法。</p>
+<p>那么FNN LM 的一次完整训练“发生了什么”？</p>
+<p>Step 1：把上下文变成数字（embedding）</p>
+<p>每个词 → 一个向量</p>
+<p>前面的 n−1 个词 → n−1 个向量</p>
+<p>拼在一起，作为神经网络输入</p>
+<p>Step 2：前馈神经网络给出“猜测”</p>
+<p>神经网络输出的不是概率，而是<strong>一堆分数</strong>：</p>
+<pre><code>[ -1.2, 0.3, 4.7, ... ]</code></pre>
+<p>每个分数对应词表里的一个词。</p>
+<p>Step 3：Softmax —— 把“分数”变成“概率”</p>
+<blockquote class="blockquote">
+<p>Softmax把一堆任意分数，变成“全是正的、加起来等于 1”的概率。</p>
+</blockquote>
+<p>Step 4：和“正确答案”对比 —— 损失函数</p>
+<p>现在关键来了。真实答案是一个词，比如：学校。模型却给了它 0.62。</p>
+<p>那我们自然会问一句非常人类的话，“你应该更确定一点，为什么只给 0.62？”</p>
+<p>这就引出一个概念，损失函数（loss）</p>
+<p>常用损失是交叉熵（等价于最大化真实下一个 token 的对数概率）。</p>
+<p>真实 token 的概率越高，loss 越小。</p>
+<blockquote class="blockquote">
+<p>损失函数是用来衡量模型对自己这次预测结果的不满意程度的。具体来说，损失函数的值越小，说明模型对自己的预测越满意，预测结果越接近真实情况；损失函数的值越大，说明模型对自己的预测越不满意，预测结果与真实情况相差越大。在语言模型中，损失函数通常会根据模型预测的词的概率分布与真实答案之间的差异来计算，以此来量化模型预测的准确性和可靠性。</p>
+</blockquote>
+<p>Step 5：反向传播 —— 真正“学”的地方</p>
+<p>现在你有了一个数，<strong>损失</strong>。接下来系统会自动做一件事，沿着“谁导致了这个错误”，一层一层把责任往回分，然后微调每个参数。这一步叫 <strong>反向传播</strong>，但你不用记名词，只记这句话，谁让模型猜错了，谁就少说一点话。某个权重让错误变大 → 减小它，让正确概率变大的 → 强化它。</p>
+</section>
+<section id="rnn-lstm第一次学会记忆" class="level4" data-number="3.1.1.3">
+<h4 data-number="3.1.1.3" class="anchored" data-anchor-id="rnn-lstm第一次学会记忆"><span class="header-section-number">3.1.1.3</span> 3 RNN / LSTM：第一次“学会记忆”</h4>
+<p>FNN上下文窗口是固定大小的。为了预测下一个词，它只能看到前 n−1 个词，再早的历史信息就被丢弃了。</p>
+<p><img src="images/clipboard-364803581.png" class="img-fluid"></p>
+<p>FNN LM只看“最近固定数量的词”，然后猜下一个词。比如只看最近 3 个词：地铁 上 看到了 ___</p>
+<p>问题来了，如果你只给它这 3 个词，它根本不知道：是在哪个城市，是谁在看，是什么时间背景。这个空位，可以是<strong>任何东西</strong>。</p>
+<p>那我把窗口调大一点不就行了？</p>
+<p>你可能会自然想到，“那我别看 3 个词了，我看 10 个、50 个、100 个？”</p>
+<p>现实是<strong>FNN LM 做不到这一点</strong>，原因很直观，每多看一个词输入就变得更长、更复杂，参数量暴涨、训练变慢、泛化变差。所以 FNN LM 有一个硬限制，它只能看一个固定、很短的窗口。</p>
+<p>那么RNN 的想法的思想是什么呢？</p>
+<p>它每一步，「我不只看新来的词，我还带着一个‘到目前为止的记忆’」</p>
+<p>这个“记忆”，你可以把它想成一句话，<strong>“我目前对整段历史的理解摘要”</strong></p>
+<p>为了打破固定窗口的限制，<strong>循环神经网络 (Recurrent Neural Network, RNN)</strong> 应运而生，其核心思想非常直观：为网络增加“记忆”能力。RNN 的设计引入了一个<strong>隐藏状态 (hidden state)</strong> 向量，我们可以将其理解为网络的短期记忆。</p>
+<p>他们怎么训练呢，不需要知道真实的概率分布，只需要知道下一个正确token是什么，而文本本身就有了下一个token，所以可以直接训练。</p>
+<p>RNN 在训练时，会把一句话按时间展开， 每读一个 token，就用当前状态预测下一个 token， 并立刻算一次 loss。 一整句话读完后，把所有时间步的 loss 加起来， 再把错误沿着时间和网络结构一起反向传播， 去调整那一套共享的参数。</p>
+<p>现在你已经有 RNN 了，而且你已经知道它怎么训练。那 RNN 在现实里，<strong>最让人崩溃的问题是什么？</strong></p>
+<p>它“记不住重要的旧信息”。一个非常直观的例子：</p>
+<p>读下面这句话（故意拉长）。</p>
+<blockquote class="blockquote">
+<p>我昨天在北京出差的时候，<br>
+</p>
+<p>因为天气突然下雨，<br>
+</p>
+<p>又正好遇到地铁故障，<br>
+</p>
+<p>所以今天早上我_____</p>
+</blockquote>
+<p>你作为人，很自然知道后面可能是迟到了、没赶上会议，但你靠的是什么？你一直记得“因为……所以……”这一层因果关系，你一直记得“我”是主语。</p>
+<p>RNN 的问题在于，它的记忆是一个不断被更新的“状态”，新信息进来，会<strong>覆盖</strong>旧信息，时间一长，早期的重要信息就被“冲淡了”。结果导致句子一长，RNN 会“失忆”。</p>
+<p>RNN处理长句子容易丢主语、搞错时态、断裂因果、前后矛盾。训练时你会看到，梯度要么越来越小（改不动），要么越来越大（训练炸掉）RNN 的“记忆链条”太脆弱，传不远。</p>
+<p>人们做了很多尝试，比如调学习率、换激活函数、把 RNN 堆深一点。但结果都差不多。于是一个<strong>非常关键的观察</strong>出现了，问题不在“算”，而在“记忆怎么被保存和更新”。换句话说，RNN 把“短期信息”和“长期信息” 混在同一个状态里了。这就是根本矛盾。</p>
+<p>为了解决它，引入了LSTM。既然有些信息很重要、要记很久，那我就专门给它一条“不容易被冲掉的通道”。这条通道，就是 <strong>LSTM 最大的变化</strong>。</p>
+<p>LSTM 把“记忆”<strong>一分为二</strong></p>
+<ol type="1">
+<li><strong>长期记忆</strong>（该记就记，不轻易改）</li>
+<li><strong>当前理解</strong>（随时更新，用来做预测）</li>
+</ol>
+<p>你可以把它想成一个保险柜 + 一个便签纸。保险柜里的东西，不轻易动，便签纸随时写、随时换。</p>
+<blockquote class="blockquote">
+<p>其核心创新在于引入了<strong>细胞状态 (Cell State)</strong> 和一套精密的<strong>门控机制 (Gating Mechanism)</strong> 。</p>
+<p>这些门包括：</p>
+<ul>
+<li><p><strong>遗忘门 (Forget Gate)</strong>：决定从上一时刻的细胞状态中丢弃哪些信息。</p></li>
+<li><p><strong>输入门 (Input Gate)</strong>：决定将当前输入中的哪些新信息存入细胞状态。</p></li>
+<li><p><strong>输出门 (Output Gate)</strong>：决定根据当前的细胞状态，输出哪些信息到隐藏状态。</p></li>
+</ul>
+</blockquote>
+<p>现在问题来了，哪些信息该长期记？哪些该立刻忘？</p>
+<p>这不能靠人写规则。 所以 LSTM 又加了一个非常聪明的设计，让模型自己决定“记 / 不记 / 忘”。</p>
+<p>LSTM加了“开关”，它在每一步都会做三件非常朴素的事：</p>
+<ol type="1">
+<li>决定哪些旧记忆要留下</li>
+<li>决定哪些新信息值得记进去</li>
+<li>决定当前要用哪些记忆来做预测</li>
+</ol>
+<p>它有一条专门的“长期记忆通道”，不会轻易消失。它每一步都会判断，该忘什么？该记什么？</p>
+<p>LSTM 是第一个在工程上， 能稳定学习“很早的信息影响很晚的结果”的模型。</p>
+</section>
+<section id="transformer真正奠定大语言模型" class="level4" data-number="3.1.1.4">
+<h4 data-number="3.1.1.4" class="anchored" data-anchor-id="transformer真正奠定大语言模型"><span class="header-section-number">3.1.1.4</span> 4 Transformer：真正奠定“大语言模型”</h4>
+<p>既然 LSTM 能记住长期信息， 那为什么还要 Transformer？</p>
+<ol type="1">
+<li>痛点 1：慢</li>
+</ol>
+<p>LSTM 是 <strong>一步一步走的</strong>，token1 → token2 → token3 → token4 → …</p>
+<p>第 10 个 token必须等前 9 个 token 全算完，没法并行，序列一长，训练就极慢，📌 在大规模数据（网页、书籍）上，这一点是致命的工程瓶颈。</p>
+<ol start="2" type="1">
+<li>痛点 2：“记忆”仍然是被压缩的</li>
+</ol>
+<p>即使是 LSTM，它的长期记忆仍然是一个固定长度的向量，很多信息被“挤”在一个盒子里。结果是记住了一点整体感觉，但精确细节可能已经丢了。</p>
+<ol start="3" type="1">
+<li>痛点 3：<strong>远距离关系仍然不好学</strong></li>
+</ol>
+<p>LSTM 的设计是信息一步一步往后传，这意味着第 1 个 token 要影响第 100 个 token，必须穿过 99 次“中转”。哪怕 LSTM 比 RNN 强， 这条路依然很长、很脆弱。</p>
+<p>人们其实尝试过堆很多层 LSTM、做双向 LSTM、加各种工程优化。结果是模型越来越复杂、训练越来越慢、提升越来越有限。</p>
+<p>为了解决 LSTM 的局限，Transformer引入了注意力（Attention）机制。</p>
+<p>我们先假设，<strong>LSTM 已经能记住长期信息了</strong>。那还缺什么？我只给你一个现实场景，不谈模型。</p>
+<p>你在读一段很长的句子：The book that the teacher who the students admired wrote was extremely popular.</p>
+<p>你作为人，在读到 <strong>was</strong> 的时候，会立刻知道主语是 <strong>book，</strong>中间那一大串插入语可以忽略。关键问题来了，你是怎么做到的？，你不是靠“记忆一步一步传下来的感觉”，而是在看到 was 的那一刻，你直接“回头看”了 book。</p>
+<p>你不是“等 book 的信息慢慢传到 was”，而是 <strong>直接建立了关系</strong>。</p>
+<p>我们现在站在 <strong>LSTM 的工作方式</strong> 上看这个句子。LSTM 的世界观是这样的：</p>
+<p>第 1 个词 → 记忆</p>
+<p>第 2 个词 → 更新记忆</p>
+<p>…</p>
+<p>第 20 个词 → 用当前记忆做判断</p>
+<p>也就是说，book 的信息必须一步一步穿过所有中间词<strong>才能影响 was。</strong></p>
+<p>哪怕 LSTM 比 RNN 强很多，这条路依然是长、脆弱、难学。</p>
+<p>Transformer 的思路更激进，“我为什么一定要把信息一步一步往后传？”</p>
+<p>Transformer 的核心想法：不要让信息“传递”，让需要信息的地方，自己去“看”。</p>
+<p>我们现在终于可以说 <strong>Transformer 特别在哪</strong> 了。</p>
+<p>Attention 的本质：当前这个 token， 对整段序列的所有 token 打分「谁和我最相关？」</p>
+<p>然后相关的 → 多看一点，不相关的 → 几乎不看。</p>
+<p><img src="images/clipboard-229538623.png" class="img-fluid"></p>
+<p>回到刚才的句子，在 <strong>was</strong> 这个位置，Transformer 可以直接给 <strong>book</strong> 很高权重，给中间那一大串很低权重。book → was 是一跳直连，不需要经过中间所有词。</p>
+<p>现在我们可以非常清楚地说，Transformer 的“特别之处”不是更复杂，而是这 3 件事：</p>
+<ol type="1">
+<li>不再有“一步一步传的记忆”</li>
+<li>每个 token 都能“主动选择”要看的历史</li>
+<li>所有 token 可以同时处理（并行）</li>
+</ol>
+</section>
+</section>
+<section id="transformer-架构解析" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="transformer-架构解析"><span class="header-section-number">3.1.2</span> <strong>Transformer 架构解析</strong></h3>
+<p><strong>（1）Encoder-Decoder 整体结构</strong></p>
+<p>Transformer 最初提出于论文Attention Is All You Need，它解决的是一个典型的“序列到序列”问题，例如：机器翻译、摘要生成、问答系统。</p>
+<p>整体结构分为两部分：输入序列 → Encoder → 中间表示 → Decoder → 输出序列。</p>
+<p>Encoder 在做什么？</p>
+<p>它的任务是把输入序列编码成一组“上下文相关表示”，也就是说，每个 token 不再是孤立的 embedding，而是已经“理解了整段话”的表示。</p>
+<p>如果输入是：<code>The animal didn't cross the street because it was tired.</code></p>
+<p>那么在 Encoder 输出中，“it” 的表示已经和 “animal” 强关联，“tired” 会和 “animal” 建立联系。</p>
+<p>Encoder 的内部结构是：</p>
+<pre><code>多层：
+Self-Attention
+→ FFN
+→ Self-Attention
+→ FFN
+→ ...</code></pre>
+<p>每一层都在“重新解释”整段句子。</p>
+<p>Decoder 在做什么？</p>
+<p>它的目标是基于 Encoder 的输出 + 已生成部分，预测下一个 token。</p>
+<p>Decoder 有两个注意力模块：</p>
+<ol type="1">
+<li>Masked Self-Attention（不能看未来）</li>
+<li>Cross-Attention（看 Encoder 输出）</li>
+</ol>
+<p>所以 Decoder 的一层结构是：</p>
+<pre><code>Masked Self-Attention
+→ Cross-Attention
+→ FFN</code></pre>
+<p>在 GPT 类模型中，只保留 Decoder（因为只做语言建模）。</p>
+<p><strong>（2）从自注意力到多头注意力</strong></p>
+<p>Transformer 的核心创新，是 Self-Attention。什么是 Self-Attention？</p>
+<p>它的核心思想是每个 token，都可以“主动查看”整段序列。它不再依赖“记忆传递”，而是直接计算相关性。</p>
+<p>计算过程公式为：</p>
+<p><span class="math inline">\(\mathit{Attention}(Q, K, V) = \mathit{softmax}\left(\frac{QK^T}{\sqrt{d}}\right)V\)</span></p>
+<p>具体含义：</p>
+<ul>
+<li>Q、K、V 本质上只是同一个向量的三种不同线性投影。它们没有“天然语义”。它们只是为了完成一种计算结构而被拆开的三个角色。</li>
+</ul>
+<p>每个 token 都会生成 Q、K、V。</p>
+<p><img src="images/clipboard-1120740787.png" class="img-fluid"></p>
+<p>然后当前 token 的 Q 与所有 token 的 K 做相似度计算，通过 softmax 归一化，对所有 V 做加权求和。结果就是当前 token 得到一个融合整段信息的新表示。</p>
+<blockquote class="blockquote">
+<p>假设一句话<code>I love you</code> ，经过 embedding + 位置编码后，每个 token 变成一个向量x₁, x₂, x₃。维度比如是 512。现在 Transformer 做的第一件事，是对每个 x 做三次线性变换： <span class="math inline">\(\begin{aligned}
+Q &amp;= XW_Q \\
+K &amp;= XW_K \\
+V &amp;= XW_V
+\end{aligned}\)</span></p>
+<p>这3个W是三组可学习参数矩阵，它们只是不同的投影矩阵。也就是说同一个 token 表示，被投影到了三个不同的子空间。</p>
+</blockquote>
+<p>为什么要多头（Multi-Head）？</p>
+<p>语言中有多种关系，比如语法依赖、指代关系、时间顺序、情绪关联、逻辑因果。</p>
+<p>一个注意力头只能学到一种投影关系。于是 Transformer 并行使用多个注意力头。多头的本质是在不同子空间里独立学习关系。这使模型能同时捕捉多种结构。</p>
+<p><strong>（3）前馈神经网络</strong></p>
+<p>在每个注意力层之后，都会接一个前馈网络：</p>
+<pre><code>Linear
+→ 激活函数（ReLU / GELU）
+→ Linear</code></pre>
+<p>维度通常是：</p>
+<p><span class="math inline">\(d_{\text{model}} \rightarrow 4d_{\text{model}} \rightarrow d_{\text{model}}\)</span></p>
+<p>关键特性：</p>
+<ul>
+<li><p>它对每个 token 独立作用</p></li>
+<li><p>不再混合 token 之间信息</p></li>
+<li><p>只是提升非线性表达能力</p></li>
+</ul>
+<p>你可以理解为Attention = 建立关系，FFN = 深加工表达。没有 FFN，模型的表达能力会严重受限。</p>
+<p><strong>（4）残差连接与层归一化</strong></p>
+<p>Transformer 可以堆叠很多层（12层、24层、甚至上百层）。如果没有稳定机制，深层网络会难以训练。</p>
+<p>每个子层输出：</p>
+<p><span class="math inline">\(x + \textit{Sublayer}(x)\)</span></p>
+<p>这来自 Deep Residual Learning for Image Recognition。</p>
+<p>可以这么理解，子层不是替换原表示，而是在原表示上“修正”。这样即便训练不充分，也不会破坏已有信息。</p>
+<blockquote class="blockquote">
+<p>残差连接（Residual Connection/Skip Connection）是一种用于深层神经网络的结构，通过在层与层之间引入直接的“短路”（shortcut），允许输入跳过一个或多个中间层，直接与输出相加，公式为 (y=f(x)+x)。</p>
+</blockquote>
+<p>LayerNorm 在每一层后对表示进行标准化，用于控制数值尺度、防止梯度爆炸、提高训练稳定性。</p>
+<p>残差 + LayerNorm 的组合，使 Transformer 能够非常深。</p>
+<p>（5）<strong>位置编码</strong></p>
+<p>Attention 本质上是一个“集合运算”。它本身不知道顺序。如果不给顺序信息：</p>
+<pre><code>dog bites man
+man bites dog</code></pre>
+<p>这两句，在模型看来可能是一样的。因此必须显式加入位置信息。</p>
+<p>原始论文中的位置编码使用正弦余弦函数：</p>
+<p><span class="math inline">\(\begin{aligned} PE(pos, 2i) &amp;= \sin\left(\frac{pos}{10000^{2i/d}}\right) \\ PE(pos, 2i+1) &amp;= \cos\left(\frac{pos}{10000^{2i/d}}\right) \end{aligned}\)</span></p>
+<p>本质是为每个位置生成一个唯一、可区分的向量。现代模型也使用可学习位置嵌入或相对位置编码。</p>
+<p>Transformer 在结构层面完成了三件关键事情：</p>
+<ol type="1">
+<li>不再压缩历史为单一状态（区别于 RNN）</li>
+<li>允许所有 token 显式交互（Self-Attention）</li>
+<li>通过多层堆叠形成深度非线性函数近似</li>
+</ol>
+<p>整体流程是：</p>
+<pre><code>输入 embedding
++ 位置编码
+↓
+多层：
+    Self-Attention
+    → FFN
+    → 残差 + LayerNorm
+↓
+输出概率分布</code></pre>
+<p>它没有改变语言模型的数学目标。它改变的是条件概率函数的结构化近似方式。</p>
+</section>
+<section id="decoder-only-架构" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="decoder-only-架构"><span class="header-section-number">3.1.3</span> Decoder-Only 架构</h3>
+<p>Transformer 有三种结构形态，</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">结构</th>
+<th style="text-align: left;">代表模型</th>
+<th style="text-align: left;">核心输出</th>
+<th style="text-align: left;">典型用途</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Encoder-Only</strong></td>
+<td style="text-align: left;">BERT, RoBERTa</td>
+<td style="text-align: left;"><strong>上下文向量表示</strong> (hidden states)</td>
+<td style="text-align: left;">理解任务（分类、NER、相似度）</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Encoder-Decoder</strong></td>
+<td style="text-align: left;">T5, BART, 原版Transformer</td>
+<td style="text-align: left;"><strong>序列生成的概率分布</strong></td>
+<td style="text-align: left;">翻译、摘要、改写</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Decoder-Only</strong></td>
+<td style="text-align: left;">GPT系列, LLaMA, Claude</td>
+<td style="text-align: left;"><strong>下一个token的概率分布</strong></td>
+<td style="text-align: left;">文本生成、对话</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>Encoder-Decoder 生成过程（以翻译为例）：</p>
+<p>源语言: “我喜欢学习” → Encoder → 上下文向量 [h1, h2, h3, h4] ↓ Decoder 生成（一步一步，不能跳）： ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━步骤0: 输入 [<sos>]</sos></p>
+<p>↓</p>
+<p>输出token的概率分布 → 选 “I”</p>
+<p>步骤1: 输入 [<sos>, I]</sos></p>
+<p>↓</p>
+<p>输出token的概率分布 → 选 “like”</p>
+<p>步骤2: 输入 [<sos>, I, like]</sos></p>
+<p>↓</p>
+<p>输出token的概率分布 → 选 “studying”</p>
+<p>步骤3: 输入 [<sos>, I, like, studying]</sos></p>
+<p>↓</p>
+<p>输出token的概率分布 → 结束 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━最终: “I like studying”</p>
+<p>选择策略：Greedy、Beam Search、Sampling。</p>
+</blockquote>
+<p>Decoder-Only = 只用 Transformer 的 Decoder 堆叠来做自回归生成的架构。</p>
+<p>它解决的核心问题不是“理解一句话是什么意思”，而是给定前文，下一步最可能出现什么 token？</p>
+<p>最开始讲语言模型基础的时候，提到语言模型要解决的问题是：在已经出现了一段文字的情况下，所有可能的下一个词，各自出现的概率是多少？</p>
+<p>Decoder-Only刚好跟这个问题对得上，Decoder-Only 模型，本质上就是一个高容量的条件概率函数近似器。它没有额外任务，它不“理解世界”，它只做一件事：</p>
+<p><span class="math inline">\(P(t_i \mid t_1, \ldots, t_{i-1})\)</span></p>
+<p>一切能力，都是从这个目标函数里长出来的。这个函数输出下一个token的概率分布，基于之前长度为<code>i-1</code> 个token序列。</p>
+<p><img src="images/clipboard-2228497585.png" class="img-fluid"></p>
+<p>你可能会问一个很自然的问题，既然最初的 Transformer 是 Encoder-Decoder，为什么现在主流大模型几乎都是 Decoder-Only？</p>
+<p>答案非常直接——因为语言建模目标本身就是自回归的，</p>
+<p>回忆一下我们最开始说的语言模型的职责只有一个输出“下一个 token 的概率分布”。</p>
+<p>Decoder-Only 天然就是为这个目标设计的，它只能看历史（Masked Self-Attention），而且每一步预测下一个 token，不需要额外结构。在大规模数据 + 大参数规模下，它已经足够强。很多你以为是“理解”的能力，其实只是在海量文本中，学习到了非常稳定的条件概率结构。</p>
+<p>到这里，我们必须区分两个完全不同的过程：</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>阶段</th>
+<th>发生什么</th>
+<th>是否生成文本</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>训练</td>
+<td>学条件概率</td>
+<td>不生成</td>
+</tr>
+<tr class="even">
+<td>推理</td>
+<td>用条件概率采样</td>
+<td>生成</td>
+</tr>
+</tbody>
+</table>
+<p>训练时，模型不会“自由生成”。它拿到一整段真实文本，比如：</p>
+<blockquote class="blockquote">
+<p>我今天去了学校</p>
+</blockquote>
+<p>训练过程是这样的：</p>
+<pre><code>输入：我
+目标：今天
+
+输入：我 今天
+目标：去了
+
+输入：我 今天 去了
+目标：学校
+
+输入：我 今天 去了 学校
+目标：&lt;eos&gt;</code></pre>
+<p>每一步都在预测下一个 token、计算交叉熵损失、反向传播、调整参数。</p>
+<p>整个训练目标可以写成：</p>
+<p><span class="math inline">\(\mathcal{L} = -\sum\limits_{i}\log P(t_i \mid t_1, \ldots, t_{i-1})\)</span></p>
+<p>也就是说最大化真实文本的联合概率。模型只被要求给真实下一个 token 更高概率。</p>
+<p>推理阶段才开始“生成”。现在你给它一句话开头：</p>
+<blockquote class="blockquote">
+<p>我今天去</p>
+</blockquote>
+<p>模型输出一个概率分布：</p>
+<pre><code>{
+上班: 0.41
+学校: 0.27
+医院: 0.08
+…
+}</code></pre>
+<p>接下来发生的不是“模型选择”，而是“解码策略选择”。</p>
+<ul>
+<li><p>贪心：选最大概率</p></li>
+<li><p>top-k：只在前 k 个里采样</p></li>
+<li><p>top-p：选累计概率达到 p 的集合采样</p></li>
+<li><p>temperature：调节分布陡峭程度</p></li>
+</ul>
+<p>生成不是模型的一部分，它只是概率分布之上的一个外部决策过程。这点非常关键。</p>
+<p>为什么规模会带来能力？</p>
+<p>这是一切大模型讨论的核心。从数学角度看，模型规模变大只意味着参数更多、函数空间更复杂、拟合能力更强。但为什么会出现长文本一致性、推理能力、代码生成、多语言迁移、类推能力。</p>
+<p>这是一个非常简单的统计事实，当参数规模足够大，数据足够多，模型开始逼近真实语言分布。语言本身包含逻辑结构、因果关系、数学表达、程序代码、科学知识、常识。模型在在拟合人类写下的、包含知识的文本分布。当它足够接近这个分布时，你观察到的“能力”自然出现。这不是本质改变，只是函数逼近能力的量变。这一点必须说清楚。语言模型没有世界模型、真实感知、意图、自主目标。</p>
+<p>它只是一个条件概率函数近似器。如果你问它2 + 2 = ?，它之所以能答 4， 不是因为它做了符号推理， 而是因为在训练数据里， “2 + 2 = 4” 的条件概率极高。如果你问一个复杂推理问题， 它做的也不是“思考”， 而是在生成过程中， 通过中间 token 逐步提高正确答案的概率。所谓“Chain-of-Thought”， 只是让模型生成更多中间 token， 从而改变条件概率路径。</p>
+<p>我们从一句话开始：语言模型是什么？</p>
+<p>现在你可以给出一个更完整但更冷静的回答：语言模型不是“生成文本的机器”， 它是一个定义在 token 序列上的条件概率函数。从 n-gram 到 RNN 到Transformer，目标函数没有变过。</p>
+<p>变化的只是如何结构化近似这个函数、如何在高维空间中共享参数、如何处理长程依赖、如何稳定训练深层网络。</p>
+<p>大语言模型的出现，不是目标改变，而是函数逼近能力跨过了一个阈值。</p>
+<blockquote class="blockquote">
+<p>据说<strong>DeepSeek 的 think 模式，底层仍然是 Decoder-Only Transformer。</strong></p>
+<p>think 模式不是换了结构，它只是被训练成在某些任务上，生成中间 token 能提高最终 token 的条件概率。think 模式 = 强制模型展开中间推理 token。</p>
+</blockquote>
+<p>这就很有意思了，大语言模型只会计算条件概率，所以当你“想要一个正确答案 A”，模型真正做的不是“推理”，而是在寻找一条 token 路径，使得你这个正确答案的条件概率尽可能大。</p>
+<p>大语言模型学到了训练数据分布下的条件概率结构，它不是学“真实世界”。它学的是真实世界在文本里的统计投影。这是一个非常重要的区分。现实世界包含物理规律、因果关系、社会规则、人类行为。</p>
+<p>但模型只看到人类写下的文字，它学到的是人类如何描述世界。如果某个事实，经常被写出来 → 概率高，很少被写出来 → 概率低，从未被写出来 → 概率接近 0。模型不关心真假。它只关心频率结构。</p>
+<p>资料多少决定概率形状训练数据本质上定义了概率空间的形状。如果某个领域文本很多数学，编程，英语。模型在这些区域会形成稳定概率结构。如果某个领域文本极少，冷门语言、小众文化、未公开知识，模型就几乎没有统计支撑。</p>
+<p>结果就是高频区域 → 模型“像专家”，低频区域 → 模型“像猜测”，这是数据密度差异。</p>
+<p>模型靠谱的条件，条件概率分布陡峭且稳定。</p>
+<p>不靠谱的条件，条件概率平缓且稀疏。</p>
+<p>当多个 token 选择概率接近时， 模型其实是在“猜”。</p>
+<p>真正危险的不是“它不知道”。危险的是它在低密度区域仍然必须输出。语言模型无法说“概率空间为空。”，它只能输出最高的那一个。 哪怕最高的只是 0.09。</p>
+<p>一般来说，怎么判断模型靠不靠谱，问问：</p>
+<ol type="1">
+<li>这个问题在互联网是否大量出现？<br>
+出现多 → 稳定，出现少 → 危险</li>
+<li>这个答案是否高度约束？<br>
+规则清晰 → 稳定，开放创造 → 漂移</li>
+<li>是否需要实时外部事实？<br>
+需要 → 不可靠，不需要 → 更稳定</li>
+</ol>
+</section>
+</section>
+<section id="与大语言模型交互" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="与大语言模型交互"><span class="header-section-number">3.2</span> <strong>与大语言模型交互</strong></h2>
+<section id="提示工程" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="提示工程"><span class="header-section-number">3.2.1</span> <strong>提示工程</strong></h3>
+<p>从前面我们已经知道，大语言模型本质上是一个高维条件概率函数。模型并不会“理解你的意图”，它只是在当前条件下，输出一个词表概率分布。从这个角度看，“提示工程（Prompt Engineering）”就变得非常清晰。</p>
+<p>提示词不是“给模型下命令”。提示词是在人为构造条件变量，改变概率分布形状。</p>
+<p>当你输入<code>请用严谨的学术语言解释 Transformer。</code> 你并不是在“激活学术模式”。你是在增加一段条件信息，使得学术风格 token 的条件概率升高，口语表达 token 的条件概率降低。</p>
+<p>好的提示词，不是“更复杂”， 而是让目标 token 的概率分布更加陡峭、更加集中。如果提示模糊，条件空间宽泛，模型只能在一个平缓分布里采样，这样子模型猜的可能性更多。</p>
+<p><img src="images/clipboard-1716043677.png" class="img-fluid"></p>
+<ol type="1">
+<li><p><strong>模型采样参数<br>
+</strong>模型每一步都会输出完整词表概率分布。但“选哪个 token”不是模型决定的，而是解码策略决定的。<br>
+a.Temperature<br>
+Temperature 是对 softmax 结果的一个缩放因子，它控制概率分布的“平滑程度”。<br>
+T &lt; 1 → 分布更陡峭（高概率更高，低概率更低）<br>
+T = 1 → 原始分布<br>
+T &gt; 1 → 分布更平缓（更多 token 有机会被选中）<br>
+Temperature 不改变模型知识， 它改变的是分布锐度。<br>
+写代码、做数学题 → T = 0 ~ 0.3<br>
+正常回答 → T = 0.5 ~ 0.8<br>
+创意写作 → T = 0.8 ~ 1.2<br>
+b.Top-k<br>
+只在概率最高的 k 个 token 中采样。缩小搜索空间，它控制“搜索空间大小”。<br>
+k=1 → 等于贪心（Greedy）<br>
+k=5 → 只在前5个里选<br>
+k=50 → 给更多选择空间<br>
+希望稳定输出 → k 小<br>
+希望多样性 → k 大<br>
+c.Top-p（nucleus sampling）<br>
+选择最小的一组 token，使它们的累计概率 ≥ p。假设排序后：上班: 0.41 学校: 0.27 医院: 0.08 超市: 0.07。<br>
+Top-p=0.7，那么0.41 + 0.27 = 0.68（还不够），加上 0.08 = 0.76（超过 0.7），所以只保留前三个。<br>
+Top-p 更稳定，因为它适应不同问题的分布形态。现代系统通常使用temperature + top-p</p></li>
+<li><p><strong>零样本、单样本与少样本提示<br>
+</strong>这部分从条件概率角度看，会非常清晰。<br>
+<img src="images/clipboard-2400897912.png" class="img-fluid"><br>
+a.零样本（Zero-shot）<br>
+直接给任务说明，只给任务描述，不给例子。模型只能依赖预训练中已有分布。<br>
+<code>请把这句话翻译成英文。</code><br>
+b.单样本 / 少样本（One-shot / Few-shot）<br>
+提供示例作为任务映射样本。你给出示例，这相当于在条件中注入任务映射样本，示例会显著改变分布结构。</p>
+<pre><code>中文：我喜欢苹果
+英文：I like apples
+
+中文：我喜欢香蕉
+英文：</code></pre>
+<p>示例改变条件空间。模型会把“中文→英文映射”这个结构强烈注入当前分布。它在条件里加入一个小型数据分布。</p></li>
+<li><p><strong>指令调优的影响<br>
+</strong>在预训练模型之上，用“人类指令-回答对”继续训练，它不是在增加知识，它在重新塑形输出偏好，改变了分布形状。</p></li>
+<li><p><strong>基础提示技巧<br>
+</strong>所有提示技巧，本质上都在控制概率空间。可以归纳为三种策略：<br>
+a.收缩输出空间<br>
+明确格式、长度、结构。<br>
+<code>“用三点回答”/“输出 JSON”/“不超过 200 字”</code><br>
+这会大幅收缩概率空间。<br>
+b.提供结构模板<br>
+<code>请按以下结构分析这个问题：1.现象描述 2.根本原因3.可能后果4.解决路径</code><br>
+提前约束输出骨架，减少漂移。<br>
+c.明确角色设定<br>
+“你是一名数学教授”<br>
+它改变的是语域 token 的条件概率。</p></li>
+<li><p><strong>思维链<br>
+</strong>从概率视角看，思维链的本质非常清楚。让中间序列变长，它不是让模型“更聪明”，而是让正确答案的条件概率上升。多生成几步，本质是扩展概率路径。<br>
+思维链有效，是因为它在构造一个新的条件序列使最终答案变成一个“更自然的续写”。模型不需要再直接从问题预测答案，而是生成一个中间序列。如果训练数据里没有大量“类似题目→直接答案”的例子，那这个条件概率分布会是若干候选数字，他们之间概率差距不大，该分布相对平缓，这时候模型“猜”的成分就高。<br>
+<img src="images/clipboard-3240022943.png" class="img-fluid"><br>
+如果中间推理 token 被写出来。关键变化发生在这里，每一步推理本身也是一个高概率续写。这些推导步骤，在数学语料中是高度频繁的，前面推导已经把概率空间收缩了。<br>
+举例来说：<br>
+假设有一个 4 位密码，正确答案是7392。你现在有两种方式去猜。<br>
+1 直接猜最终答案<br>
+你一次性猜 4 位数字。模型的任务相当于，在 0000 ~ 9999 之间选一个最可能的。空间是 10,000 种。哪怕模型“感觉”7392比较合理，它仍然是在一个非常大的空间里做选择。它需要一步跨越 4 个决策。<br>
+2 一步一步锁定<br>
+现在我们换一种方式，假设你知道了第一位是7，第二位是3，第三位是9，现在最后一步要预测的空间是什么？不是 10,000 种了。是 10 种。只剩最后一位。而且前面 739 已经形成强约束。此时7392在这个局部空间里是“自然续写”。<br>
+没有中间步骤就相当于你要直接猜，有中间步骤相当于每一步都在缩小空间。<br>
+问题：<br>
+一个班有 10 人，每人有 3 本书，一共有多少本？<br>
+直接问答案的话，模型要在很多数字里选一个。可能100，20，30……<br>
+它需要一步跳到 30。<br>
+加入思维链：<br>
+第一步：每人3本<br>
+第二步：10个人<br>
+第三步：10 × 3 = ?<br>
+因此答案是：<br>
+现在最后一步只是在“续写一个乘法表达式”。在语料中10 × 3 = 30是一个高频结构。<br>
+所以30在这个局部上下文中几乎是“唯一自然的续写”。<br>
+当然，思维链不是保证正确，它的效果取决于真实文本分布的结构质量，如果分布健康，它帮你收敛到正确区域；如果分布混乱，它帮你更稳定地走错。</p></li>
+</ol>
+</section>
+<section id="文本分词" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="文本分词"><span class="header-section-number">3.2.2</span> <strong>文本分词</strong></h3>
+<ol type="1">
+<li><strong>为何需要分词<br>
+</strong>计算机在内部只能处理数字。要让模型处理文本，必须先把文本转换成数字序列。把文本转换成一串“可编号的符号”的过程，叫做分词（Tokenization）。分词器（Tokenizer）是把文本转换成模型可处理的符号序列的工具。<br>
+语言模型在做的事情是根据前面已经出现的符号，预测下一个符号出现的可能性。但模型不能对“无限可能的字符串”做预测。它必须在一个<strong>有限的符号集合</strong>里做选择。这个有限集合，就是分词器定义的词表。<br>
+<img src="images/clipboard-1121871095.png" class="img-fluid"><br>
+换句话说分词器决定了模型世界里的“最小单位”。模型不是直接预测“单词”或“句子”，它预测的是分词器定义的这些单位。如果这些单位不同，模型学习到的语言结构也会不同。你可以这样理解：就像化学里，如果你的最小单位是“分子”，和最小单位是“原子”，你能描述的结构层级是不一样的。分词器的作用，不只是把文本切开。它实际上决定了模型建模语言时所使用的基本单位。<br>
+<strong>按词分词 (Word-based)</strong><br>
+按字符分词 (Character-based)<br>
+子词分词 (Subword Tokenization)</li>
+<li><strong>字节对编码算法解析<br>
+</strong>字节对编码 (Byte-Pair Encoding, BPE) 是最主流的子词分词算法之一。<br>
+在“训练分词器阶段”的输入是一大堆文本语料，训练阶段输出的是一套“合并规则” + 一个词表（vocabulary），使用阶段输出的是一串 token（以及对应的编号）模型看到的是这些编号。<br>
+BPE 的核心思想非常简单：从最小单位开始，反复把“最常一起出现的相邻字符”合并成一个新单位。<br>
+它的过程是：一开始，每个字符都是一个单位；统计语料中最常见的“相邻字符对”；把它们合并成一个新单位；重复这个过程很多次。最后得到一套“常见片段”。这些片段就是 token。<br>
+不同平台的词表不一样，<strong>同一个词在不同模型里的编号是不通用的</strong>。比如“你好”这个词，在模型 A 里可能是编号 101，在模型 B 里可能是 5023。正因如此，你不能直接把一个模型的输出 ID 喂给另一个模型。<br>
+在 Hugging Face (HF) 及其生态中，“模型 (Model)”和“分词器 (Tokenizer)”通常是成对出现、且不可拆分的。<br>
+模型本身是一个巨大的数学函数，它只认识数字矩阵（Tensors），不认识文本。模型 A必须使用 Tokenizer_A 将字符串转为 Input_IDs_A，模型 B 必须使用 Tokenizer_B 将字符串转为 Input_IDs_B。如果你把 Tokenizer_A 生成的编号喂给 Model_B，模型会完全理解错你的意思（比如你想说“你好”，模型 B 却以为你在输入一串乱码）。<br>
+词表不一样的话，也说明token对应的数字不一样。<br>
+模型在训练时使用了某一个<strong>固定词表，</strong>使用了某一个<strong>固定的分词规则，</strong>学习的是在这个词表上的下一个 token 概率。所以模型只能理解“它训练时用的那套 token 编号”。</li>
+<li><strong>分词器对开发者的意义</strong></li>
+</ol>
+<p>1 它决定“输入有多长”<br>
+模型的上下文长度是按 <strong>token 数</strong>算的，不是按字符。比如4k token、8k token、128k token。如果你不知道分词器怎么切，你根本不知道你的 prompt 实际多长，会不会超出上限，会不会被截断。这直接影响成本性能稳定性。</p>
+<p>2 它决定“费用”</p>
+<p>很多 API 是按 token 计费的。同样一句话，不同模型，不同分词器，会导致token 数可能不同。多 30% token，就多 30% 成本，这是现实问题。</p>
+<p>3 它影响性能（尤其是多语言）</p>
+<p>如果某语言被切得很碎，token 数变多，序列变长，注意力计算变重，推理变慢。例如，英文 1 个 token，某些语言可能被拆成 3~4 个，这会影响效果。</p>
+<p>4 它影响 prompt 设计</p>
+<p>例如 GPT 的分词器：” Hello”（带空格），是一个整体 token。</p>
+<p>但”Hello”可能是另一个 token。这会影响few-shot 示例、结构控制、JSON 输出稳定性。很多“奇怪的生成错误”其实是分词问题。</p>
+<p>5 它影响模型迁移</p>
+<p>你不能随便换 tokenizer或者换 vocab，否则模型输出就会错位。 模型和 tokenizer 是绑定的。</p>
+<p>如果你只是普通对话不管成本不做系统开发，那你可以完全忽略分词器。但如果你做 RAG，做长上下文拼接，做成本优化，做多语言系统，做微调，那分词器必须理解。</p>
+<blockquote class="blockquote">
+<p>为什么在Hugging Face上面，模型都有一个<code>tokenizer.json</code> ，原来它它通常包含“词表 + 分词规则 + 其他配置”，跟模型配套使用的。<br>
+示例内容：</p>
+<p>合并规则：“merges”: [ [ “Ġ”, “Ġ” ],……,]</p>
+<p>当两个 token 相邻出现时，并且匹配某条 merge 规则，就合并成一个新 token。<br>
+映射表：“vocab”: { “Ā”: 0, “ā”: 1, “Ă”: 2,……}<br>
+每一次你输入文本时，都必须先经过分词器（tokenizer）处理。流程其实非常固定，而且每次都会发生。<br>
+假设你输入I love AI，发生的事情是：</p>
+<p>分词器切分（或者根据模型不同，切成别的形式）：[“I”, “love”, “AI”]<br>
+转成编号：[314, 1879, 912]<br>
+模型计算：模型真正看到的是[314, 1879, 912]，然后预测下一个编号是多少？<br>
+模型输出编号：[1023]<br>
+再通过分词器“反向解码”：编号变回”!“。最后你看到完整句子。</p>
+</blockquote>
+</section>
+<section id="调用开源大语言模型" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="调用开源大语言模型"><span class="header-section-number">3.2.3</span> <strong>调用开源大语言模型</strong></h3>
+<p><strong>到Hugging Face下载模型。</strong></p>
+</section>
+<section id="模型的选择" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="模型的选择"><span class="header-section-number">3.2.4</span> <strong>模型的选择</strong></h3>
+<ol type="1">
+<li><strong>模型选型的关键考量<br>
+a</strong> 任务匹配 —— 这个模型是否真的擅长你要做的事（代码、推理、RAG、批处理、对话），别用聊天最强的去做批量分类。<br>
+b 成本与Token消耗 —— 输入单价、输出单价、平均上下文长度。长期调用时，token结构比“模型强不强”更重要。<br>
+c 上下文与稳定性 —— 是否需要长上下文？在长输入下是否稳定？是否能按格式输出？能不能持续可控？</li>
+<li><strong>闭源模型概览<br>
+OpenAI GPT 系列、Google Gemini 系列、Anthropic Claude 系列、国内主流模型。</strong></li>
+<li><strong>开源模型概览<br>
+Meta Llama 系列、Mistral AI 系列、国内开源力量（Qwen）</strong></li>
+</ol>
+</section>
+</section>
+<section id="大语言模型的缩放法则与局限性" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="大语言模型的缩放法则与局限性"><span class="header-section-number">3.3</span> <strong>大语言模型的缩放法则与局限性</strong></h2>
+<section id="缩放法则" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="缩放法则"><span class="header-section-number">3.3.1</span> <strong>缩放法则</strong></h3>
+<p>缩放法则说的是这样一个经验现象：当模型参数变大、训练数据变多、计算量增加时，模型的损失会按照一种相对平滑、可预测的规律下降，而且这种下降通常呈现幂律关系。简单理解就是，只要数据、模型规模和算力按比例一起增加，性能会持续稳定提升，而不是随机波动。这条规律的重要意义在于，它告诉我们大模型能力的提升并不是神秘跃迁，而是规模驱动下的连续改进。当参数数量扩大、训练语料更丰富、优化更充分时，模型对语言分布的逼近更准确，于是推理、代码、多语言等能力自然增强。缩放法则也意味着，如果只增加模型参数而不增加数据，或者只增加数据而不扩大模型容量，收益会变小，因为三者之间存在一个平衡关系。从工程角度看，缩放法则提供了一种可预测的扩展路径，让研究者可以提前估算投入多少算力能换来多少性能提升。但它并不意味着规模无限增长就一定线性变强，因为成本、数据质量、训练稳定性和架构限制都会成为新的瓶颈。</p>
+<p><img src="images/clipboard-574607320.png" class="img-fluid"></p>
+<p>Chinchilla 定律是对缩放法则的一次修正，它指出在给定总计算预算的情况下，模型参数数量和训练数据规模之间存在一个最优比例。早期的大模型往往追求不断增加参数，但训练数据量增长不够，结果是模型容量很大，却没有被充分训练。Chinchilla 研究发现，如果算力固定，与其把大部分预算都用来扩大模型参数，不如适当减小模型规模，同时大幅增加训练数据量，这样反而能获得更好的性能。简单说，它告诉我们“更大模型”不等于“更优模型”，关键是参数数量和数据规模要匹配。按照这条规律，在计算资源一定的前提下，模型参数和训练 token 数量大致需要保持一个平衡比例，否则就会出现过大模型欠训练，或者数据不足浪费容量的情况。Chinchilla 定律的意义在于，它把规模扩展从单纯追求参数数量，转变为追求参数、数据和计算三者之间的最优配比。</p>
+</section>
+<section id="模型幻觉" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="模型幻觉"><span class="header-section-number">3.3.2</span> <strong>模型幻觉</strong></h3>
+<p><strong>模型幻觉（Hallucination）</strong>通常指的是大语言模型生成的内容与客观事实、用户输入或上下文信息相矛盾，或者生成了不存在的事实、实体或事件。</p>
+<p><img src="images/clipboard-4011156805.png" class="img-fluid"></p>
+<p>模型在回答问题时，生成了听起来合理、结构完整、语气自信，但事实上错误、编造或无法验证的内容。它不是“故意撒谎”，也不是系统崩溃，而是语言模型在概率空间中选出了一个最高概率的路径，但这条路径在现实世界里并不成立。</p>
+<p>产生幻觉的根本原因在于模型的目标函数。模型只被训练去最大化条件概率，也就是在给定上下文时，生成最“像真实文本”的下一个 token。它的优化目标不是“说真话”，而是“生成高概率文本”。如果某个问题在训练数据中很少出现，或者没有稳定答案，模型仍然必须输出一个结果，它不会停下来承认不知道，而是选择一个在语义上最连贯、统计上最常见的表达方式。这时就容易产生幻觉。</p>
+<p>幻觉更容易发生在几个场景下。第一是低数据密度领域，比如冷门知识、最新事件、小众人物。第二是高开放问题，比如让模型列举不存在的论文或虚构引用。第三是需要精确事实核查的问题，比如具体日期、具体数字。第四是长推理链条中，前一步的微小错误被后续放大。还有一种情况是提示本身暗示了某种不存在的事实，模型会顺着暗示生成看似合理的细节。</p>
+<p>从机制上看，幻觉往往出现在概率分布比较平缓的区域。当多个候选 token 的概率差距不大时，模型其实是在“猜”。而语言模型无法输出“概率空间为空”这种状态，它总要给出一个最高概率选项，即便这个最高值并不高。</p>
+<p>需要强调的是，幻觉并不意味着模型完全不可靠。在高频知识、规则明确、结构清晰的问题上，条件概率分布通常陡峭且稳定，错误率会明显降低。但在知识稀疏或开放创造任务中，幻觉风险显著上升。</p>
+<p>对开发者来说，减少幻觉的常见策略包括引入外部检索系统，让模型基于可验证资料回答；收缩输出空间，要求引用来源或结构化输出；在关键场景加入校验步骤；以及在系统设计上允许模型承认不确定，而不是强制给出确定答案。</p>
+<p>一句话总结，模型幻觉不是认知错误，而是概率逼近在低确定性区域的自然结果。它反映的不是模型“想象力”，而是统计结构在现实真值面前的局限。</p>
+</section>
+</section>
+<section id="本章小结" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="本章小结"><span class="header-section-number">3.4</span> <strong>本章小结</strong></h2>
+<p>言模型本质上就是一个条件概率函数，它做的唯一事情是给定前面的 token 序列，输出下一个 token 的概率分布。从 n-gram 到神经网络再到 Transformer，目标函数从来没有变过，变的只是近似这个条件概率函数的方式。n-gram 用查表和马尔可夫假设截断历史，解决不了稀疏和泛化问题；前馈神经网络通过 embedding 和函数近似让相似词共享信息；RNN 引入隐藏状态试图记住历史，但长距离依赖不稳定；LSTM 通过门控机制改进记忆结构；Transformer 则彻底改变信息传递方式，用自注意力让每个 token 直接和所有历史 token 建立关系，实现并行和长程依赖建模。现代大模型多采用 Decoder-Only 结构，因为语言建模本身就是自回归的条件概率问题。训练阶段模型只是学习最大化真实文本的条件概率，不生成文本；推理阶段才通过解码策略把概率分布变成具体输出。所谓规模带来能力，本质上是模型参数、数据和算力增加后，更好地逼近了人类文本分布，而不是产生了真正的理解或世界模型。模型学习的是文本中的统计结构，而不是真实世界本身，这也是幻觉产生的根本原因。当概率分布不够陡峭或数据密度低时，模型只能在不确定区域里选一个最高概率的答案。提示工程、思维链、采样参数等方法，本质都是在调整条件空间和概率分布形状，让目标答案更自然地成为“高概率续写”。分词器则决定了模型的最小建模单位和成本结构，模型和分词器是绑定的。缩放法则和 Chinchilla 定律说明性能提升来自参数、数据和计算之间的平衡扩展。整章可以归结为一句话，大语言模型不是生成文本的机器，而是一个高容量的条件概率函数近似器，所有能力、限制和现象都可以从这个视角统一理解。</p>
+<p><img src="images/clipboard-1419212562.png" class="img-fluid"></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./cp_2.html" class="pagination-link" aria-label="**智能体发展史**">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./cp_4.html" class="pagination-link" aria-label="智能体经典范式构建">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">智能体经典范式构建</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
