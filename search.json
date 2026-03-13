@@ -1334,7 +1334,7 @@
     "href": "index.html",
     "title": "Agent Book",
     "section": "",
-    "text": "Preface\n人工智能正在经历一场深刻的范式转变。随着大语言模型（LLM）的崛起，我们不再只是构建能”理解”文本的系统，而是在构建能够在复杂环境中感知、推理、决策和行动的智能体（Agent）。\n智能体代表了AI发展的新阶段——从静态的预测器转向动态的决策系统。它们不仅能够处理信息，还能主动规划任务、调用工具、维护记忆、与其他智能体协作，并在持续的学习中不断改进自己的行为。这种转变正在从根本上重塑我们构建AI应用的方式。",
+    "text": "Preface\nArtificial intelligence is undergoing a profound paradigm shift. With the rise of large language models (LLMs), we are no longer merely building systems that can interpret text. Instead, we are beginning to build systems that can perceive, reason, plan, and act in complex environments. These systems are commonly referred to as agents.\nAgents represent a new stage in the evolution of AI. Traditional machine learning models largely functioned as static predictors: they received an input and produced an output. Agents, in contrast, operate as dynamic decision systems. They can plan tasks, invoke tools, maintain memory, interact with external environments, and collaborate with other agents. Rather than producing a single answer, they participate in an ongoing loop of perception, reasoning, and action.\nThis shift is fundamentally changing how AI applications are designed. Instead of building isolated models, we are now designing systems composed of models, tools, memory, and interaction protocols. Understanding this transition is essential for anyone who wants to work with modern AI systems.",
     "crumbs": [
       "Preface"
     ]
@@ -1405,6 +1405,66 @@
     "title": "Agent Book",
     "section": "反馈与交流",
     "text": "反馈与交流\n智能体技术仍在快速演进，书中难免有疏漏或需要改进的地方。欢迎读者通过任何方式提供反馈、分享见解或报告问题。\n让我们一起探索智能体这一激动人心的领域，共同推动AI从”理解”走向”行动”。",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#the-purpose-of-this-book",
+    "href": "index.html#the-purpose-of-this-book",
+    "title": "Agent Book",
+    "section": "The Purpose of This Book",
+    "text": "The Purpose of This Book\nThe goal of this book is to provide a systematic understanding of modern AI agents.\nMany discussions of agents focus either on high-level concepts or on specific frameworks and code examples. This book takes a different approach. Its primary goal is to help readers understand how agent systems work, why they are designed the way they are, and how the different components fit together into a coherent architecture.\nCode examples are included throughout the book, but they serve mainly as illustrations of key ideas, not as the central focus. The emphasis is on building a clear conceptual and architectural understanding that allows readers to reason about agent systems independently of any particular framework.\nBy the end of this book, readers should not only know how to build simple agents, but more importantly how to think about agent systems.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#structure-of-the-book",
+    "href": "index.html#structure-of-the-book",
+    "title": "Agent Book",
+    "section": "Structure of the Book",
+    "text": "Structure of the Book\nThis book is organized into four parts, gradually moving from foundational concepts to system-level design.\n\nPart I — Foundations and Background (Chapters 1–3)\nChapter 1 begins with a fundamental question: What is an agent?\n\nIt introduces the basic definition of agents, different types of agent systems, and the core perception–reasoning–action loop that underlies agent behavior. A minimal example is provided to build an intuitive understanding of how an agent operates.\nChapter 2 traces the historical evolution of agent ideas. From early symbolic AI and expert systems, through connectionist approaches and reinforcement learning, to modern LLM-driven agents, the chapter highlights the conceptual shifts that shaped today’s agent systems.\nChapter 3 provides the necessary background on large language models. It explains the evolution from n-gram models to Transformers and discusses key concepts such as decoder-only architectures, tokenization, prompt engineering, and scaling laws. These ideas form the technical foundation for understanding LLM-based agents.\n\n\nPart II — Agent Paradigms and Frameworks (Chapters 4 and 6)\nChapter 4 explores several influential agent paradigms, including ReAct (Reason + Act) and Plan-and-Solve. These paradigms illustrate how reasoning and tool usage can be structured into coherent workflows.\nChapter 6 introduces several widely used agent frameworks, including AutoGen, AgentScope, CAMEL, and LangGraph. Rather than focusing on detailed tutorials, the chapter examines their design principles, architectural differences, and appropriate use cases.\n\n\nPart III — Core Capabilities and System Architecture (Chapters 8–10)\nChapter 8 focuses on memory and retrieval systems, which provide the persistent knowledge needed for long-running agents. The chapter explains different types of memory, retrieval mechanisms, and the role of memory in agent reasoning.\nChapter 9 examines context engineering, a concept that has become central to modern agent design. The chapter reframes context not merely as input text, but as the operating environment of an agent—a first-class design element that must be constructed, maintained, and optimized.\nChapter 10 discusses agent communication protocols, including Model Context Protocol (MCP), Agent-to-Agent communication (A2A), and emerging approaches to agent network interoperability. These protocols are essential for building scalable multi-agent systems.\n\n\nPart IV — Advanced Topics (Chapters 11–12)\nChapter 11 explores how agents can improve through interaction and feedback. It introduces the role of reinforcement learning and discusses the challenges involved in training agents in complex environments.\nChapter 12 addresses the problem of agent evaluation, which is significantly more complex than evaluating traditional models. The chapter analyzes what should be evaluated, common evaluation strategies, and the difficulties involved in assessing open-ended agent behavior.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#what-makes-this-book-different",
+    "href": "index.html#what-makes-this-book-different",
+    "title": "Agent Book",
+    "section": "What Makes This Book Different",
+    "text": "What Makes This Book Different\nThis book emphasizes understanding over implementation.\nRather than presenting a collection of framework tutorials, it focuses on the underlying ideas that make agent systems possible. Readers will learn how to reason about agents at the levels of architecture, capability, and system design.\nCode examples are used to clarify concepts and demonstrate practical implementations, but the primary objective is to develop a clear mental model of agent systems.\nBy understanding the principles behind agents, readers will be better prepared to adapt to new tools, frameworks, and research developments as the field continues to evolve.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#intended-audience",
+    "href": "index.html#intended-audience",
+    "title": "Agent Book",
+    "section": "Intended Audience",
+    "text": "Intended Audience\nThis book is intended for readers who want to understand the emerging field of AI agents, including:\n\nDevelopers who want a systematic introduction to agent systems\nEngineers working with large language models who want to move beyond simple prompting\nResearchers exploring the architecture of modern AI systems\nAnyone curious about how AI is evolving from prediction systems to decision-making systems\n\nBasic programming experience (especially Python) will be helpful, but deep prior knowledge of machine learning is not required.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use-this-book",
+    "href": "index.html#how-to-use-this-book",
+    "title": "Agent Book",
+    "section": "How to Use This Book",
+    "text": "How to Use This Book\nThe book can be read sequentially from beginning to end, as each chapter builds on the concepts introduced earlier.\nReaders who want a quick overview of agents may start with Chapters 1 and 4. Those interested in the technical foundations of language models may wish to read Chapter 3 in detail. Readers focused on system design will find Chapters 8–10 particularly relevant.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#a-field-in-motion",
+    "href": "index.html#a-field-in-motion",
+    "title": "Agent Book",
+    "section": "A Field in Motion",
+    "text": "A Field in Motion\nThe field of AI agents is evolving rapidly. New frameworks, protocols, and architectures appear frequently. Rather than attempting to capture a fixed snapshot of the field, this book aims to provide conceptual tools for understanding its ongoing evolution.\nAgents mark an important transition in artificial intelligence: from systems that merely interpret information to systems that can act within the world.\nUnderstanding this transition is the first step toward building the intelligent systems of the future.",
     "crumbs": [
       "Preface"
     ]
