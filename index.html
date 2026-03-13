@@ -190,7 +190,13 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#本书的目标" id="toc-本书的目标" class="nav-link" data-scroll-target="#本书的目标">本书的目标</a></li>
+  <li><a href="#本书的组织结构" id="toc-本书的组织结构" class="nav-link" data-scroll-target="#本书的组织结构">本书的组织结构</a></li>
+  <li><a href="#本书的特色" id="toc-本书的特色" class="nav-link" data-scroll-target="#本书的特色">本书的特色</a></li>
+  <li><a href="#目标读者" id="toc-目标读者" class="nav-link" data-scroll-target="#目标读者">目标读者</a></li>
+  <li><a href="#如何阅读本书" id="toc-如何阅读本书" class="nav-link" data-scroll-target="#如何阅读本书">如何阅读本书</a></li>
+  <li><a href="#致谢" id="toc-致谢" class="nav-link" data-scroll-target="#致谢">致谢</a></li>
+  <li><a href="#反馈与交流" id="toc-反馈与交流" class="nav-link" data-scroll-target="#反馈与交流">反馈与交流</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -231,8 +237,69 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="preface" class="level1 unnumbered">
 <h1 class="unnumbered">Preface</h1>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<p>人工智能正在经历一场深刻的范式转变。随着大语言模型（LLM）的崛起，我们不再只是构建能”理解”文本的系统，而是在构建能够在复杂环境中感知、推理、决策和行动的智能体（Agent）。</p>
+<p>智能体代表了AI发展的新阶段——从静态的预测器转向动态的决策系统。它们不仅能够处理信息，还能主动规划任务、调用工具、维护记忆、与其他智能体协作，并在持续的学习中不断改进自己的行为。这种转变正在从根本上重塑我们构建AI应用的方式。</p>
+<section id="本书的目标" class="level2">
+<h2 class="anchored" data-anchor-id="本书的目标">本书的目标</h2>
+<p>本书旨在为读者提供一条系统理解并构建现代智能体的完整路径。从智能体的基本概念出发，沿着历史演进、理论基础、范式构建、框架实践、系统架构、进阶主题这一主线，逐步深入智能体的核心技术和设计原理。</p>
+<p>我们的目标不是让读者停留在表面的概念了解，而是真正理解智能体如何工作，为什么这样工作，以及如何动手构建一个可用的智能体系统。每一章都包含清晰的讲解、完整可运行的代码示例，以及深入的思考，帮助读者将理论转化为实践能力。</p>
+</section>
+<section id="本书的组织结构" class="level2">
+<h2 class="anchored" data-anchor-id="本书的组织结构">本书的组织结构</h2>
+<p>全书共分为四个部分，共计十二章。</p>
+<p><strong>第一部分：基础与入门（第1-3章）</strong></p>
+<p>第1章从”什么是智能体”这个问题出发，介绍了智能体的基本定义、不同类型以及核心运行机制——感知-思考-行动的循环。本章还包含一个”5分钟实现第一个智能体”的实战案例，让读者快速建立直观理解。</p>
+<p>第2章追溯智能体的发展历史，从早期的符号主义AI和专家系统，到联结主义与强化学习，再到现代大语言模型驱动的智能体。这一章不仅展示了技术的演进，更揭示了智能体思想背后的核心变革——从人工设计的规则到自主学习的行为。</p>
+<p>第3章深入大语言模型的基础，从语言模型的基本原理讲起，系统阐述了从n-gram到Transformer的技术演进路径。本章详细解释了Decoder-Only架构、提示工程、分词机制、模型缩放法则等核心概念，为后续章节奠定坚实的理论基础。</p>
+<p><strong>第二部分：范式构建与框架实践（第4、6章）</strong></p>
+<p>第4章聚焦智能体的经典行为范式，重点讲解ReAct（Reason + Act）和Plan-and-Solve等主流范式。通过多个从简单到复杂的实战案例，展示了如何将理论思想转化为可运行的智能体系统，并深入分析了实现中的工程挑战和解决方案。</p>
+<p>第6章介绍了当前主流的智能体框架，包括AutoGen、AgentScope、CAMEL和LangGraph。本章通过最小可运行案例和实际应用示例，帮助读者理解不同框架的设计理念和适用场景，为选择合适的开发工具提供指导。</p>
+<p><strong>第三部分：核心能力与系统架构（第8-10章）</strong></p>
+<p>第8章深入探讨智能体的记忆与检索机制。从为什么需要记忆开始，系统讲解了记忆系统的类型、检索机制的原理，以及如何实现一个完整的Memory and Retrieval系统。本章特别强调了记忆作为”持久智能基础”的重要性。</p>
+<p>第9章转向上下文工程，这是一个被广泛讨论但常常被误解的概念。本章将上下文重新定义为智能体的”操作环境”和”第一类设计元素”，系统讲解了上下文的来源、构建、优化方法以及在智能体系统中的应用。</p>
+<p>第10章讨论智能体通信协议，包括模型与外部资源交互的Model Context Protocol（MCP）、智能体间通信的Agent-to-Agent（A2A）协议，以及支持大规模智能体网络的Agent Network Protocol（ANP）。这一章为构建可互操作、可扩展的智能体生态系统提供了重要的技术视角。</p>
+<p><strong>第四部分：进阶主题（第11-12章）</strong></p>
+<p>第11章探索智能体的强化学习机制。讨论了为什么智能体需要学习、如何从环境交互和反馈中改进行为，以及智能体训练架构和面临的挑战。这一章展望了智能体学习的未来方向。</p>
+<p>第12章专注于智能体评估，这是一个复杂但至关重要的话题。本章分析了智能体评估的特殊性、应该评估什么、常用的评估方法和框架，以及如何构建完整的评估管道。最后讨论了评估智能体面临的核心挑战。</p>
+</section>
+<section id="本书的特色" class="level2">
+<h2 class="anchored" data-anchor-id="本书的特色">本书的特色</h2>
+<ul>
+<li><p><strong>系统性与实用性并重</strong>：每一章都从理论原理出发，最终落实到可运行的代码实现。读者不仅能理解”是什么”，更能掌握”怎么做”。</p></li>
+<li><p><strong>完整的技术视角</strong>：不局限于单一技术或框架，而是从智能体的核心本质出发，系统地讲解涉及的所有关键技术，帮助读者建立完整的技术地图。</p></li>
+<li><p><strong>丰富的实战案例</strong>：从简单的”5分钟智能体”到复杂的多框架应用，包含大量经过验证的代码示例。这些案例不仅展示了如何实现，更揭示了实现中的细节和陷阱。</p></li>
+<li><p><strong>深入的工程思考</strong>：本书不仅讲解技术原理，更关注实际工程中的挑战和权衡。例如，输出协议的稳定性问题、模型能力差异对实现的影响、上下文窗口的约束等，这些都是构建生产级智能体必须面对的问题。</p></li>
+</ul>
+</section>
+<section id="目标读者" class="level2">
+<h2 class="anchored" data-anchor-id="目标读者">目标读者</h2>
+<p>本书适合以下读者：</p>
+<ul>
+<li>有一定编程基础，希望系统学习智能体技术的开发者</li>
+<li>对大语言模型感兴趣，想进一步探索如何构建智能体的工程师</li>
+<li>研究AI系统的研究人员，希望了解智能体的最新进展和实践方法</li>
+<li>所有对AI Agent这一前沿领域充满好奇的探索者</li>
+</ul>
+<p>读者需要具备基本的Python编程能力，对大语言模型有初步了解会更有帮助，但这并非必需——第3章会提供必要的背景知识。</p>
+</section>
+<section id="如何阅读本书" class="level2">
+<h2 class="anchored" data-anchor-id="如何阅读本书">如何阅读本书</h2>
+<p>本书可以按顺序阅读，每一章都建立在前面章节的基础上。如果你已经熟悉某些内容，也可以直接跳转到感兴趣的章节：</p>
+<ul>
+<li>如果你想快速入门，建议先阅读第1章和第4章，然后尝试运行其中的代码案例</li>
+<li>如果你想深入理解大语言模型，第3章提供了系统性的讲解</li>
+<li>如果你想选择合适的开发框架，第6章对比了主流框架的特点</li>
+<li>如果你想构建生产级系统，第8-10章提供了关键的技术指导</li>
+</ul>
+</section>
+<section id="致谢" class="level2">
+<h2 class="anchored" data-anchor-id="致谢">致谢</h2>
+<p>智能体领域正在快速发展，本书的内容建立在全球研究者和开发者的工作之上。感谢所有为这一领域做出贡献的人们。</p>
+</section>
+<section id="反馈与交流" class="level2">
+<h2 class="anchored" data-anchor-id="反馈与交流">反馈与交流</h2>
+<p>智能体技术仍在快速演进，书中难免有疏漏或需要改进的地方。欢迎读者通过任何方式提供反馈、分享见解或报告问题。</p>
+<p>让我们一起探索智能体这一激动人心的领域，共同推动AI从”理解”走向”行动”。</p>
 
 
 </section>
