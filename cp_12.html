@@ -225,6 +225,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="why-agent-evaluation-is-hard" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="why-agent-evaluation-is-hard"><span class="header-section-number">10.1</span> Why Agent Evaluation Is Hard</h2>
 <p>Evaluating intelligent agents is significantly more difficult than evaluating traditional machine learning models. While many models can be assessed using fixed datasets and well-defined metrics, agent systems operate in dynamic environments where behavior unfolds over multiple steps. As a result, measuring agent performance requires evaluating not only final outputs but also the processes that lead to those outputs.</p>
+<p><img src="images/clipboard-2040203513.png" class="img-fluid"></p>
 <p>One major challenge is that agent tasks are often <strong>multi-step and sequential</strong>. An agent may retrieve information, call external tools, analyze intermediate results, and then produce a final answer. Even if the final output is correct, the intermediate steps may reveal inefficient reasoning, incorrect tool usage, or unnecessary operations. Traditional evaluation methods that focus only on final answers may fail to capture these issues.</p>
 <p>Another difficulty arises from <strong>environment interaction</strong>. Agents frequently operate within external systems such as APIs, databases, web environments, or software tools. Their performance depends not only on reasoning ability but also on their ability to navigate these environments effectively. Because the environment may change over time, evaluation results can vary depending on external conditions.</p>
 <p>Agent behavior is also <strong>non-deterministic</strong>. Modern language models often produce slightly different outputs for the same input due to sampling and probabilistic generation. This means that evaluating a single run of an agent may not accurately reflect its overall performance. Reliable evaluation often requires multiple runs and statistical aggregation.</p>
@@ -258,6 +259,7 @@ A benchmark for evaluating agents that interact with websites and perform tasks 
 <h3 data-number="10.3.1" class="anchored" data-anchor-id="llm-as-a-judge-evaluation"><span class="header-section-number">10.3.1</span> LLM-as-a-Judge Evaluation</h3>
 <p>LLM-based evaluation has become increasingly popular in recent years. Instead of relying solely on predefined metrics, another language model is used to evaluate the quality of an agent’s output.</p>
 <p>In this approach, the evaluator model receives the task description, the agent’s output, and sometimes a reference answer. The model then produces a score or qualitative judgment based on criteria such as correctness, relevance, and clarity.</p>
+<p><img src="images/clipboard-2397229808.png" class="img-fluid"></p>
 <p>Several frameworks implement this approach, including:</p>
 <ul>
 <li><p>Ragas</p></li>
@@ -313,6 +315,7 @@ A benchmark for evaluating agents that interact with websites and perform tasks 
 <p>Another difficulty is that agent systems involve many interacting components. Failures may originate from the language model, the retrieval system, the tool interface, or the environment itself. Identifying the root cause of errors can therefore be complex.</p>
 <p>Finally, agents may exhibit stochastic behavior due to probabilistic generation. This means that evaluation results may vary across different runs, making consistent measurement difficult.</p>
 <p>For these reasons, reliable agent evaluation typically requires a combination of benchmarks, automated metrics, LLM-based judgments, and system tracing. Together, these methods provide a more comprehensive view of agent performance.</p>
+<p><img src="images/clipboard-1616022051.png" class="img-fluid"></p>
 
 
 </section>

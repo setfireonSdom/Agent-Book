@@ -272,6 +272,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="why-intelligent-agents-need-memory" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="why-intelligent-agents-need-memory"><span class="header-section-number">6.1</span> Why Intelligent Agents Need Memory</h2>
 <p>Intelligence without memory is fundamentally limited. An agent that cannot retain information beyond the immediate interaction behaves as if every moment were its first. While modern language models demonstrate impressive reasoning and language capabilities, they are inherently <strong>stateless systems</strong>. Each inference is performed within a bounded context window and does not persist beyond the current session unless external mechanisms store and retrieve information.</p>
+<p><img src="images/clipboard-183828691.png" class="img-fluid"></p>
 <p>Because of this limitation, an intelligent agent must rely on a memory system to maintain continuity, accumulate knowledge, and operate effectively across time.</p>
 <section id="the-stateless-nature-of-language-models" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="the-stateless-nature-of-language-models"><span class="header-section-number">6.1.1</span> The Stateless Nature of Language Models</h3>
@@ -870,6 +871,7 @@ An agent needs retrieval if it does not have a complete and up-to-date memory of
 <p>The example above is deliberately minimal, but the same architectural pattern scales upward. In larger systems, the in-memory list of embeddings is replaced by a vector store. Metadata filtering becomes more sophisticated. Query rewriting and reranking may be added. The prompt builder may become a full context orchestration module.</p>
 <p>Yet the underlying design remains the same: memory is stored externally, retrieval selects what matters, and the language model reasons over the retrieved context.</p>
 <p>This is the practical foundation of memory-enabled agents. Without such a system, an agent remains bounded by transient prompt context. With it, the agent gains a persistent knowledge substrate that can be accessed dynamically during inference.</p>
+<p><img src="images/clipboard-1176315799.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="commonly-used-method" class="level2" data-number="6.7">
