@@ -235,6 +235,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="the-nature-of-context" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="the-nature-of-context"><span class="header-section-number">7.1</span> The Nature of Context</h2>
 <p>Context is the information that a model uses to interpret a task and produce a response. In language models and agent systems, context defines the immediate environment within which reasoning occurs. Without context, a model has only its pretrained parameters, which encode general statistical knowledge but do not specify the situation, task, or knowledge required for a particular interaction.</p>
+<p><img src="images/clipboard-2955010475.png" class="img-fluid"></p>
+<blockquote class="blockquote">
+<p>这幅图是上下文工程的一个算法伪代码示例，上下文工程部分就是F这个函数。大部分是人工设计，但是也有新论文把这部分交给LLM来处理。</p>
+<p>因为模型本身的能够接受的token数量是有限的，而且往往token越多，它表现越差，所以需要context engineering.</p>
+<p>常见方法是什么，有<strong>Compaction（压缩）</strong>，Pruning &amp; Masking（遮蔽处理），例如OpenClaw就用了这两种，当上下文过长的时候，就把旧历史压缩成摘要，或者将工具输出部分遮蔽，只保留大概这样的一段话“这里曾经调用了一个工具”还可以把摘要再压缩成摘要。</p>
+<p>其他的还有RAG，将信息存为文件，让模型有需要的时候自己调用工具去读。</p>
+<p>如果文件太长，也有论文做了一些工作，只调用相关部分的内容。</p>
+<p>也有让大模型自己处理上下文工程的论文。</p>
+</blockquote>
 <p>In practical terms, context is the <strong>input information available to the model at inference time</strong>. It includes everything the model can read before generating an output. The model’s behavior is therefore not determined solely by its architecture or training data, but also by the structure and content of the context it receives.</p>
 <section id="context-as-the-operational-environment" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="context-as-the-operational-environment"><span class="header-section-number">7.1.1</span> Context as the Operational Environment</h3>
