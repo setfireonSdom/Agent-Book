@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>1&nbsp; 初识智能体 – Agent Book</title>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.8.25" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>1  初识智能体 – Agent Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,28 +18,26 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./cp_2.html" rel="next">
-<link href="./index.html" rel="prev">
+<meta content="./" name="quarto:offset"/>
+
+
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,177 +65,189 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-
-
-<link rel="stylesheet" href="styles.css">
-</head>
-
+<link href="styles.css" rel="stylesheet"/>
+<link href="./cp_2.html" rel="next"/><link href="./index.html" rel="prev"/></head>
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">初识智能体</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_1.html"><span class="chapter-number">1</span>  <span class="chapter-title">初识智能体</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Agent Book</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+<a class="sidebar-logo-link" href="./index.html">
+</a>
+<div class="sidebar-title mb-0 py-0">
+<a href="./">Agent Book</a>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./index.html">
+<span class="menu-text">Preface</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">初识智能体</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="./cp_1.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">初识智能体</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_2.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">智能体发展史</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">大语言模型基础</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_3.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">大语言模型基础</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">智能体经典范式构建</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_4.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">智能体经典范式构建</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>框架开发实践</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_5.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">基于低代码平台的智能体搭建</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Memory <strong>and</strong> Retrieval</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_6.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">框架开发实践</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>上下文工程</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_7.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">构建你的智能体框架</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Agent Communication Protocols</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_8.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">记忆与检索</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_9.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">上下文工程</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agent Evaluation</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_10.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">智能体通信协议</span></span></a>
+</div>
 </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_11.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Agentic-RL</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_12.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">智能体性能评估</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_13.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">智能旅行助手</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_14.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">自动化深度研究智能体</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_15.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">构建赛博小镇</span></span></a>
+</div>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#什么是智能体" id="toc-什么是智能体" class="nav-link active" data-scroll-target="#什么是智能体"><span class="header-section-number">1.1</span> <strong>什么是智能体？</strong></a>
-  <ul class="collapse">
-  <li><a href="#传统视角下的智能体" id="toc-传统视角下的智能体" class="nav-link" data-scroll-target="#传统视角下的智能体"><span class="header-section-number">1.1.1</span> <strong>传统视角下的智能体</strong></a></li>
-  <li><a href="#大语言模型驱动的新范式" id="toc-大语言模型驱动的新范式" class="nav-link" data-scroll-target="#大语言模型驱动的新范式"><span class="header-section-number">1.1.2</span> 大语言模型驱动的新范式</a></li>
-  <li><a href="#智能体的类型" id="toc-智能体的类型" class="nav-link" data-scroll-target="#智能体的类型"><span class="header-section-number">1.1.3</span> <strong>智能体的类型</strong></a></li>
-  </ul></li>
-  <li><a href="#智能体的构成与运行原理" id="toc-智能体的构成与运行原理" class="nav-link" data-scroll-target="#智能体的构成与运行原理"><span class="header-section-number">1.2</span> <strong>智能体的构成与运行原理</strong></a>
-  <ul class="collapse">
-  <li><a href="#任务环境定义" id="toc-任务环境定义" class="nav-link" data-scroll-target="#任务环境定义"><span class="header-section-number">1.2.1</span> <strong>任务环境定义</strong></a></li>
-  <li><a href="#智能体的运行机制" id="toc-智能体的运行机制" class="nav-link" data-scroll-target="#智能体的运行机制"><span class="header-section-number">1.2.2</span> <strong>智能体的运行机制</strong></a></li>
-  <li><a href="#智能体的感知与行动" id="toc-智能体的感知与行动" class="nav-link" data-scroll-target="#智能体的感知与行动"><span class="header-section-number">1.2.3</span> <strong>智能体的感知与行动</strong></a></li>
-  </ul></li>
-  <li><a href="#动手体验5-分钟实现第一个智能体" id="toc-动手体验5-分钟实现第一个智能体" class="nav-link" data-scroll-target="#动手体验5-分钟实现第一个智能体"><span class="header-section-number">1.3</span> <strong>动手体验：5 分钟实现第一个智能体</strong></a></li>
-  <li><a href="#完整案例代码" id="toc-完整案例代码" class="nav-link" data-scroll-target="#完整案例代码"><span class="header-section-number">1.4</span> 完整案例代码</a></li>
-  <li><a href="#工具补充说明" id="toc-工具补充说明" class="nav-link" data-scroll-target="#工具补充说明"><span class="header-section-number">1.5</span> 工具补充说明</a>
-  <ul class="collapse">
-  <li><a href="#wttr.inhttpsgithub.comchubinwttr.in" id="toc-wttr.inhttpsgithub.comchubinwttr.in" class="nav-link" data-scroll-target="#wttr.inhttpsgithub.comchubinwttr.in"><span class="header-section-number">1.5.1</span> wttr.in（https://github.com/chubin/wttr.in）</a></li>
-  <li><a href="#tavilyhttpsdocs.tavily.comdocumentationapi-referenceendpointsearch" id="toc-tavilyhttpsdocs.tavily.comdocumentationapi-referenceendpointsearch" class="nav-link" data-scroll-target="#tavilyhttpsdocs.tavily.comdocumentationapi-referenceendpointsearch"><span class="header-section-number">1.5.2</span> tavily（https://docs.tavily.com/documentation/api-reference/endpoint/search）</a></li>
-  </ul></li>
-  </ul>
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+<nav class="toc-active" data-toc-expanded="2" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a class="nav-link active" data-scroll-target="#什么是智能体" href="#什么是智能体" id="toc-什么是智能体"><span class="header-section-number">1.1</span> <strong>什么是智能体？</strong></a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#传统视角下的智能体" href="#传统视角下的智能体" id="toc-传统视角下的智能体"><span class="header-section-number">1.1.1</span> <strong>传统视角下的智能体</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#大语言模型驱动的新范式" href="#大语言模型驱动的新范式" id="toc-大语言模型驱动的新范式"><span class="header-section-number">1.1.2</span> 大语言模型驱动的新范式</a></li>
+<li><a class="nav-link" data-scroll-target="#智能体的类型" href="#智能体的类型" id="toc-智能体的类型"><span class="header-section-number">1.1.3</span> <strong>智能体的类型</strong></a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#智能体的构成与运行原理" href="#智能体的构成与运行原理" id="toc-智能体的构成与运行原理"><span class="header-section-number">1.2</span> <strong>智能体的构成与运行原理</strong></a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#任务环境定义" href="#任务环境定义" id="toc-任务环境定义"><span class="header-section-number">1.2.1</span> <strong>任务环境定义</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#智能体的运行机制" href="#智能体的运行机制" id="toc-智能体的运行机制"><span class="header-section-number">1.2.2</span> <strong>智能体的运行机制</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#智能体的感知与行动" href="#智能体的感知与行动" id="toc-智能体的感知与行动"><span class="header-section-number">1.2.3</span> <strong>智能体的感知与行动</strong></a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#动手体验5-分钟实现第一个智能体" href="#动手体验5-分钟实现第一个智能体" id="toc-动手体验5-分钟实现第一个智能体"><span class="header-section-number">1.3</span> <strong>动手体验：5 分钟实现第一个智能体</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#完整案例代码" href="#完整案例代码" id="toc-完整案例代码"><span class="header-section-number">1.4</span> 完整案例代码</a></li>
+<li><a class="nav-link" data-scroll-target="#工具补充说明" href="#工具补充说明" id="toc-工具补充说明"><span class="header-section-number">1.5</span> 工具补充说明</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#wttr.inhttpsgithub.comchubinwttr.in" href="#wttr.inhttpsgithub.comchubinwttr.in" id="toc-wttr.inhttpsgithub.comchubinwttr.in"><span class="header-section-number">1.5.1</span> wttr.in（https://github.com/chubin/wttr.in）</a></li>
+<li><a class="nav-link" data-scroll-target="#tavilyhttpsdocs.tavily.comdocumentationapi-referenceendpointsearch" href="#tavilyhttpsdocs.tavily.comdocumentationapi-referenceendpointsearch" id="toc-tavilyhttpsdocs.tavily.comdocumentationapi-referenceendpointsearch"><span class="header-section-number">1.5.2</span> tavily（https://docs.tavily.com/documentation/api-reference/endpoint/search）</a></li>
+</ul></li>
+</ul>
 </nav>
-    </div>
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<header class="quarto-title-block default" id="title-block-header">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">初识智能体</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>  <span class="chapter-title">初识智能体</span></h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
-<p>本章，我们探讨几个问题：智能体是什么？它有哪些主要的类型？它又是如何与我们所处的世界进行交互的？通过这些讨论，希望能为你未来的学习和探索打下坚实的基础。<br>
-<img src="images/clipboard-3177150746.png" class="img-fluid"></p>
-<section id="什么是智能体" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="什么是智能体"><span class="header-section-number">1.1</span> <strong>什么是智能体？</strong></h2>
+<p>本章，我们探讨几个问题：智能体是什么？它有哪些主要的类型？它又是如何与我们所处的世界进行交互的？通过这些讨论，希望能为你未来的学习和探索打下坚实的基础。<br/>
+<img class="img-fluid" src="images/clipboard-3177150746.png"/></p>
+<section class="level2" data-number="1.1" id="什么是智能体">
+<h2 class="anchored" data-anchor-id="什么是智能体" data-number="1.1"><span class="header-section-number">1.1</span> <strong>什么是智能体？</strong></h2>
 <p>在人工智能领域，智能体被定义为任何能够通过<strong>传感器（Sensors）</strong>感知其所处<strong>环境（Environment）</strong>，并<strong>自主</strong>地通过<strong>执行器（Actuators）</strong>采取<strong>行动（Action）</strong>以达成特定目标的实体。</p>
 <p>注意，环境不代表的就是地球，就是现实世界，它是智能体无法直接控制、但必须持续应对的外部状态与变化的集合。在智能体语境下，“环境”并不等同于物理世界，而是一个<strong>相对于智能体而言的概念</strong>。</p>
-<p><img src="images/clipboard-1587856724.png" class="img-fluid"></p>
+<p><img class="img-fluid" src="images/clipboard-1587856724.png"/></p>
 <p>环境就是智能体“所在并必须应对的世界”，无论这个世界是物理的，还是完全虚拟的。</p>
-<section id="传统视角下的智能体" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="传统视角下的智能体"><span class="header-section-number">1.1.1</span> <strong>传统视角下的智能体</strong></h3>
+<section class="level3" data-number="1.1.1" id="传统视角下的智能体">
+<h3 class="anchored" data-anchor-id="传统视角下的智能体" data-number="1.1.1"><span class="header-section-number">1.1.1</span> <strong>传统视角下的智能体</strong></h3>
 <p>智能体的演变</p>
 <p><strong>反射智能体（</strong>Simple Reflex Agent<strong>）：</strong>它们的决策核心由工程师明确设计的“条件-动作”规则构成。经典的自动恒温器便是如此，若传感器感知的室温高于设定值，则启动制冷系统。</p>
 <p>这种智能体完全依赖于当前的感知输入，不具备记忆或预测能力。它像一种数字化的本能，可靠且高效，但也因此无法应对需要理解上下文的复杂任务。</p>
@@ -249,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
 <p>反射智能体的决策可以抽象为：</p>
 <pre><code>if perception matches condition_i:
     do action_i</code></pre>
-<p><img src="images/clipboard-160085135.png" class="img-fluid"><strong>基于模型的反射智能体（Model-Based Reflex Agent）：</strong>智能体在做决策时，通常只能感知到环境的一部分，传感器存在盲区，信息存在延迟，关键对象可能被遮挡。</p>
+<p><img class="img-fluid" src="images/clipboard-160085135.png"/><strong>基于模型的反射智能体（Model-Based Reflex Agent）：</strong>智能体在做决策时，通常只能感知到环境的一部分，传感器存在盲区，信息存在延迟，关键对象可能被遮挡。</p>
 <p>如果智能体只能依据“此刻看到的内容”做出反应，那么当感知不完整时，它将无法维持对世界的连续理解，进而做出危险或不合理的决策。</p>
 <p>研究者们引入了“状态”的概念，这类智能体拥有一个内部的<strong>世界模型（World Model）</strong>，用于追踪和理解环境中那些无法被直接感知的方面。它试图回答：“世界现在是什么样子的？”。</p>
 <p>基于模型的反射智能体会在内部维护一个关于世界的估计，用以补全当前感知中缺失的部分。这使得智能体能够在短暂失去感知时，仍然基于过去的信息对世界状态做出合理判断。在这一阶段，智能体第一次具备了“记住世界”的能力，其决策开始依赖于一个连续的状态，而非孤立的瞬时输入。</p>
@@ -287,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
 <p><code>PLAN</code>：核心，通常是搜索（BFS/DFS/A*/MCTS/规划器等）</p>
 <p><code>model</code>：描述“动作会如何改变状态”（状态转移函数）</p>
 <p><strong>基于效用的智能体（Utility-Based Agent）：</strong>在真实环境中，目标往往并非单一且绝对的。不同目标之间可能相互冲突，而同一目标的实现方式也可能存在多种选择。</p>
-<p><img src="images/clipboard-1981509242.png" class="img-fluid"></p>
+<p><img class="img-fluid" src="images/clipboard-1981509242.png"/></p>
 <p>如果智能体只能判断“是否达成目标”，那么它将无法在多种可行方案之间进行理性取舍。为了解决这一问题，引入了效用的概念。</p>
 <p>现实世界的目标往往不是单一的。当多个目标需要权衡时，该智能体随之出现。它为每一个可能的世界状态都赋予一个效用值，这个值代表了满意度的高低。智能体的核心目标不再是简单地达成某个特定状态，而是最大化期望效用。它需要回答一个更复杂的问题：“哪种行为能为我带来最满意的结果？”。这种架构让智能体学会在相互冲突的目标之间进行权衡，使其决策更接近人类的理性选择。</p>
 <p>至此，我们讨论的智能体虽然功能日益复杂，但其核心决策逻辑，无论是规则、模型还是效用函数，依然依赖于人类设计师的先验知识。如果智能体能不依赖预设，而是通过与环境的互动自主学习呢？</p>
@@ -314,7 +321,7 @@ ul.task-list li input[type="checkbox"] {
 <p>注意，基于效用的智能体是在“已知效用与模型”的前提下，选择期望效用最大的行动；强化学习则是在“效用或模型未知”的情况下，通过交互去学习这些量。</p>
 <p><strong>学习型智能体（Learning Agent）：</strong>截至此处，智能体的决策结构虽然不断扩展，但其核心逻辑——规则、模型、目标和效用函数——仍然依赖人类事先设计。当环境复杂到人类无法穷举所有策略时，这一方式便达到了极限。</p>
 <p><strong>强化学习（Reinforcement Learning, RL）</strong>是实现这一思想最具代表性的路径。学习型智能体包含一个性能元件（即我们前面讨论的各类智能体）和一个学习元件。学习元件通过观察性能元件在环境中的行动所带来的结果来不断修正性能元件的决策策略。</p>
-<p><img src="images/clipboard-2975259719.png" class="img-fluid"></p>
+<p><img class="img-fluid" src="images/clipboard-2975259719.png"/></p>
 <p>想象一个学习下棋的 AI。它开始时可能只是随机落子，当它最终赢下一局时，系统会给予它一个正向的奖励。通过大量的自我对弈，学习元件会逐渐发现哪些棋路更有可能导向最终的胜利。AlphaGo Zero 是这一理念的一个里程碑式的成就。它在围棋这一复杂博弈中，通过强化学习发现了许多超越人类既有知识的有效策略。</p>
 <p><strong>这是真正的分水岭</strong>，决策逻辑不再完全可读，人开始失去“可解释的控制权”</p>
 <p><strong>强化学习</strong>的决策可以抽象为：</p>
@@ -341,11 +348,11 @@ loop for each time step:
     if done:
         s = RESET_ENV()</code></pre>
 </section>
-<section id="大语言模型驱动的新范式" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="大语言模型驱动的新范式"><span class="header-section-number">1.1.2</span> 大语言模型驱动的新范式</h3>
+<section class="level3" data-number="1.1.2" id="大语言模型驱动的新范式">
+<h3 class="anchored" data-anchor-id="大语言模型驱动的新范式" data-number="1.1.2"><span class="header-section-number">1.1.2</span> 大语言模型驱动的新范式</h3>
 <p>以<strong>GPT（Generative Pre-trained Transformer）</strong>为代表的大语言模型的出现，正在显著改变智能体的构建方法与能力边界。由大语言模型驱动的 LLM 智能体，其核心决策机制与传统智能体存在本质区别，从而赋予了其一系列全新的特性。LLM 智能体的出现，第一次让机器能够在语言层面理解目标、拆解任务并组织行动。</p>
 <p>这种转变，可以从两者在核心引擎、知识来源、交互方式等多个维度的对比中清晰地看出，如表 1.1 所示。简而言之，传统智能体的能力源于工程师的显式编程与知识构建，其行为模式是确定且有边界的；而 LLM 智能体则通过在海量数据上的预训练，获得了隐式的世界模型与强大的涌现能力，使其能够以更灵活、更通用的方式应对复杂任务。</p>
-<p><img src="images/clipboard-3432448905.png" class="img-fluid"></p>
+<p><img class="img-fluid" src="images/clipboard-3432448905.png"/></p>
 <p>这种差异使得 LLM 智能体可以直接处理高层级、模糊且充满上下文信息的自然语言指令。让我们以一个“智能旅行助手”为例来说明。</p>
 <p>在 LLM 智能体出现之前，规划旅行通常意味着用户需要在多个专用应用（如天气、地图、预订网站）之间手动切换，并由用户自己扮演信息整合与决策的角色。而一个 LLM 智能体则能将这个流程整合起来。当接收到“规划一次厦门之旅”这样的模糊指令时，它的工作方式体现了以下几点：</p>
 <ul>
@@ -355,29 +362,29 @@ loop for each time step:
 </ul>
 <p>总而言之，我们正从开发专用自动化工具转向构建能自主解决问题的系统。核心不再是编写代码，而是引导一个通用的“大脑”去规划、行动和学习。</p>
 </section>
-<section id="智能体的类型" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="智能体的类型"><span class="header-section-number">1.1.3</span> <strong>智能体的类型</strong></h3>
+<section class="level3" data-number="1.1.3" id="智能体的类型">
+<h3 class="anchored" data-anchor-id="智能体的类型" data-number="1.1.3"><span class="header-section-number">1.1.3</span> <strong>智能体的类型</strong></h3>
 <p>（1）基于内部决策架构的分类</p>
 <p>（2）基于时间与反应性的分类</p>
 <p>（3）基于知识表示的分类</p>
 </section>
 </section>
-<section id="智能体的构成与运行原理" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="智能体的构成与运行原理"><span class="header-section-number">1.2</span> <strong>智能体的构成与运行原理</strong></h2>
-<section id="任务环境定义" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="任务环境定义"><span class="header-section-number">1.2.1</span> <strong>任务环境定义</strong></h3>
+<section class="level2" data-number="1.2" id="智能体的构成与运行原理">
+<h2 class="anchored" data-anchor-id="智能体的构成与运行原理" data-number="1.2"><span class="header-section-number">1.2</span> <strong>智能体的构成与运行原理</strong></h2>
+<section class="level3" data-number="1.2.1" id="任务环境定义">
+<h3 class="anchored" data-anchor-id="任务环境定义" data-number="1.2.1"><span class="header-section-number">1.2.1</span> <strong>任务环境定义</strong></h3>
 <p><strong>任务环境：</strong>在人工智能领域，通常使用<strong>PEAS 模型</strong>来精确描述一个任务环境，即分析其<strong>性能度量(Performance)、环境(Environment)、执行器(Actuators)和传感器(Sensors)</strong> 。</p>
 <p>以上文提到的智能旅行助手为例，下表 1.2 展示了如何运用 PEAS 模型对其任务环境进行规约。</p>
-<p><img src="images/clipboard-760084029.png" class="img-fluid"></p>
+<p><img class="img-fluid" src="images/clipboard-760084029.png"/></p>
 <p>在实践中，LLM 智能体所处的数字环境展现出若干复杂特性，这些特性直接影响着智能体的设计。</p>
 <p>首先，环境通常是<strong>部分可观察的</strong>。</p>
 <p>其次，环境可分为<strong>确定性</strong>和<strong>随机性</strong>。</p>
 <p>此外，<strong>多智能体(Multi-agent)</strong> 是可能的。</p>
 <p>最后，几乎所有任务都发生在<strong>序贯</strong>且<strong>动态</strong>的环境中。“序贯”意味着当前动作会影响未来；而“动态”则意味着环境自身可能在智能体决策时发生变化。</p>
 </section>
-<section id="智能体的运行机制" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="智能体的运行机制"><span class="header-section-number">1.2.2</span> <strong>智能体的运行机制</strong></h3>
-<p><img src="images/clipboard-3157034800.png" class="img-fluid"></p>
+<section class="level3" data-number="1.2.2" id="智能体的运行机制">
+<h3 class="anchored" data-anchor-id="智能体的运行机制" data-number="1.2.2"><span class="header-section-number">1.2.2</span> <strong>智能体的运行机制</strong></h3>
+<p><img class="img-fluid" src="images/clipboard-3157034800.png"/></p>
 <p><strong>智能体循环 (Agent Loop)：</strong>智能体并非一次性完成任务，而是通过一个持续的循环与环境进行交互，这个核心机制被称为 <strong>智能体循环。</strong></p>
 <p>这个循环主要包含以下几个相互关联的阶段：</p>
 <ol type="1">
@@ -391,15 +398,15 @@ loop for each time step:
 </ol>
 <p>行动并非循环的终点。智能体的行动会引起<strong>环境 (Environment)</strong> 的<strong>状态变化 (State Change)</strong>，环境随即会产生一个新的<strong>观察 (Observation)</strong> 作为结果反馈。这个新的观察又会在下一轮循环中被智能体的感知系统捕获，形成一个持续的“感知-思考-行动-观察”的闭环。智能体正是通过不断重复这一循环，逐步推进任务，从初始状态向目标状态演进。</p>
 </section>
-<section id="智能体的感知与行动" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="智能体的感知与行动"><span class="header-section-number">1.2.3</span> <strong>智能体的感知与行动</strong></h3>
+<section class="level3" data-number="1.2.3" id="智能体的感知与行动">
+<h3 class="anchored" data-anchor-id="智能体的感知与行动" data-number="1.2.3"><span class="header-section-number">1.2.3</span> <strong>智能体的感知与行动</strong></h3>
 </section>
 </section>
-<section id="动手体验5-分钟实现第一个智能体" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="动手体验5-分钟实现第一个智能体"><span class="header-section-number">1.3</span> <strong>动手体验：5 分钟实现第一个智能体</strong></h2>
+<section class="level2" data-number="1.3" id="动手体验5-分钟实现第一个智能体">
+<h2 class="anchored" data-anchor-id="动手体验5-分钟实现第一个智能体" data-number="1.3"><span class="header-section-number">1.3</span> <strong>动手体验：5 分钟实现第一个智能体</strong></h2>
 </section>
-<section id="完整案例代码" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="完整案例代码"><span class="header-section-number">1.4</span> 完整案例代码</h2>
+<section class="level2" data-number="1.4" id="完整案例代码">
+<h2 class="anchored" data-anchor-id="完整案例代码" data-number="1.4"><span class="header-section-number">1.4</span> 完整案例代码</h2>
 <p>这个Agent案例它其实很简单，首先我们需要一个大模型，当人这个大模型也不必要很大，<code>qwen2.5:1.5b</code>已经足够跑案例了（或者使用ollama的远程模型）。</p>
 <p>首先给模型设定一个system提示词，告诉它可以使用哪些工具，再指定输出格式，让模型只能输出思考内容以及行动，行动只包含两个选择，输出使用哪个函数，或者finish。</p>
 <p>具体怎么调用工具呢，使用re包从模型输出的内容里面抽取函数名，找出来，判断它是否在指定工具列表里面，在的话就执行，执行结果加进对话历史里面。</p>
@@ -613,10 +620,10 @@ for i in range(5): # 设置最大循环次数
     prompt_history.append(observation_str)</code></pre>
 <p>运行后结果。</p>
 </section>
-<section id="工具补充说明" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="工具补充说明"><span class="header-section-number">1.5</span> 工具补充说明</h2>
-<section id="wttr.inhttpsgithub.comchubinwttr.in" class="level3" data-number="1.5.1">
-<h3 data-number="1.5.1" class="anchored" data-anchor-id="wttr.inhttpsgithub.comchubinwttr.in"><span class="header-section-number">1.5.1</span> wttr.in（https://github.com/chubin/wttr.in）</h3>
+<section class="level2" data-number="1.5" id="工具补充说明">
+<h2 class="anchored" data-anchor-id="工具补充说明" data-number="1.5"><span class="header-section-number">1.5</span> 工具补充说明</h2>
+<section class="level3" data-number="1.5.1" id="wttr.inhttpsgithub.comchubinwttr.in">
+<h3 class="anchored" data-anchor-id="wttr.inhttpsgithub.comchubinwttr.in" data-number="1.5.1"><span class="header-section-number">1.5.1</span> wttr.in（https://github.com/chubin/wttr.in）</h3>
 <p><strong>wttr.in</strong> 是一个<strong>极简的天气查询服务</strong>，主打“<strong>不用注册、不用 API Key、直接返回结果</strong>”，而且<strong>非常适合命令行 / 脚本 / 自动化</strong>场景。</p>
 <p>1 80% 场景的唯一推荐接口</p>
 <p><strong>👉</strong> JSON + 当前天气</p>
@@ -678,10 +685,10 @@ def get_weather_text(city="Beijing"):
 
 print(get_weather_text("Beijing"))</code></pre>
 </section>
-<section id="tavilyhttpsdocs.tavily.comdocumentationapi-referenceendpointsearch" class="level3" data-number="1.5.2">
-<h3 data-number="1.5.2" class="anchored" data-anchor-id="tavilyhttpsdocs.tavily.comdocumentationapi-referenceendpointsearch"><span class="header-section-number">1.5.2</span> tavily（https://docs.tavily.com/documentation/api-reference/endpoint/search）</h3>
+<section class="level3" data-number="1.5.2" id="tavilyhttpsdocs.tavily.comdocumentationapi-referenceendpointsearch">
+<h3 class="anchored" data-anchor-id="tavilyhttpsdocs.tavily.comdocumentationapi-referenceendpointsearch" data-number="1.5.2"><span class="header-section-number">1.5.2</span> tavily（https://docs.tavily.com/documentation/api-reference/endpoint/search）</h3>
 <!-- 这是一张图片，ocr 内容为：PAGES / OVERVIEW OPERATIONAL VERVIEW TAVILY PFTCIAL TAVILYDUGINTORCH, AND - ENABLING ROAL-THE WEB WEBSEARCH, OSEARCH AND CONT EXTRACTTY LNYOURTEM PERSONAL CURRENT PLAN 3 MANAGE PLAN OVERVIEW RESEARCHER APIPLAYGROUND USE CASES APIUSAGE BILLING 7/1,000 CREDITS MONTHLY PLAN 本 SETTINGS PAY AS YOU GO CERTIFCATION DOCUMENTATION -->
-<p><img src="https://cdn.nlark.com/yuque/0/2026/png/49299071/1769510993872-3bf61cac-ec5b-420a-9a6b-1ef43ed2fb52.png" class="img-fluid"></p>
+<p><img class="img-fluid" src="https://cdn.nlark.com/yuque/0/2026/png/49299071/1769510993872-3bf61cac-ec5b-420a-9a6b-1ef43ed2fb52.png"/></p>
 <p>是一个搜索引擎，调用它的api可以搜索网络信息，有免费额度。</p>
 <blockquote class="blockquote">
 <p><font style="color:rgb(66, 67, 67);">Unlike other search APIs such as Serp or Google, Tavily focuses on optimizing search for AI developers and autonomous AI agents.</font></p><font style="color:rgb(66, 67, 67);">
@@ -726,11 +733,8 @@ print(response)</code></pre>
    'raw_content': None}],
  'response_time': 0.85,
  'request_id': '7a8bca8a-0c4b-4454-a550-12a3d989561d'}</code></pre>
-
-
 </font></font></section><font style="color:rgb(66, 67, 67);"><font style="color:rgb(66, 67, 67);">
 </font></font></section><font style="color:rgb(66, 67, 67);"><font style="color:rgb(66, 67, 67);">
-
 </font></font></main><font style="color:rgb(66, 67, 67);"><font style="color:rgb(66, 67, 67);"> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1133,20 +1137,8 @@ print(response)</code></pre>
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./cp_2.html" class="pagination-link" aria-label="**智能体发展史**">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous"><a aria-label="Preface" class="pagination-link" href="./index.html"><i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span></a></div>
+<div class="nav-page nav-page-next"><a aria-label="智能体发展史" class="pagination-link" href="./cp_2.html"><span class="nav-page-text"><span class="chapter-number">2</span>  <span class="chapter-title">智能体发展史</span></span> <i class="bi bi-arrow-right-short"></i></a></div>
 </nav>
 </font></font></div><font style="color:rgb(66, 67, 67);"><font style="color:rgb(66, 67, 67);"> <!-- /content -->
-
-
-
-
 </font></font></body></html>
