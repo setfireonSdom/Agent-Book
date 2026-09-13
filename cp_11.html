@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>9&nbsp; Agentic-RL – Agent Book</title>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.8.25" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>11  Agentic-RL – Agent Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,28 +18,26 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./cp_12.html" rel="next">
-<link href="./cp_10.html" rel="prev">
+<meta content="./" name="quarto:offset"/>
+
+
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,160 +65,172 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-
-
-<link rel="stylesheet" href="styles.css">
-</head>
-
+<link href="styles.css" rel="stylesheet"/>
+<link href="./cp_12.html" rel="next"/><link href="./cp_10.html" rel="prev"/></head>
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_11.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_11.html"><span class="chapter-number">11</span>  <span class="chapter-title">Agentic-RL</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Agent Book</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+<a class="sidebar-logo-link" href="./index.html">
+</a>
+<div class="sidebar-title mb-0 py-0">
+<a href="./">Agent Book</a>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./index.html">
+<span class="menu-text">Preface</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">初识智能体</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_1.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">初识智能体</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_2.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">智能体发展史</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">大语言模型基础</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_3.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">大语言模型基础</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">智能体经典范式构建</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_4.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">智能体经典范式构建</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>框架开发实践</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_5.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">基于低代码平台的智能体搭建</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Memory <strong>and</strong> Retrieval</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_6.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">框架开发实践</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>上下文工程</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_7.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">构建你的智能体框架</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Agent Communication Protocols</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_8.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">记忆与检索</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_11.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_9.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">上下文工程</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agent Evaluation</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_10.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">智能体通信协议</span></span></a>
+</div>
 </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="./cp_11.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Agentic-RL</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_12.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">智能体性能评估</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_13.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">智能旅行助手</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_14.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">自动化深度研究智能体</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_15.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">构建赛博小镇</span></span></a>
+</div>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#agent-learning" id="toc-agent-learning" class="nav-link active" data-scroll-target="#agent-learning"><span class="header-section-number">9.1</span> Agent Learning</a></li>
-  <li><a href="#why-agents-need-learning" id="toc-why-agents-need-learning" class="nav-link" data-scroll-target="#why-agents-need-learning"><span class="header-section-number">9.2</span> Why Agents Need Learning</a></li>
-  <li><a href="#from-model-training-to-agent-training" id="toc-from-model-training-to-agent-training" class="nav-link" data-scroll-target="#from-model-training-to-agent-training"><span class="header-section-number">9.3</span> From Model Training to Agent Training</a></li>
-  <li><a href="#the-reinforcement-learning-framework" id="toc-the-reinforcement-learning-framework" class="nav-link" data-scroll-target="#the-reinforcement-learning-framework"><span class="header-section-number">9.4</span> The Reinforcement Learning Framework</a></li>
-  <li><a href="#rewards-and-objectives-for-agents" id="toc-rewards-and-objectives-for-agents" class="nav-link" data-scroll-target="#rewards-and-objectives-for-agents"><span class="header-section-number">9.5</span> Rewards and Objectives for Agents</a></li>
-  <li><a href="#learning-from-environment-interaction" id="toc-learning-from-environment-interaction" class="nav-link" data-scroll-target="#learning-from-environment-interaction"><span class="header-section-number">9.6</span> Learning from Environment Interaction</a></li>
-  <li><a href="#learning-from-feedback" id="toc-learning-from-feedback" class="nav-link" data-scroll-target="#learning-from-feedback"><span class="header-section-number">9.7</span> Learning from Feedback</a></li>
-  <li><a href="#agent-training-architectures" id="toc-agent-training-architectures" class="nav-link" data-scroll-target="#agent-training-architectures"><span class="header-section-number">9.8</span> Agent Training Architectures</a></li>
-  <li><a href="#challenges-in-training-agents" id="toc-challenges-in-training-agents" class="nav-link" data-scroll-target="#challenges-in-training-agents"><span class="header-section-number">9.9</span> Challenges in Training Agents</a></li>
-  <li><a href="#the-future-of-agent-learning" id="toc-the-future-of-agent-learning" class="nav-link" data-scroll-target="#the-future-of-agent-learning"><span class="header-section-number">9.10</span> The Future of Agent Learning</a></li>
-  </ul>
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+<nav class="toc-active" data-toc-expanded="2" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a class="nav-link active" data-scroll-target="#agent-learning" href="#agent-learning" id="toc-agent-learning"><span class="header-section-number">9.1</span> Agent Learning</a></li>
+<li><a class="nav-link" data-scroll-target="#why-agents-need-learning" href="#why-agents-need-learning" id="toc-why-agents-need-learning"><span class="header-section-number">9.2</span> Why Agents Need Learning</a></li>
+<li><a class="nav-link" data-scroll-target="#from-model-training-to-agent-training" href="#from-model-training-to-agent-training" id="toc-from-model-training-to-agent-training"><span class="header-section-number">9.3</span> From Model Training to Agent Training</a></li>
+<li><a class="nav-link" data-scroll-target="#the-reinforcement-learning-framework" href="#the-reinforcement-learning-framework" id="toc-the-reinforcement-learning-framework"><span class="header-section-number">9.4</span> The Reinforcement Learning Framework</a></li>
+<li><a class="nav-link" data-scroll-target="#rewards-and-objectives-for-agents" href="#rewards-and-objectives-for-agents" id="toc-rewards-and-objectives-for-agents"><span class="header-section-number">9.5</span> Rewards and Objectives for Agents</a></li>
+<li><a class="nav-link" data-scroll-target="#learning-from-environment-interaction" href="#learning-from-environment-interaction" id="toc-learning-from-environment-interaction"><span class="header-section-number">9.6</span> Learning from Environment Interaction</a></li>
+<li><a class="nav-link" data-scroll-target="#learning-from-feedback" href="#learning-from-feedback" id="toc-learning-from-feedback"><span class="header-section-number">9.7</span> Learning from Feedback</a></li>
+<li><a class="nav-link" data-scroll-target="#agent-training-architectures" href="#agent-training-architectures" id="toc-agent-training-architectures"><span class="header-section-number">9.8</span> Agent Training Architectures</a></li>
+<li><a class="nav-link" data-scroll-target="#challenges-in-training-agents" href="#challenges-in-training-agents" id="toc-challenges-in-training-agents"><span class="header-section-number">9.9</span> Challenges in Training Agents</a></li>
+<li><a class="nav-link" data-scroll-target="#the-future-of-agent-learning" href="#the-future-of-agent-learning" id="toc-the-future-of-agent-learning"><span class="header-section-number">9.10</span> The Future of Agent Learning</a></li>
+</ul>
 </nav>
-    </div>
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<header class="quarto-title-block default" id="title-block-header">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></h1>
+<h1 class="title"><span class="chapter-number">11</span>  <span class="chapter-title">Agentic-RL</span></h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
-<section id="agent-learning" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="agent-learning"><span class="header-section-number">9.1</span> Agent Learning</h2>
+<section class="level2" data-number="9.1" id="agent-learning">
+<h2 class="anchored" data-anchor-id="agent-learning" data-number="9.1"><span class="header-section-number">9.1</span> Agent Learning</h2>
 <p>Agent learning refers to the process through which an intelligent agent improves its behavior through experience. Unlike traditional software systems, which follow fixed rules written by developers, agents operate in environments where the correct sequence of actions is often unknown in advance. Learning allows an agent to adapt its behavior based on feedback from its environment, from human evaluators, or from automated evaluation systems.</p>
 <p>In the context of modern AI systems, an agent typically consists of a language model combined with tools, memory systems, and reasoning mechanisms. While the underlying model may already possess strong general knowledge, effective agent behavior often requires additional learning. The agent must learn how to choose actions, how to sequence tool usage, and how to respond to changing conditions within its environment.</p>
 <p>Agent learning therefore focuses on improving <strong>decision-making over time</strong>. Each interaction with the environment provides information about whether a particular action was successful or unsuccessful. By accumulating these experiences, the agent gradually learns strategies that lead to better outcomes.</p>
@@ -232,8 +239,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Agent learning also differs from traditional model training in an important way. Conventional language model training focuses on predicting text based on large datasets. Agent learning, by contrast, focuses on <strong>behavior in a task environment</strong>. The goal is not simply to produce fluent text but to perform actions that achieve specific objectives.</p>
 <p>As agent systems become more complex, learning mechanisms will play an increasingly important role in their development. Rather than manually programming every behavior, developers can design environments, feedback signals, and evaluation systems that allow agents to improve through experience. In this sense, agent learning represents a shift from static model capabilities toward adaptive intelligent systems that evolve through interaction.</p>
 </section>
-<section id="why-agents-need-learning" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="why-agents-need-learning"><span class="header-section-number">9.2</span> Why Agents Need Learning</h2>
+<section class="level2" data-number="9.2" id="why-agents-need-learning">
+<h2 class="anchored" data-anchor-id="why-agents-need-learning" data-number="9.2"><span class="header-section-number">9.2</span> Why Agents Need Learning</h2>
 <p>Even highly capable language models cannot perform complex tasks reliably without additional adaptation. When models are used as agents, they must operate in dynamic environments, interact with external tools, and make sequences of decisions. In such settings, fixed behavior is rarely sufficient. Learning becomes necessary for improving performance over time.</p>
 <p>One reason agents require learning is that real environments contain uncertainty. An agent may face situations that were not represented in its training data. When this happens, the agent must rely on experimentation and feedback to discover effective strategies. Learning mechanisms allow the system to refine its behavior based on the outcomes of previous actions.</p>
 <p>Another reason is that agent tasks are often <strong>sequential and goal-oriented</strong>. Many problems require a series of decisions rather than a single response. For example, an agent might need to gather information, analyze it, call external tools, and synthesize a final result. The effectiveness of the overall task depends not only on individual actions but also on the order in which they are performed. Learning helps agents identify sequences of actions that lead to successful outcomes.</p>
@@ -242,8 +249,8 @@ ul.task-list li input[type="checkbox"] {
 <p>In addition, developers cannot always anticipate the optimal behavior of an agent system. Complex tasks may involve many possible approaches, and it is often unclear which strategy will perform best. Learning provides a mechanism for discovering effective behaviors through interaction and evaluation rather than relying solely on manual design.</p>
 <p>For these reasons, learning plays a central role in the development of advanced agents. It allows systems to improve through experience, adapt to changing environments, and discover strategies that cannot be fully specified in advance.</p>
 </section>
-<section id="from-model-training-to-agent-training" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="from-model-training-to-agent-training"><span class="header-section-number">9.3</span> From Model Training to Agent Training</h2>
+<section class="level2" data-number="9.3" id="from-model-training-to-agent-training">
+<h2 class="anchored" data-anchor-id="from-model-training-to-agent-training" data-number="9.3"><span class="header-section-number">9.3</span> From Model Training to Agent Training</h2>
 <p>Traditional language model training focuses on learning patterns from large text datasets. During this process, the model learns to predict the next token in a sequence, gradually developing an internal representation of language, knowledge, and reasoning patterns. This form of training is extremely effective for building general-purpose models that can generate coherent text and answer a wide range of questions.</p>
 <p>However, the objective of language model training is fundamentally different from the objective of agent systems. Language models are trained to <strong>produce plausible text</strong>, while agents are designed to <strong>achieve goals through actions</strong>. When a model becomes part of an agent system, it must move beyond text generation and operate within an environment that requires decision-making and interaction.</p>
 <p>In an agent setting, the model often acts as a policy that selects actions based on the current state of the system. These actions may include generating text, invoking tools, retrieving information, or coordinating with other agents. The outcome of each action affects the environment and influences the next decision the agent must make.</p>
@@ -251,46 +258,46 @@ ul.task-list li input[type="checkbox"] {
 <p>Because of these differences, agent training requires additional mechanisms beyond standard model training. Instead of optimizing only for language prediction, agent training focuses on optimizing <strong>task performance</strong>. Feedback signals may come from task outcomes, human evaluations, automated scoring systems, or simulated environments.</p>
 <p>As a result, agent training can be viewed as a new layer built on top of model training. The language model provides general reasoning and language capabilities, while the agent training process teaches the system how to apply those capabilities effectively within specific environments. This layered approach allows developers to leverage powerful pretrained models while adapting them to perform complex real-world tasks.</p>
 </section>
-<section id="the-reinforcement-learning-framework" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="the-reinforcement-learning-framework"><span class="header-section-number">9.4</span> The Reinforcement Learning Framework</h2>
+<section class="level2" data-number="9.4" id="the-reinforcement-learning-framework">
+<h2 class="anchored" data-anchor-id="the-reinforcement-learning-framework" data-number="9.4"><span class="header-section-number">9.4</span> The Reinforcement Learning Framework</h2>
 <p>Reinforcement learning provides a general framework for training agents that must make decisions over time. Instead of learning from fixed datasets, an agent interacts with an environment and receives feedback based on the outcomes of its actions. The goal of the learning process is to discover strategies that maximize long-term success.</p>
 <p>In this framework, the environment presents a <strong>state</strong> describing the current situation. Based on this state, the agent selects an <strong>action</strong>. The action changes the environment and produces a new state, along with a <strong>reward</strong> signal that evaluates the quality of the action. Through repeated interaction, the agent learns a policy that maps states to actions in a way that leads to higher cumulative rewards.</p>
 <p>When applied to modern AI agents, the environment may represent a task system, a tool ecosystem, or a simulated workflow. The state can include the current task description, intermediate outputs, tool responses, and memory contents. The agent’s actions may involve generating text, invoking tools, retrieving information, or delegating tasks to other agents.</p>
 <p>The reinforcement learning framework is particularly suitable for agent systems because many agent tasks involve <strong>sequences of decisions</strong>. The quality of the final result often depends on the entire chain of actions rather than any single step. Reinforcement learning provides a way to optimize behavior across these multi-step processes.</p>
 </section>
-<section id="rewards-and-objectives-for-agents" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="rewards-and-objectives-for-agents"><span class="header-section-number">9.5</span> Rewards and Objectives for Agents</h2>
+<section class="level2" data-number="9.5" id="rewards-and-objectives-for-agents">
+<h2 class="anchored" data-anchor-id="rewards-and-objectives-for-agents" data-number="9.5"><span class="header-section-number">9.5</span> Rewards and Objectives for Agents</h2>
 <p>A central component of reinforcement learning is the reward signal. The reward defines what the agent should optimize and therefore shapes the behavior that emerges during training.</p>
 <p>For agents, rewards are often tied to <strong>task outcomes</strong>. For example, a successful solution to a programming task, a correct answer to a question, or a well-structured report may produce a positive reward. Conversely, incorrect results, failed tool calls, or inefficient reasoning steps may produce lower rewards.</p>
 <p>Designing rewards for agent systems can be challenging. In many tasks, success cannot be evaluated by a single simple metric. Instead, multiple objectives may be involved, such as accuracy, efficiency, safety, or clarity. These objectives must be translated into reward signals that guide the agent toward desirable behavior.</p>
 <p>Another challenge arises from the delayed nature of rewards. In sequential tasks, the benefit of an early action may only become visible much later. For example, gathering the right information early in a workflow may significantly improve the final result, even though the immediate reward for that step is unclear.</p>
 <p>Because of these difficulties, reward design often involves a combination of automatic evaluation, heuristic signals, and human feedback. The goal is to create reward functions that reflect the real objectives of the agent system while remaining stable enough for effective training.</p>
 </section>
-<section id="learning-from-environment-interaction" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="learning-from-environment-interaction"><span class="header-section-number">9.6</span> Learning from Environment Interaction</h2>
+<section class="level2" data-number="9.6" id="learning-from-environment-interaction">
+<h2 class="anchored" data-anchor-id="learning-from-environment-interaction" data-number="9.6"><span class="header-section-number">9.6</span> Learning from Environment Interaction</h2>
 <p>One of the defining characteristics of reinforcement learning is that agents learn through interaction with an environment. Instead of relying only on static datasets, the agent actively explores possible actions and observes their consequences.</p>
 <p>In the context of agent systems, the environment may consist of a simulated task setting or a real operational system. The agent may attempt different strategies, invoke various tools, and observe how the environment responds. Each interaction provides new data that can be used to improve the agent’s decision policy.</p>
 <p>Exploration plays an important role in this process. If the agent only repeats strategies it already knows, it may fail to discover better approaches. By occasionally trying alternative actions, the agent can gather information about different possible outcomes. Over time, successful strategies become more likely to be selected, while ineffective behaviors are gradually discarded.</p>
 <p>Many training systems therefore rely on <strong>simulated environments</strong> where agents can safely experiment. Simulations allow large numbers of interactions to occur without risking damage to real systems. This makes it possible to train agents through extensive trial-and-error processes before deploying them in real-world applications.</p>
 </section>
-<section id="learning-from-feedback" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="learning-from-feedback"><span class="header-section-number">9.7</span> Learning from Feedback</h2>
+<section class="level2" data-number="9.7" id="learning-from-feedback">
+<h2 class="anchored" data-anchor-id="learning-from-feedback" data-number="9.7"><span class="header-section-number">9.7</span> Learning from Feedback</h2>
 <p>In addition to interacting with environments, agents can also improve through feedback from evaluators. Feedback-based learning provides guidance about the quality of the agent’s actions or outputs.</p>
 <p>One common form of feedback comes from human evaluators. Humans may compare different responses generated by an agent and indicate which one is better. These preferences can then be used to train a reward model that predicts the quality of future outputs. The agent is subsequently optimized to produce responses that receive higher predicted rewards.</p>
 <p>Feedback can also come from automated evaluators. In many tasks, programmatic metrics can assess the correctness or usefulness of an agent’s output. For example, code execution results, benchmark scores, or task completion indicators can serve as signals for learning.</p>
 <p>Another emerging approach involves using AI systems themselves as evaluators. A separate model may analyze the agent’s output and provide structured critiques or scoring signals. These automated feedback systems allow large-scale evaluation without requiring constant human supervision.</p>
 <p>By combining human judgments, automated metrics, and model-based critiques, agent training systems can obtain rich feedback signals that guide improvements in agent behavior.</p>
 </section>
-<section id="agent-training-architectures" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="agent-training-architectures"><span class="header-section-number">9.8</span> Agent Training Architectures</h2>
+<section class="level2" data-number="9.8" id="agent-training-architectures">
+<h2 class="anchored" data-anchor-id="agent-training-architectures" data-number="9.8"><span class="header-section-number">9.8</span> Agent Training Architectures</h2>
 <p>Training intelligent agents typically involves more than a single model. Instead, many systems use structured training architectures that coordinate multiple components involved in learning.</p>
 <p>A common architecture includes an <strong>actor</strong>, which represents the agent responsible for generating actions, and an <strong>evaluator</strong> that assesses the quality of those actions. The evaluator may produce reward signals, ranking scores, or critiques that guide updates to the agent’s policy.</p>
 <p>In some systems, additional components such as planners, critics, or environment simulators are included. Planners may propose strategies for solving tasks, while critics analyze intermediate reasoning steps and identify errors. Environment simulators provide the interactive setting in which the agent can experiment with different behaviors.</p>
 <p>Training architectures often rely on iterative loops. The agent generates actions within a task environment, evaluators assess the outcomes, and optimization algorithms update the agent’s policy. This cycle repeats many times, gradually improving the agent’s ability to perform tasks.</p>
 <p>Such architectures allow complex training pipelines to be constructed in a modular way. Different evaluation methods, reward signals, and training strategies can be integrated without changing the fundamental structure of the agent system. As a result, agent training architectures provide the foundation for scalable learning systems that can continuously improve through interaction and feedback.</p>
 </section>
-<section id="challenges-in-training-agents" class="level2" data-number="9.9">
-<h2 data-number="9.9" class="anchored" data-anchor-id="challenges-in-training-agents"><span class="header-section-number">9.9</span> Challenges in Training Agents</h2>
+<section class="level2" data-number="9.9" id="challenges-in-training-agents">
+<h2 class="anchored" data-anchor-id="challenges-in-training-agents" data-number="9.9"><span class="header-section-number">9.9</span> Challenges in Training Agents</h2>
 <p>Training intelligent agents introduces several challenges that go beyond traditional model training. While language models learn from static datasets, agents must operate within dynamic environments where the consequences of actions unfold over time. This difference creates both technical and conceptual difficulties in designing effective training systems.</p>
 <p>One major challenge is <strong>environment complexity</strong>. Many real-world environments are difficult to simulate accurately. If the environment used during training differs significantly from the environment encountered during deployment, the agent’s learned strategies may not generalize well. Designing environments that provide meaningful learning signals while remaining computationally practical is therefore an important challenge.</p>
 <p>Another difficulty lies in <strong>reward design</strong>. Agents learn according to the reward signals they receive, but defining rewards that truly reflect desired outcomes is often complicated. Poorly designed rewards can lead agents to exploit shortcuts or unintended behaviors that maximize the reward without actually solving the intended task. Ensuring that rewards align with real objectives is a central issue in reinforcement learning systems.</p>
@@ -298,8 +305,8 @@ ul.task-list li input[type="checkbox"] {
 <p>There is also the challenge of <strong>evaluation</strong>. Determining whether an agent is improving is not always straightforward. Many tasks involve subjective or multi-dimensional criteria such as usefulness, safety, and reliability. Designing evaluation systems that accurately measure agent performance remains an active area of research.</p>
 <p>Finally, safety and control become increasingly important as agents gain more capabilities. Agents that interact with external tools or systems must be trained to avoid harmful actions, respect constraints, and behave reliably under uncertainty. Ensuring that learning processes produce safe and controllable behavior is a critical requirement for real-world deployment.</p>
 </section>
-<section id="the-future-of-agent-learning" class="level2" data-number="9.10">
-<h2 data-number="9.10" class="anchored" data-anchor-id="the-future-of-agent-learning"><span class="header-section-number">9.10</span> The Future of Agent Learning</h2>
+<section class="level2" data-number="9.10" id="the-future-of-agent-learning">
+<h2 class="anchored" data-anchor-id="the-future-of-agent-learning" data-number="9.10"><span class="header-section-number">9.10</span> The Future of Agent Learning</h2>
 <p>As agent systems become more advanced, learning mechanisms will likely evolve beyond traditional reinforcement learning approaches. Future systems may combine multiple sources of learning signals and operate within increasingly sophisticated training environments.</p>
 <p>One important direction is the development of <strong>large-scale simulation environments</strong> for training agents. Just as self-driving systems rely heavily on simulated worlds for testing and training, agent systems may be trained within simulated digital environments that model complex workflows, software systems, or economic interactions. These environments allow agents to accumulate experience safely and efficiently.</p>
 <p>Another trend is the growing role of <strong>automated feedback systems</strong>. Instead of relying solely on human evaluators, future training pipelines may incorporate automated critics, verification systems, and model-based evaluators that continuously assess agent behavior. These systems can provide detailed feedback signals that help agents refine their strategies.</p>
@@ -308,10 +315,7 @@ ul.task-list li input[type="checkbox"] {
 <p>While many technical challenges remain, the field of agent learning is rapidly evolving. As research progresses, learning mechanisms will likely become a central component of intelligent systems that operate effectively in complex and changing environments.</p>
 <p>In most real-world agent systems, improvement does not come from updating model parameters.</p>
 <p>Instead, agents improve through memory accumulation, better prompts, and refined workflows.</p>
-
-
 </section>
-
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -714,20 +718,8 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./cp_10.html" class="pagination-link" aria-label="Agent Communication Protocols">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Agent Communication Protocols</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./cp_12.html" class="pagination-link" aria-label="Agent Evaluation">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agent Evaluation</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous"><a aria-label="智能体通信协议" class="pagination-link" href="./cp_10.html"><i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>  <span class="chapter-title">智能体通信协议</span></span></a></div>
+<div class="nav-page nav-page-next"><a aria-label="智能体性能评估" class="pagination-link" href="./cp_12.html"><span class="nav-page-text"><span class="chapter-number">12</span>  <span class="chapter-title">智能体性能评估</span></span> <i class="bi bi-arrow-right-short"></i></a></div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
 </body></html>

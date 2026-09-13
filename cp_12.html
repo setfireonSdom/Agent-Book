@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>10&nbsp; Agent Evaluation – Agent Book</title>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.8.25" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>12  智能体性能评估 – Agent Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,27 +18,25 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./cp_11.html" rel="prev">
+<meta content="./" name="quarto:offset"/>
+
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,163 +64,175 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-
-
-<link rel="stylesheet" href="styles.css">
-</head>
-
+<link href="styles.css" rel="stylesheet"/>
+<link href="./cp_13.html" rel="next"/><link href="./cp_11.html" rel="prev"/></head>
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_12.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agent Evaluation</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_12.html"><span class="chapter-number">12</span>  <span class="chapter-title">智能体性能评估</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Agent Book</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+<a class="sidebar-logo-link" href="./index.html">
+</a>
+<div class="sidebar-title mb-0 py-0">
+<a href="./">Agent Book</a>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./index.html">
+<span class="menu-text">Preface</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">初识智能体</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_1.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">初识智能体</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_2.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">智能体发展史</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">大语言模型基础</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_3.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">大语言模型基础</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">智能体经典范式构建</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_4.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">智能体经典范式构建</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>框架开发实践</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_5.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">基于低代码平台的智能体搭建</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Memory <strong>and</strong> Retrieval</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_6.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">框架开发实践</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>上下文工程</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_7.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">构建你的智能体框架</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Agent Communication Protocols</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_8.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">记忆与检索</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_9.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">上下文工程</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_12.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agent Evaluation</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_10.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">智能体通信协议</span></span></a>
+</div>
 </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_11.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Agentic-RL</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="./cp_12.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">智能体性能评估</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_13.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">智能旅行助手</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_14.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">自动化深度研究智能体</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_15.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">构建赛博小镇</span></span></a>
+</div>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#why-agent-evaluation-is-hard" id="toc-why-agent-evaluation-is-hard" class="nav-link active" data-scroll-target="#why-agent-evaluation-is-hard"><span class="header-section-number">10.1</span> Why Agent Evaluation Is Hard</a></li>
-  <li><a href="#what-should-be-evaluated-in-an-agent" id="toc-what-should-be-evaluated-in-an-agent" class="nav-link" data-scroll-target="#what-should-be-evaluated-in-an-agent"><span class="header-section-number">10.2</span> What Should Be Evaluated in an Agent</a></li>
-  <li><a href="#evaluation-methods-for-agents" id="toc-evaluation-methods-for-agents" class="nav-link" data-scroll-target="#evaluation-methods-for-agents"><span class="header-section-number">10.3</span> Evaluation Methods for Agents</a>
-  <ul class="collapse">
-  <li><a href="#llm-as-a-judge-evaluation" id="toc-llm-as-a-judge-evaluation" class="nav-link" data-scroll-target="#llm-as-a-judge-evaluation"><span class="header-section-number">10.3.1</span> LLM-as-a-Judge Evaluation</a></li>
-  <li><a href="#rule-based-and-programmatic-evaluation" id="toc-rule-based-and-programmatic-evaluation" class="nav-link" data-scroll-target="#rule-based-and-programmatic-evaluation"><span class="header-section-number">10.3.2</span> Rule-Based and Programmatic Evaluation</a></li>
-  </ul></li>
-  <li><a href="#agent-evaluation-frameworks" id="toc-agent-evaluation-frameworks" class="nav-link" data-scroll-target="#agent-evaluation-frameworks"><span class="header-section-number">10.4</span> Agent Evaluation Frameworks</a></li>
-  <li><a href="#observability-and-tracing-for-agents" id="toc-observability-and-tracing-for-agents" class="nav-link" data-scroll-target="#observability-and-tracing-for-agents"><span class="header-section-number">10.5</span> Observability and Tracing for Agents</a></li>
-  <li><a href="#building-an-agent-evaluation-pipeline" id="toc-building-an-agent-evaluation-pipeline" class="nav-link" data-scroll-target="#building-an-agent-evaluation-pipeline"><span class="header-section-number">10.6</span> Building an Agent Evaluation Pipeline</a></li>
-  <li><a href="#challenges-in-evaluating-agents" id="toc-challenges-in-evaluating-agents" class="nav-link" data-scroll-target="#challenges-in-evaluating-agents"><span class="header-section-number">10.7</span> Challenges in Evaluating Agents</a></li>
-  </ul>
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+<nav class="toc-active" data-toc-expanded="2" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a class="nav-link active" data-scroll-target="#why-agent-evaluation-is-hard" href="#why-agent-evaluation-is-hard" id="toc-why-agent-evaluation-is-hard"><span class="header-section-number">10.1</span> Why Agent Evaluation Is Hard</a></li>
+<li><a class="nav-link" data-scroll-target="#what-should-be-evaluated-in-an-agent" href="#what-should-be-evaluated-in-an-agent" id="toc-what-should-be-evaluated-in-an-agent"><span class="header-section-number">10.2</span> What Should Be Evaluated in an Agent</a></li>
+<li><a class="nav-link" data-scroll-target="#evaluation-methods-for-agents" href="#evaluation-methods-for-agents" id="toc-evaluation-methods-for-agents"><span class="header-section-number">10.3</span> Evaluation Methods for Agents</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#llm-as-a-judge-evaluation" href="#llm-as-a-judge-evaluation" id="toc-llm-as-a-judge-evaluation"><span class="header-section-number">10.3.1</span> LLM-as-a-Judge Evaluation</a></li>
+<li><a class="nav-link" data-scroll-target="#rule-based-and-programmatic-evaluation" href="#rule-based-and-programmatic-evaluation" id="toc-rule-based-and-programmatic-evaluation"><span class="header-section-number">10.3.2</span> Rule-Based and Programmatic Evaluation</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#agent-evaluation-frameworks" href="#agent-evaluation-frameworks" id="toc-agent-evaluation-frameworks"><span class="header-section-number">10.4</span> Agent Evaluation Frameworks</a></li>
+<li><a class="nav-link" data-scroll-target="#observability-and-tracing-for-agents" href="#observability-and-tracing-for-agents" id="toc-observability-and-tracing-for-agents"><span class="header-section-number">10.5</span> Observability and Tracing for Agents</a></li>
+<li><a class="nav-link" data-scroll-target="#building-an-agent-evaluation-pipeline" href="#building-an-agent-evaluation-pipeline" id="toc-building-an-agent-evaluation-pipeline"><span class="header-section-number">10.6</span> Building an Agent Evaluation Pipeline</a></li>
+<li><a class="nav-link" data-scroll-target="#challenges-in-evaluating-agents" href="#challenges-in-evaluating-agents" id="toc-challenges-in-evaluating-agents"><span class="header-section-number">10.7</span> Challenges in Evaluating Agents</a></li>
+</ul>
 </nav>
-    </div>
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<header class="quarto-title-block default" id="title-block-header">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agent Evaluation</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>  <span class="chapter-title">智能体性能评估</span></h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
-<section id="why-agent-evaluation-is-hard" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="why-agent-evaluation-is-hard"><span class="header-section-number">10.1</span> Why Agent Evaluation Is Hard</h2>
+<section class="level2" data-number="10.1" id="why-agent-evaluation-is-hard">
+<h2 class="anchored" data-anchor-id="why-agent-evaluation-is-hard" data-number="10.1"><span class="header-section-number">10.1</span> Why Agent Evaluation Is Hard</h2>
 <p>Evaluating intelligent agents is significantly more difficult than evaluating traditional machine learning models. While many models can be assessed using fixed datasets and well-defined metrics, agent systems operate in dynamic environments where behavior unfolds over multiple steps. As a result, measuring agent performance requires evaluating not only final outputs but also the processes that lead to those outputs.</p>
-<p><img src="images/clipboard-2040203513.png" class="img-fluid"></p>
+<p><img class="img-fluid" src="images/clipboard-2040203513.png"/></p>
 <p>One major challenge is that agent tasks are often <strong>multi-step and sequential</strong>. An agent may retrieve information, call external tools, analyze intermediate results, and then produce a final answer. Even if the final output is correct, the intermediate steps may reveal inefficient reasoning, incorrect tool usage, or unnecessary operations. Traditional evaluation methods that focus only on final answers may fail to capture these issues.</p>
 <p>Another difficulty arises from <strong>environment interaction</strong>. Agents frequently operate within external systems such as APIs, databases, web environments, or software tools. Their performance depends not only on reasoning ability but also on their ability to navigate these environments effectively. Because the environment may change over time, evaluation results can vary depending on external conditions.</p>
 <p>Agent behavior is also <strong>non-deterministic</strong>. Modern language models often produce slightly different outputs for the same input due to sampling and probabilistic generation. This means that evaluating a single run of an agent may not accurately reflect its overall performance. Reliable evaluation often requires multiple runs and statistical aggregation.</p>
@@ -233,33 +240,33 @@ ul.task-list li input[type="checkbox"] {
 <p>Another complication is the <strong>combination of heterogeneous capabilities</strong> within an agent system. Agents may rely on retrieval systems, tool invocation, reasoning chains, memory components, and external APIs. Failures can occur in any part of this pipeline. Determining whether a failure was caused by the model, the retrieval system, the tool interface, or the reasoning process is often difficult.</p>
 <p>Because of these factors, agent evaluation typically requires a combination of approaches. Benchmark tasks, automated evaluation metrics, LLM-based judges, and system tracing tools are often used together to obtain a more complete picture of agent behavior. Designing reliable evaluation strategies therefore becomes an essential part of building robust agent systems.</p>
 </section>
-<section id="what-should-be-evaluated-in-an-agent" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="what-should-be-evaluated-in-an-agent"><span class="header-section-number">10.2</span> What Should Be Evaluated in an Agent</h2>
+<section class="level2" data-number="10.2" id="what-should-be-evaluated-in-an-agent">
+<h2 class="anchored" data-anchor-id="what-should-be-evaluated-in-an-agent" data-number="10.2"><span class="header-section-number">10.2</span> What Should Be Evaluated in an Agent</h2>
 <p>Unlike traditional machine learning models, agents are not evaluated solely based on the correctness of their outputs. Agent systems operate through a sequence of actions that involve reasoning, tool usage, and interaction with external environments. As a result, evaluation must consider multiple aspects of agent behavior.</p>
 <p>First, the <strong>task outcome</strong> must be evaluated. The most basic question is whether the agent successfully completed the task it was given. In many benchmarks this is measured using metrics such as accuracy, exact match, or task success rate.</p>
 <p>Second, the <strong>reasoning and action trajectory</strong> should be examined. Agents often perform multi-step reasoning and invoke external tools during problem solving. Evaluating only the final answer may hide inefficient reasoning or incorrect tool usage.</p>
 <p>Third, the <strong>tool interaction behavior</strong> must be assessed. Modern agents frequently rely on external APIs or software tools. Evaluation therefore includes checking whether the agent selected the correct tool, constructed valid tool calls, and used the tool results appropriately.</p>
 <p>Finally, <strong>efficiency and reliability</strong> are also important considerations. Agents may produce correct answers but require excessive tokens, repeated tool calls, or unnecessary steps. Practical evaluation therefore often includes metrics such as response time, token consumption, and failure rates.</p>
 </section>
-<section id="evaluation-methods-for-agents" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="evaluation-methods-for-agents"><span class="header-section-number">10.3</span> Evaluation Methods for Agents</h2>
+<section class="level2" data-number="10.3" id="evaluation-methods-for-agents">
+<h2 class="anchored" data-anchor-id="evaluation-methods-for-agents" data-number="10.3"><span class="header-section-number">10.3</span> Evaluation Methods for Agents</h2>
 <p>In practice, most agent systems rely on three complementary evaluation methods: benchmark evaluation, LLM-based evaluation, and rule-based evaluation.</p>
 <p>Benchmark evaluation measures agent performance on predefined tasks. These tasks simulate realistic scenarios where agents must perform reasoning, tool usage, or environment interaction.</p>
 <p>Examples of widely used agent benchmarks include:</p>
 <ul>
-<li><p>GAIA<br>
+<li><p>GAIA<br/>
 A benchmark designed to evaluate general-purpose AI assistants on real-world tasks requiring reasoning, tool usage, and multi-step problem solving.</p></li>
-<li><p>AgentBench<br>
+<li><p>AgentBench<br/>
 A collection of environments designed to test the capabilities of autonomous agents across multiple domains.</p></li>
-<li><p>WebArena<br>
+<li><p>WebArena<br/>
 A benchmark for evaluating agents that interact with websites and perform tasks in simulated web environments.</p></li>
 </ul>
 <p>Benchmarks provide standardized comparisons between different agent systems. However, they often cover only a limited set of scenarios and may not fully reflect real-world deployments.</p>
-<section id="llm-as-a-judge-evaluation" class="level3" data-number="10.3.1">
-<h3 data-number="10.3.1" class="anchored" data-anchor-id="llm-as-a-judge-evaluation"><span class="header-section-number">10.3.1</span> LLM-as-a-Judge Evaluation</h3>
+<section class="level3" data-number="10.3.1" id="llm-as-a-judge-evaluation">
+<h3 class="anchored" data-anchor-id="llm-as-a-judge-evaluation" data-number="10.3.1"><span class="header-section-number">10.3.1</span> LLM-as-a-Judge Evaluation</h3>
 <p>LLM-based evaluation has become increasingly popular in recent years. Instead of relying solely on predefined metrics, another language model is used to evaluate the quality of an agent’s output.</p>
 <p>In this approach, the evaluator model receives the task description, the agent’s output, and sometimes a reference answer. The model then produces a score or qualitative judgment based on criteria such as correctness, relevance, and clarity.</p>
-<p><img src="images/clipboard-2397229808.png" class="img-fluid"></p>
+<p><img class="img-fluid" src="images/clipboard-2397229808.png"/></p>
 <p>Several frameworks implement this approach, including:</p>
 <ul>
 <li><p>Ragas</p></li>
@@ -270,8 +277,8 @@ A benchmark for evaluating agents that interact with websites and perform tasks 
 <p>LLM-based evaluation is particularly useful for tasks where outputs are open-ended and difficult to measure with strict rules, such as report generation or reasoning explanations.</p>
 <p>However, this method also introduces potential biases because the evaluator itself is another language model.</p>
 </section>
-<section id="rule-based-and-programmatic-evaluation" class="level3" data-number="10.3.2">
-<h3 data-number="10.3.2" class="anchored" data-anchor-id="rule-based-and-programmatic-evaluation"><span class="header-section-number">10.3.2</span> Rule-Based and Programmatic Evaluation</h3>
+<section class="level3" data-number="10.3.2" id="rule-based-and-programmatic-evaluation">
+<h3 class="anchored" data-anchor-id="rule-based-and-programmatic-evaluation" data-number="10.3.2"><span class="header-section-number">10.3.2</span> Rule-Based and Programmatic Evaluation</h3>
 <p>For many tasks, evaluation can be performed using deterministic rules or automated scripts. This method is particularly useful when the correctness of an output can be verified programmatically.</p>
 <p>Examples include:</p>
 <ul>
@@ -283,20 +290,20 @@ A benchmark for evaluating agents that interact with websites and perform tasks 
 <p>Rule-based evaluation is widely used in engineering environments because it is deterministic, reproducible, and inexpensive to run.</p>
 </section>
 </section>
-<section id="agent-evaluation-frameworks" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="agent-evaluation-frameworks"><span class="header-section-number">10.4</span> Agent Evaluation Frameworks</h2>
+<section class="level2" data-number="10.4" id="agent-evaluation-frameworks">
+<h2 class="anchored" data-anchor-id="agent-evaluation-frameworks" data-number="10.4"><span class="header-section-number">10.4</span> Agent Evaluation Frameworks</h2>
 <p>Agent evaluation frameworks provide structured tools for running evaluation experiments and analyzing results. These frameworks integrate datasets, evaluation metrics, and experiment tracking into unified systems.</p>
 <p>Commonly used frameworks include <strong>LangSmith</strong>, <strong>TruLens</strong>, <strong>DeepEval</strong>, and <strong>Arize Phoenix</strong>. These platforms allow developers to run evaluation suites, compare model versions, and analyze agent performance across multiple tasks.</p>
 <p>By automating evaluation workflows, these frameworks make it easier to test new agent configurations and track improvements over time.</p>
 </section>
-<section id="observability-and-tracing-for-agents" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="observability-and-tracing-for-agents"><span class="header-section-number">10.5</span> Observability and Tracing for Agents</h2>
+<section class="level2" data-number="10.5" id="observability-and-tracing-for-agents">
+<h2 class="anchored" data-anchor-id="observability-and-tracing-for-agents" data-number="10.5"><span class="header-section-number">10.5</span> Observability and Tracing for Agents</h2>
 <p>In complex agent systems, understanding how an agent arrived at an answer is often as important as the answer itself. Observability tools record the full trajectory of an agent’s execution, including reasoning steps, tool calls, intermediate outputs, and final responses.</p>
 <p>Tracing systems help developers diagnose failures and identify inefficiencies in agent workflows. For example, a failure might occur because of incorrect retrieval results, a malformed tool call, or an error in reasoning.</p>
 <p>Platforms such as <strong>LangSmith</strong>, <strong>Helicone</strong>, and <strong>Arize Phoenix</strong> provide tracing capabilities that allow developers to visualize agent execution paths and analyze system behavior in detail.</p>
 </section>
-<section id="building-an-agent-evaluation-pipeline" class="level2" data-number="10.6">
-<h2 data-number="10.6" class="anchored" data-anchor-id="building-an-agent-evaluation-pipeline"><span class="header-section-number">10.6</span> Building an Agent Evaluation Pipeline</h2>
+<section class="level2" data-number="10.6" id="building-an-agent-evaluation-pipeline">
+<h2 class="anchored" data-anchor-id="building-an-agent-evaluation-pipeline" data-number="10.6"><span class="header-section-number">10.6</span> Building an Agent Evaluation Pipeline</h2>
 <p>In practical systems, agent evaluation is usually implemented as a pipeline rather than a single metric.</p>
 <p>A typical evaluation workflow includes the following steps:</p>
 <ol type="1">
@@ -308,18 +315,15 @@ A benchmark for evaluating agents that interact with websites and perform tasks 
 </ol>
 <p>This pipeline allows developers to systematically compare agent versions and track improvements across iterations.</p>
 </section>
-<section id="challenges-in-evaluating-agents" class="level2" data-number="10.7">
-<h2 data-number="10.7" class="anchored" data-anchor-id="challenges-in-evaluating-agents"><span class="header-section-number">10.7</span> Challenges in Evaluating Agents</h2>
+<section class="level2" data-number="10.7" id="challenges-in-evaluating-agents">
+<h2 class="anchored" data-anchor-id="challenges-in-evaluating-agents" data-number="10.7"><span class="header-section-number">10.7</span> Challenges in Evaluating Agents</h2>
 <p>Despite the growing ecosystem of evaluation tools, evaluating intelligent agents remains an open problem.</p>
 <p>One challenge is that real-world tasks are often open-ended, making it difficult to define objective metrics. Different solutions may be equally valid but vary in style or reasoning approach.</p>
 <p>Another difficulty is that agent systems involve many interacting components. Failures may originate from the language model, the retrieval system, the tool interface, or the environment itself. Identifying the root cause of errors can therefore be complex.</p>
 <p>Finally, agents may exhibit stochastic behavior due to probabilistic generation. This means that evaluation results may vary across different runs, making consistent measurement difficult.</p>
 <p>For these reasons, reliable agent evaluation typically requires a combination of benchmarks, automated metrics, LLM-based judgments, and system tracing. Together, these methods provide a more comprehensive view of agent performance.</p>
-<p><img src="images/clipboard-1616022051.png" class="img-fluid"></p>
-
-
+<p><img class="img-fluid" src="images/clipboard-1616022051.png"/></p>
 </section>
-
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -722,17 +726,8 @@ A benchmark for evaluating agents that interact with websites and perform tasks 
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./cp_11.html" class="pagination-link" aria-label="**Agentic-RL**">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
+<div class="nav-page nav-page-previous"><a aria-label="Agentic-RL" class="pagination-link" href="./cp_11.html"><i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>  <span class="chapter-title">Agentic-RL</span></span></a></div>
+<div class="nav-page nav-page-next"><a aria-label="智能旅行助手" class="pagination-link" href="./cp_13.html"><span class="nav-page-text"><span class="chapter-number">13</span>  <span class="chapter-title">智能旅行助手</span></span> <i class="bi bi-arrow-right-short"></i></a></div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
 </body></html>

@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>8&nbsp; Agent Communication Protocols – Agent Book</title>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.8.25" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>10  智能体通信协议 – Agent Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,28 +18,26 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./cp_11.html" rel="next">
-<link href="./cp_9.html" rel="prev">
+<meta content="./" name="quarto:offset"/>
+
+
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,179 +65,191 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-
-
-<link rel="stylesheet" href="styles.css">
-</head>
-
+<link href="styles.css" rel="stylesheet"/>
+<link href="./cp_11.html" rel="next"/><link href="./cp_9.html" rel="prev"/></head>
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_10.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Agent Communication Protocols</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_10.html"><span class="chapter-number">10</span>  <span class="chapter-title">智能体通信协议</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Agent Book</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+<a class="sidebar-logo-link" href="./index.html">
+</a>
+<div class="sidebar-title mb-0 py-0">
+<a href="./">Agent Book</a>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./index.html">
+<span class="menu-text">Preface</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">初识智能体</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_1.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">初识智能体</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_2.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">智能体发展史</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">大语言模型基础</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_3.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">大语言模型基础</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">智能体经典范式构建</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_4.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">智能体经典范式构建</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>框架开发实践</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_5.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">基于低代码平台的智能体搭建</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Memory <strong>and</strong> Retrieval</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_6.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">框架开发实践</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>上下文工程</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_7.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">构建你的智能体框架</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_10.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Agent Communication Protocols</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_8.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">记忆与检索</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_9.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">上下文工程</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agent Evaluation</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="./cp_10.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">智能体通信协议</span></span></a>
+</div>
 </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_11.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Agentic-RL</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_12.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">智能体性能评估</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_13.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">智能旅行助手</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_14.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">自动化深度研究智能体</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_15.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">构建赛博小镇</span></span></a>
+</div>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#why-agents-need-communication-protocols" id="toc-why-agents-need-communication-protocols" class="nav-link active" data-scroll-target="#why-agents-need-communication-protocols"><span class="header-section-number">8.1</span> Why Agents Need Communication Protocols</a></li>
-  <li><a href="#what-an-agent-communication-protocol-is" id="toc-what-an-agent-communication-protocol-is" class="nav-link" data-scroll-target="#what-an-agent-communication-protocol-is"><span class="header-section-number">8.2</span> What an Agent Communication Protocol Is</a></li>
-  <li><a href="#the-landscape-of-agent-communication-protocols" id="toc-the-landscape-of-agent-communication-protocols" class="nav-link" data-scroll-target="#the-landscape-of-agent-communication-protocols"><span class="header-section-number">8.3</span> The Landscape of Agent Communication Protocols</a></li>
-  <li><a href="#model-context-protocol-mcp" id="toc-model-context-protocol-mcp" class="nav-link" data-scroll-target="#model-context-protocol-mcp"><span class="header-section-number">8.4</span> Model Context Protocol (MCP)</a></li>
-  <li><a href="#agent-to-agent-protocols-a2a" id="toc-agent-to-agent-protocols-a2a" class="nav-link" data-scroll-target="#agent-to-agent-protocols-a2a"><span class="header-section-number">8.5</span> Agent-to-Agent Protocols (A2A)</a></li>
-  <li><a href="#agent-network-protocols-anp" id="toc-agent-network-protocols-anp" class="nav-link" data-scroll-target="#agent-network-protocols-anp"><span class="header-section-number">8.6</span> Agent Network Protocols (ANP)</a></li>
-  <li><a href="#comparing-mcp-a2a-and-anp" id="toc-comparing-mcp-a2a-and-anp" class="nav-link" data-scroll-target="#comparing-mcp-a2a-and-anp"><span class="header-section-number">8.7</span> Comparing MCP, A2A, and ANP</a></li>
-  <li><a href="#designing-systems-with-agent-protocols" id="toc-designing-systems-with-agent-protocols" class="nav-link" data-scroll-target="#designing-systems-with-agent-protocols"><span class="header-section-number">8.8</span> Designing Systems with Agent Protocols</a></li>
-  <li><a href="#the-future-of-agent-communication" id="toc-the-future-of-agent-communication" class="nav-link" data-scroll-target="#the-future-of-agent-communication"><span class="header-section-number">8.9</span> The Future of Agent Communication</a></li>
-  </ul>
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+<nav class="toc-active" data-toc-expanded="2" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a class="nav-link active" data-scroll-target="#why-agents-need-communication-protocols" href="#why-agents-need-communication-protocols" id="toc-why-agents-need-communication-protocols"><span class="header-section-number">8.1</span> Why Agents Need Communication Protocols</a></li>
+<li><a class="nav-link" data-scroll-target="#what-an-agent-communication-protocol-is" href="#what-an-agent-communication-protocol-is" id="toc-what-an-agent-communication-protocol-is"><span class="header-section-number">8.2</span> What an Agent Communication Protocol Is</a></li>
+<li><a class="nav-link" data-scroll-target="#the-landscape-of-agent-communication-protocols" href="#the-landscape-of-agent-communication-protocols" id="toc-the-landscape-of-agent-communication-protocols"><span class="header-section-number">8.3</span> The Landscape of Agent Communication Protocols</a></li>
+<li><a class="nav-link" data-scroll-target="#model-context-protocol-mcp" href="#model-context-protocol-mcp" id="toc-model-context-protocol-mcp"><span class="header-section-number">8.4</span> Model Context Protocol (MCP)</a></li>
+<li><a class="nav-link" data-scroll-target="#agent-to-agent-protocols-a2a" href="#agent-to-agent-protocols-a2a" id="toc-agent-to-agent-protocols-a2a"><span class="header-section-number">8.5</span> Agent-to-Agent Protocols (A2A)</a></li>
+<li><a class="nav-link" data-scroll-target="#agent-network-protocols-anp" href="#agent-network-protocols-anp" id="toc-agent-network-protocols-anp"><span class="header-section-number">8.6</span> Agent Network Protocols (ANP)</a></li>
+<li><a class="nav-link" data-scroll-target="#comparing-mcp-a2a-and-anp" href="#comparing-mcp-a2a-and-anp" id="toc-comparing-mcp-a2a-and-anp"><span class="header-section-number">8.7</span> Comparing MCP, A2A, and ANP</a></li>
+<li><a class="nav-link" data-scroll-target="#designing-systems-with-agent-protocols" href="#designing-systems-with-agent-protocols" id="toc-designing-systems-with-agent-protocols"><span class="header-section-number">8.8</span> Designing Systems with Agent Protocols</a></li>
+<li><a class="nav-link" data-scroll-target="#the-future-of-agent-communication" href="#the-future-of-agent-communication" id="toc-the-future-of-agent-communication"><span class="header-section-number">8.9</span> The Future of Agent Communication</a></li>
+</ul>
 </nav>
-    </div>
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<header class="quarto-title-block default" id="title-block-header">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Agent Communication Protocols</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>  <span class="chapter-title">智能体通信协议</span></h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
-<section id="why-agents-need-communication-protocols" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="why-agents-need-communication-protocols"><span class="header-section-number">8.1</span> Why Agents Need Communication Protocols</h2>
+<section class="level2" data-number="8.1" id="why-agents-need-communication-protocols">
+<h2 class="anchored" data-anchor-id="why-agents-need-communication-protocols" data-number="8.1"><span class="header-section-number">8.1</span> Why Agents Need Communication Protocols</h2>
 <p>As intelligent systems evolve, they increasingly consist of multiple components rather than a single model. An agent may interact with tools, access external data sources, collaborate with other agents, or operate within a distributed system. In such environments, communication becomes a fundamental requirement.</p>
-<p><img src="images/clipboard-3408420763.png" class="img-fluid"></p>
+<p><img class="img-fluid" src="images/clipboard-3408420763.png"/></p>
 <p>Without a standardized communication mechanism, each interaction must be implemented through custom integrations. For example, connecting an agent to a database, a search engine, or another agent often requires writing specialized code for each interface. As the number of integrations grows, the system becomes difficult to maintain and extend.</p>
 <p>Communication protocols address this problem by defining common rules for interaction. These rules specify how information should be structured, how requests are made, and how responses are returned. When agents follow a shared protocol, different components can communicate without needing to know the internal implementation of one another.</p>
 <p>Protocols therefore enable modularity. An agent can interact with new tools, services, or other agents simply by following the same communication standard. This reduces complexity and allows systems to scale more easily as new capabilities are added.</p>
 <p>In multi-agent systems, communication protocols are even more important. When multiple agents collaborate to solve complex tasks, they must exchange information such as instructions, intermediate results, and status updates. A protocol ensures that these messages are structured in a consistent and interpretable way.</p>
 <p>For these reasons, communication protocols form an essential layer in modern agent architectures. They allow agents, tools, and services to interact in a predictable and extensible manner.</p>
 </section>
-<section id="what-an-agent-communication-protocol-is" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="what-an-agent-communication-protocol-is"><span class="header-section-number">8.2</span> What an Agent Communication Protocol Is</h2>
+<section class="level2" data-number="8.2" id="what-an-agent-communication-protocol-is">
+<h2 class="anchored" data-anchor-id="what-an-agent-communication-protocol-is" data-number="8.2"><span class="header-section-number">8.2</span> What an Agent Communication Protocol Is</h2>
 <p>An agent communication protocol defines the rules that govern how agents exchange information. It specifies the structure of messages, the types of requests that can be made, and the expected format of responses.</p>
-<p><img src="images/clipboard-561207775.png" class="img-fluid"></p>
+<p><img class="img-fluid" src="images/clipboard-561207775.png"/></p>
 <p>At its core, a protocol establishes a shared language between systems. When two components follow the same protocol, they can communicate even if they are implemented in different programming languages or run on different platforms.</p>
 <p>A typical agent communication protocol defines several key elements. One element is the message format. Messages often contain fields such as the sender, the receiver, the requested action, and the data associated with that request. Another element is the interaction pattern, which describes how messages are exchanged, such as request–response interactions or event-driven notifications.</p>
 <p>Protocols may also define how agents describe their capabilities. For example, an agent may advertise the tasks it can perform or the tools it can access. This allows other agents to determine whether it can help with a particular task.</p>
 <p>Importantly, a protocol does not dictate the internal logic of an agent. It only specifies how agents communicate with one another. Each agent remains free to implement its own reasoning process, tools, and internal architecture.</p>
 <p>In this way, communication protocols create interoperability. They provide a standardized interface that allows diverse agents and services to cooperate within the same ecosystem.</p>
 </section>
-<section id="the-landscape-of-agent-communication-protocols" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="the-landscape-of-agent-communication-protocols"><span class="header-section-number">8.3</span> The Landscape of Agent Communication Protocols</h2>
+<section class="level2" data-number="8.3" id="the-landscape-of-agent-communication-protocols">
+<h2 class="anchored" data-anchor-id="the-landscape-of-agent-communication-protocols" data-number="8.3"><span class="header-section-number">8.3</span> The Landscape of Agent Communication Protocols</h2>
 <p>The development of agent-based systems has led to several emerging communication protocols designed specifically for interactions between models, tools, and agents. Although the ecosystem is still evolving, these protocols generally address three different layers of interaction.</p>
 <p>The first layer concerns communication between models and external resources. Language models often need to access tools, data sources, or application services. Protocols at this layer provide a standardized way for models to request information or trigger actions outside the model itself.</p>
 <p>The second layer involves communication between agents. In multi-agent systems, different agents may specialize in different tasks such as planning, information retrieval, or execution. Protocols at this layer define how agents delegate tasks, share results, and coordinate their activities.</p>
@@ -252,8 +259,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Together, these protocols represent the early stages of a broader infrastructure for agent ecosystems. As agent-based systems continue to grow in complexity and scale, standardized communication protocols will play an increasingly important role in enabling interoperability and coordination across intelligent systems.</p>
 <p>Together, these protocols represent the early stages of a broader infrastructure for agent ecosystems. As agent-based systems continue to grow in complexity and scale, standardized communication protocols will play an increasingly important role in enabling interoperability and coordination across intelligent systems.</p>
 </section>
-<section id="model-context-protocol-mcp" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="model-context-protocol-mcp"><span class="header-section-number">8.4</span> Model Context Protocol (MCP)</h2>
+<section class="level2" data-number="8.4" id="model-context-protocol-mcp">
+<h2 class="anchored" data-anchor-id="model-context-protocol-mcp" data-number="8.4"><span class="header-section-number">8.4</span> Model Context Protocol (MCP)</h2>
 <p>The Model Context Protocol (MCP) is a communication standard designed to allow language models to interact with external tools, data sources, and services in a structured and consistent way. It was introduced to address a common limitation of language models: while models can reason over the information provided in their context, they cannot directly access external systems without an interface.</p>
 <p>Traditionally, connecting a model to external tools required custom integrations. Developers had to write specialized adapters for each service, such as file systems, databases, or APIs. This approach quickly became difficult to manage as the number of integrations increased. Each new tool required additional code and maintenance.</p>
 <p>MCP addresses this problem by defining a standardized interface between models and external resources. Instead of building a custom connection for every tool, systems can expose their capabilities through an MCP server. The model, acting through an MCP client, can then interact with these resources using a common protocol.</p>
@@ -263,8 +270,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Another important aspect of MCP is that it treats external capabilities as structured resources rather than ad hoc tools. Resources may represent documents, datasets, APIs, or other forms of information that the model can query. Tools represent operations that the model can invoke to perform tasks. By organizing external capabilities in this way, MCP provides a consistent model for extending the functionality of language models.</p>
 <p>In essence, MCP provides a bridge between language models and the external world. It allows models to move beyond static prompts and interact dynamically with data and services. As agent systems grow more complex, such standardized interfaces become increasingly important for building scalable and maintainable AI applications.</p>
 </section>
-<section id="agent-to-agent-protocols-a2a" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="agent-to-agent-protocols-a2a"><span class="header-section-number">8.5</span> Agent-to-Agent Protocols (A2A)</h2>
+<section class="level2" data-number="8.5" id="agent-to-agent-protocols-a2a">
+<h2 class="anchored" data-anchor-id="agent-to-agent-protocols-a2a" data-number="8.5"><span class="header-section-number">8.5</span> Agent-to-Agent Protocols (A2A)</h2>
 <p>While protocols such as MCP focus on enabling models to interact with external tools and data, another important challenge arises when multiple agents must work together. Complex tasks often require collaboration among specialized agents, each responsible for a different aspect of the problem. Agent-to-Agent protocols (A2A) address the need for structured communication between these agents.</p>
 <p>In a multi-agent system, different agents may perform distinct roles. One agent may plan tasks, another may gather information, and a third may execute actions or verify results. To coordinate their activities, these agents must exchange messages that describe tasks, results, and system state. Without a common protocol, each agent would require custom communication logic for every other agent it interacts with.</p>
 <p>A2A protocols define standardized formats and interaction patterns for this communication. They specify how agents send requests, delegate tasks, and return results. By following the same protocol, agents can interact even if they are developed independently or implemented using different frameworks.</p>
@@ -273,8 +280,8 @@ ul.task-list li input[type="checkbox"] {
 <p>In practice, many A2A communication systems rely on widely used transport mechanisms such as HTTP APIs, message queues, or event streams. The A2A protocol defines the structure and semantics of the messages exchanged between agents, while the underlying transport layer handles the delivery of those messages.</p>
 <p>By introducing standardized communication patterns, A2A protocols make it possible to build modular multi-agent systems. New agents can join an existing system and collaborate with others as long as they follow the same communication protocol. This modularity allows agent ecosystems to grow in complexity without requiring tightly coupled implementations between every component.</p>
 </section>
-<section id="agent-network-protocols-anp" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="agent-network-protocols-anp"><span class="header-section-number">8.6</span> Agent Network Protocols (ANP)</h2>
+<section class="level2" data-number="8.6" id="agent-network-protocols-anp">
+<h2 class="anchored" data-anchor-id="agent-network-protocols-anp" data-number="8.6"><span class="header-section-number">8.6</span> Agent Network Protocols (ANP)</h2>
 <p>As agent systems grow beyond small groups of collaborating components, a new challenge emerges: how agents operate within a large, distributed environment. In such environments, agents may be developed by different organizations, deployed across different machines, and designed to perform different types of tasks. Agent Network Protocols (ANP) aim to address this broader level of interaction.</p>
 <p>Unlike protocols that focus on communication between two specific agents, ANP focuses on the infrastructure required for networks of agents. In a large ecosystem, agents must be able to discover other agents, understand their capabilities, and route requests to the appropriate service. Without such mechanisms, coordination at scale becomes extremely difficult.</p>
 <p>One of the key functions of an agent network protocol is <strong>agent discovery</strong>. In a distributed environment, an agent may need to locate another agent that provides a particular capability, such as translation, data analysis, or information retrieval. The network must therefore provide a way for agents to advertise their capabilities and for others to search for them.</p>
@@ -283,8 +290,8 @@ ul.task-list li input[type="checkbox"] {
 <p>In this sense, ANP can be viewed as an infrastructure layer for large-scale agent ecosystems. It provides mechanisms for identity, discovery, and routing that allow agents to interact dynamically within a distributed environment.</p>
 <p>Although the concept of agent network protocols is still evolving, it reflects an important direction for future AI systems. As agents become more capable and more widely deployed, networks of cooperating agents may emerge in which services can be discovered and composed dynamically. ANP represents an early attempt to define the communication foundations required for such ecosystems.</p>
 </section>
-<section id="comparing-mcp-a2a-and-anp" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="comparing-mcp-a2a-and-anp"><span class="header-section-number">8.7</span> Comparing MCP, A2A, and ANP</h2>
+<section class="level2" data-number="8.7" id="comparing-mcp-a2a-and-anp">
+<h2 class="anchored" data-anchor-id="comparing-mcp-a2a-and-anp" data-number="8.7"><span class="header-section-number">8.7</span> Comparing MCP, A2A, and ANP</h2>
 <p>Although MCP, A2A, and ANP are all related to communication in agent systems, they operate at different layers and solve different types of problems. Understanding the distinctions between these protocols helps clarify how modern agent architectures are structured.</p>
 <p>The Model Context Protocol (MCP) focuses on the interaction between a model and external resources. Its primary purpose is to allow language models to access tools, datasets, and services in a standardized way. MCP provides a consistent interface that enables models to request information or trigger actions without requiring custom integrations for each external system.</p>
 <p>Agent-to-Agent protocols (A2A), by contrast, focus on communication between agents. In a multi-agent system, different agents may specialize in different tasks, such as planning, research, or execution. A2A protocols define how these agents exchange requests, delegate tasks, and share results. The goal is to enable coordinated behavior among agents that collaborate to solve complex problems.</p>
@@ -293,8 +300,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Seen together, these protocols form a layered view of agent communication. At the lowest level, models interact with external resources through MCP. At the collaboration level, agents coordinate through A2A communication patterns. At the ecosystem level, ANP enables large networks of agents to discover and interact with one another.</p>
 <p>This layered perspective highlights how agent communication protocols complement rather than replace one another. Each protocol addresses a different aspect of interaction within increasingly complex intelligent systems.</p>
 </section>
-<section id="designing-systems-with-agent-protocols" class="level2" data-number="8.8">
-<h2 data-number="8.8" class="anchored" data-anchor-id="designing-systems-with-agent-protocols"><span class="header-section-number">8.8</span> Designing Systems with Agent Protocols</h2>
+<section class="level2" data-number="8.8" id="designing-systems-with-agent-protocols">
+<h2 class="anchored" data-anchor-id="designing-systems-with-agent-protocols" data-number="8.8"><span class="header-section-number">8.8</span> Designing Systems with Agent Protocols</h2>
 <p>When building agent-based systems, communication protocols play a central role in determining how different components interact. Rather than designing every connection individually, developers can structure their systems around established protocols that define clear interaction boundaries. This approach improves modularity, scalability, and maintainability.</p>
 <p>A useful way to think about agent system design is in terms of <strong>communication layers</strong>. At the lowest layer, agents often need to interact with tools and external data sources. Protocols such as the Model Context Protocol (MCP) provide a standardized way for agents to access resources like files, APIs, databases, or computational services. By exposing these capabilities through a consistent interface, MCP allows agents to interact with external systems without requiring custom integrations for each tool.</p>
 <p>Above this layer, agents frequently need to collaborate with other agents. In many architectures, different agents specialize in different tasks—for example planning, information retrieval, execution, or verification. Agent-to-Agent communication patterns allow these components to coordinate their work. Through structured messages, agents can delegate tasks, exchange results, and maintain shared progress within a workflow.</p>
@@ -302,18 +309,15 @@ ul.task-list li input[type="checkbox"] {
 <p>A practical agent system may therefore combine multiple protocols. For instance, a coordinating agent might delegate tasks to specialized agents through agent-to-agent communication, while those agents access tools and data through MCP-based interfaces. If the system operates within a broader ecosystem of services, network-level protocols may enable discovery of additional agents when new capabilities are required.</p>
 <p>Designing systems in this layered way helps keep responsibilities clear. Each protocol addresses a different type of interaction, allowing developers to extend the system without tightly coupling its components. As agent architectures continue to evolve, this separation of communication layers is likely to remain an important design principle.</p>
 </section>
-<section id="the-future-of-agent-communication" class="level2" data-number="8.9">
-<h2 data-number="8.9" class="anchored" data-anchor-id="the-future-of-agent-communication"><span class="header-section-number">8.9</span> The Future of Agent Communication</h2>
+<section class="level2" data-number="8.9" id="the-future-of-agent-communication">
+<h2 class="anchored" data-anchor-id="the-future-of-agent-communication" data-number="8.9"><span class="header-section-number">8.9</span> The Future of Agent Communication</h2>
 <p>Agent communication protocols are still in the early stages of development. Unlike traditional internet protocols, which have been refined over decades, the standards governing interactions between intelligent agents are only beginning to emerge. However, the rapid growth of agent-based systems suggests that communication protocols will become an increasingly important part of AI infrastructure.</p>
 <p>One likely direction is the development of more standardized interfaces between models and external resources. As models become embedded in a wider range of applications, consistent protocols will help ensure that tools, data sources, and services can be accessed in predictable ways across different platforms and frameworks.</p>
 <p>Another trend is the expansion of multi-agent systems. As tasks grow more complex, it is often beneficial to divide responsibilities among specialized agents. This creates a need for more sophisticated communication patterns that allow agents to coordinate tasks, share intermediate results, and resolve conflicts. Protocols supporting structured collaboration will therefore become increasingly important.</p>
 <p>At a larger scale, the concept of agent networks may also continue to evolve. In such environments, agents may operate across distributed infrastructures and dynamically discover services provided by other agents. If these ecosystems grow large enough, they may require mechanisms similar to those used in the internet itself, including identity management, capability discovery, and routing protocols.</p>
 <p>Finally, the development of agent communication protocols will likely be shaped by the broader goals of interoperability and ecosystem growth. Standardized protocols allow independent developers to create agents that can interact with one another, reducing fragmentation and encouraging the formation of shared platforms.</p>
 <p>While the details of these future systems remain uncertain, one trend is clear: as intelligent systems become more interconnected, the protocols that enable their communication will become a fundamental component of AI architecture.</p>
-
-
 </section>
-
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -716,20 +720,8 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./cp_9.html" class="pagination-link" aria-label="**上下文工程**">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>上下文工程</strong></span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./cp_11.html" class="pagination-link" aria-label="**Agentic-RL**">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous"><a aria-label="上下文工程" class="pagination-link" href="./cp_9.html"><i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>  <span class="chapter-title">上下文工程</span></span></a></div>
+<div class="nav-page nav-page-next"><a aria-label="Agentic-RL" class="pagination-link" href="./cp_11.html"><span class="nav-page-text"><span class="chapter-number">11</span>  <span class="chapter-title">Agentic-RL</span></span> <i class="bi bi-arrow-right-short"></i></a></div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
 </body></html>

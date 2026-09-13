@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>5&nbsp; 框架开发实践 – Agent Book</title>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.8.25" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>6  框架开发实践 – Agent Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -56,28 +53,26 @@ div.sourceCode
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
-
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./cp_8.html" rel="next">
-<link href="./cp_4.html" rel="prev">
+<meta content="./" name="quarto:offset"/>
+
+
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -105,171 +100,183 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-
-
-<link rel="stylesheet" href="styles.css">
-</head>
-
+<link href="styles.css" rel="stylesheet"/>
+<link href="./cp_7.html" rel="next"/><link href="./cp_5.html" rel="prev"/></head>
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_6.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>框架开发实践</strong></span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_6.html"><span class="chapter-number">6</span>  <span class="chapter-title">框架开发实践</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Agent Book</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+<a class="sidebar-logo-link" href="./index.html">
+</a>
+<div class="sidebar-title mb-0 py-0">
+<a href="./">Agent Book</a>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./index.html">
+<span class="menu-text">Preface</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">初识智能体</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_1.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">初识智能体</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_2.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">智能体发展史</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">大语言模型基础</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_3.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">大语言模型基础</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">智能体经典范式构建</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_4.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">智能体经典范式构建</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_6.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>框架开发实践</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_5.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">基于低代码平台的智能体搭建</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Memory <strong>and</strong> Retrieval</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="./cp_6.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">框架开发实践</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>上下文工程</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_7.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">构建你的智能体框架</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Agent Communication Protocols</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_8.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">记忆与检索</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_9.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">上下文工程</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agent Evaluation</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_10.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">智能体通信协议</span></span></a>
+</div>
 </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_11.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Agentic-RL</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_12.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">智能体性能评估</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_13.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">智能旅行助手</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_14.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">自动化深度研究智能体</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_15.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">构建赛博小镇</span></span></a>
+</div>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#框架开发" id="toc-框架开发" class="nav-link active" data-scroll-target="#框架开发"><span class="header-section-number">5.1</span> <strong>框架开发</strong></a>
-  <ul class="collapse">
-  <li><a href="#为何需要智能体框架" id="toc-为何需要智能体框架" class="nav-link" data-scroll-target="#为何需要智能体框架"><span class="header-section-number">5.1.1</span> <strong>为何需要智能体框架</strong></a></li>
-  <li><a href="#智能体框架的核心分类" id="toc-智能体框架的核心分类" class="nav-link" data-scroll-target="#智能体框架的核心分类"><span class="header-section-number">5.1.2</span> 智能体框架的核心分类</a></li>
-  </ul></li>
-  <li><a href="#框架一autogen" id="toc-框架一autogen" class="nav-link" data-scroll-target="#框架一autogen"><span class="header-section-number">5.2</span> <strong>框架一：AutoGen</strong></a>
-  <ul class="collapse">
-  <li><a href="#autogen-的最小结构" id="toc-autogen-的最小结构" class="nav-link" data-scroll-target="#autogen-的最小结构"><span class="header-section-number">5.2.1</span> AutoGen 的最小结构</a></li>
-  <li><a href="#极简-autogen-案例" id="toc-极简-autogen-案例" class="nav-link" data-scroll-target="#极简-autogen-案例"><span class="header-section-number">5.2.2</span> 极简 AutoGen 案例</a></li>
-  <li><a href="#稍复杂的例子" id="toc-稍复杂的例子" class="nav-link" data-scroll-target="#稍复杂的例子"><span class="header-section-number">5.2.3</span> 稍复杂的例子</a></li>
-  </ul></li>
-  <li><a href="#框架二agentscope" id="toc-框架二agentscope" class="nav-link" data-scroll-target="#框架二agentscope"><span class="header-section-number">5.3</span> <strong>框架二：AgentScope</strong></a>
-  <ul class="collapse">
-  <li><a href="#怎么安装" id="toc-怎么安装" class="nav-link" data-scroll-target="#怎么安装"><span class="header-section-number">5.3.1</span> 1 怎么安装？</a></li>
-  <li><a href="#最小可运行代码是什么" id="toc-最小可运行代码是什么" class="nav-link" data-scroll-target="#最小可运行代码是什么"><span class="header-section-number">5.3.2</span> 2 最小可运行代码是什么？</a></li>
-  </ul></li>
-  <li><a href="#框架三camel" id="toc-框架三camel" class="nav-link" data-scroll-target="#框架三camel"><span class="header-section-number">5.4</span> <strong>框架三：CAMEL</strong></a></li>
-  <li><a href="#框架四langgraph" id="toc-框架四langgraph" class="nav-link" data-scroll-target="#框架四langgraph"><span class="header-section-number">5.5</span> <strong>框架四：LangGraph</strong></a></li>
-  <li><a href="#本章小结" id="toc-本章小结" class="nav-link" data-scroll-target="#本章小结"><span class="header-section-number">5.6</span> <strong>本章小结</strong></a></li>
-  </ul>
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+<nav class="toc-active" data-toc-expanded="2" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a class="nav-link active" data-scroll-target="#框架开发" href="#框架开发" id="toc-框架开发"><span class="header-section-number">5.1</span> <strong>框架开发</strong></a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#为何需要智能体框架" href="#为何需要智能体框架" id="toc-为何需要智能体框架"><span class="header-section-number">5.1.1</span> <strong>为何需要智能体框架</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#智能体框架的核心分类" href="#智能体框架的核心分类" id="toc-智能体框架的核心分类"><span class="header-section-number">5.1.2</span> 智能体框架的核心分类</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#框架一autogen" href="#框架一autogen" id="toc-框架一autogen"><span class="header-section-number">5.2</span> <strong>框架一：AutoGen</strong></a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#autogen-的最小结构" href="#autogen-的最小结构" id="toc-autogen-的最小结构"><span class="header-section-number">5.2.1</span> AutoGen 的最小结构</a></li>
+<li><a class="nav-link" data-scroll-target="#极简-autogen-案例" href="#极简-autogen-案例" id="toc-极简-autogen-案例"><span class="header-section-number">5.2.2</span> 极简 AutoGen 案例</a></li>
+<li><a class="nav-link" data-scroll-target="#稍复杂的例子" href="#稍复杂的例子" id="toc-稍复杂的例子"><span class="header-section-number">5.2.3</span> 稍复杂的例子</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#框架二agentscope" href="#框架二agentscope" id="toc-框架二agentscope"><span class="header-section-number">5.3</span> <strong>框架二：AgentScope</strong></a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#怎么安装" href="#怎么安装" id="toc-怎么安装"><span class="header-section-number">5.3.1</span> 1 怎么安装？</a></li>
+<li><a class="nav-link" data-scroll-target="#最小可运行代码是什么" href="#最小可运行代码是什么" id="toc-最小可运行代码是什么"><span class="header-section-number">5.3.2</span> 2 最小可运行代码是什么？</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#框架三camel" href="#框架三camel" id="toc-框架三camel"><span class="header-section-number">5.4</span> <strong>框架三：CAMEL</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#框架四langgraph" href="#框架四langgraph" id="toc-框架四langgraph"><span class="header-section-number">5.5</span> <strong>框架四：LangGraph</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#本章小结" href="#本章小结" id="toc-本章小结"><span class="header-section-number">5.6</span> <strong>本章小结</strong></a></li>
+</ul>
 </nav>
-    </div>
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<header class="quarto-title-block default" id="title-block-header">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>框架开发实践</strong></span></h1>
+<h1 class="title"><span class="chapter-number">6</span>  <span class="chapter-title">框架开发实践</span></h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
-<section id="框架开发" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="框架开发"><span class="header-section-number">5.1</span> <strong>框架开发</strong></h2>
-<section id="为何需要智能体框架" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="为何需要智能体框架"><span class="header-section-number">5.1.1</span> <strong>为何需要智能体框架</strong></h3>
+<section class="level2" data-number="5.1" id="框架开发">
+<h2 class="anchored" data-anchor-id="框架开发" data-number="5.1"><span class="header-section-number">5.1</span> <strong>框架开发</strong></h2>
+<section class="level3" data-number="5.1.1" id="为何需要智能体框架">
+<h3 class="anchored" data-anchor-id="为何需要智能体框架" data-number="5.1.1"><span class="header-section-number">5.1.1</span> <strong>为何需要智能体框架</strong></h3>
 <p>我们先不谈任何具体框架。我们问一个更基础的问题：一个大模型 + API，够不够？</p>
 <p>LLM 本质是什么？一个<strong>条件概率生成器，</strong>输入上下文（context），输出下一个 token的概率分布。它不会主动执行任务，也不会管理长期状态，也不会调用工具，不会协调多个角色，更不会维护目标。它只是一个 <strong>推理引擎（inference engine）</strong>。</p>
 <p>现实任务的结构为：</p>
@@ -320,8 +327,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="智能体框架的核心分类" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="智能体框架的核心分类"><span class="header-section-number">5.1.2</span> 智能体框架的核心分类</h3>
+<section class="level3" data-number="5.1.2" id="智能体框架的核心分类">
+<h3 class="anchored" data-anchor-id="智能体框架的核心分类" data-number="5.1.2"><span class="header-section-number">5.1.2</span> 智能体框架的核心分类</h3>
 <p>1 第一类：Prompt 编排型</p>
 <ul>
 <li><p>LangChain</p></li>
@@ -329,7 +336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>本质是把 Prompt、工具、链式调用进行封装。核心思想：</p>
 <pre><code>输入 → 模板 → LLM → 输出</code></pre>
-<p>优点是上手快、文档多、生态成熟，缺点是控制流复杂、抽象层叠加、调试困难。<br>
+<p>优点是上手快、文档多、生态成熟，缺点是控制流复杂、抽象层叠加、调试困难。<br/>
 2 循环驱动型（ReAct / Plan-Act）</p>
 <ul>
 <li><p>AutoGen</p></li>
@@ -354,8 +361,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>我们暂时先讲循环驱动型框架，还有LangGraph。</p>
 </section>
 </section>
-<section id="框架一autogen" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="框架一autogen"><span class="header-section-number">5.2</span> <strong>框架一：AutoGen</strong></h2>
+<section class="level2" data-number="5.2" id="框架一autogen">
+<h2 class="anchored" data-anchor-id="框架一autogen" data-number="5.2"><span class="header-section-number">5.2</span> <strong>框架一：AutoGen</strong></h2>
 <p>AutoGen做的是什么？LLM 是单步预测器，AutoGen 要做的是：</p>
 <pre><code>目标
  ↓
@@ -365,8 +372,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  ↓
 直到达成任务</code></pre>
 <p>它补的是任务循环、多 Agent 角色、自动终止机制。</p>
-<section id="autogen-的最小结构" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="autogen-的最小结构"><span class="header-section-number">5.2.1</span> AutoGen 的最小结构</h3>
+<section class="level3" data-number="5.2.1" id="autogen-的最小结构">
+<h3 class="anchored" data-anchor-id="autogen-的最小结构" data-number="5.2.1"><span class="header-section-number">5.2.1</span> AutoGen 的最小结构</h3>
 <p>把AutoGen的结构元素抽象成 3 个对象：</p>
 <ol type="1">
 <li>Agent（角色）</li>
@@ -375,8 +382,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>你可以理解为：角色 + 消息机制 + 自动往返</p>
 </section>
-<section id="极简-autogen-案例" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="极简-autogen-案例"><span class="header-section-number">5.2.2</span> 极简 AutoGen 案例</h3>
+<section class="level3" data-number="5.2.2" id="极简-autogen-案例">
+<h3 class="anchored" data-anchor-id="极简-autogen-案例" data-number="5.2.2"><span class="header-section-number">5.2.2</span> 极简 AutoGen 案例</h3>
 <p>我们做一个最小可运行案例：让一个“提问者”问问题，让一个“回答者”回答，然后自动停止。</p>
 <blockquote class="blockquote">
 <p>AutoGen 确实经历了一次重大的<strong>从零重写（Complete Rewrite），让</strong>Agent 成为“任务执行单元”。<strong>AutoGen v0.4</strong> 版本于 <strong>2025年1月14日至17日</strong> 期间正式发布。</p>
@@ -425,7 +432,7 @@ asyncio.run(main())</code></pre>
 <blockquote class="blockquote">
 <p>不同模型平台 = 不同的 ModelClient，OllamaChatCompletionClient对应ollama。</p>
 <p>OpenAI 官方接口：<code>from autogen_ext.models.openai import OpenAIChatCompletionClient</code></p>
-<p>其他的具体看：<a href="https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/tutorial/models.html#openai" class="uri">https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/tutorial/models.html#openai</a></p>
+<p>其他的具体看：<a class="uri" href="https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/tutorial/models.html#openai">https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/tutorial/models.html#openai</a></p>
 <p>遵守相同协议的应该可以共用。</p>
 </blockquote>
 <pre><code>assistant = AssistantAgent(
@@ -446,43 +453,43 @@ asyncio.run(main())</code></pre>
 
 3. 返回 structured result</code></pre>
 <p>它做了很多抽象，这意味着未来它可以：多步推理、工具调用、内部循环、记忆扩展。</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>result.messages[<span class="op">-</span><span class="dv">1</span>].content</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" href="#cb11-1" tabindex="-1"></a>result.messages[<span class="op">-</span><span class="dv">1</span>].content</span></code></pre></div><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></div>
 <p>AutoGen 不返回“字符串”，它返回：</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ChatResult</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    messages: List[Message]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" href="#cb12-1" tabindex="-1"></a>ChatResult</span>
+<span id="cb12-2"><a aria-hidden="true" href="#cb12-2" tabindex="-1"></a>    messages: List[Message]</span></code></pre></div><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></div>
 <p>所有 Agent 执行结果都保留完整消息历史。这是为了支持多轮、审计、追踪、继续对话。</p>
 <p>流式输出的例子：</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> asyncio</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> autogen_agentchat.agents <span class="im">import</span> AssistantAgent</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> autogen_ext.models.ollama <span class="im">import</span> OllamaChatCompletionClient</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> main():</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> OllamaChatCompletionClient(</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        model<span class="op">=</span><span class="st">"llama3.1"</span>,</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    assistant <span class="op">=</span> AssistantAgent(</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>        name<span class="op">=</span><span class="st">"assistant"</span>,</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>        model_client<span class="op">=</span>model,</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>        system_message<span class="op">=</span><span class="st">"You are a concise assistant."</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 使用 run_stream()</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">async</span> <span class="cf">for</span> chunk <span class="kw">in</span> assistant.run_stream(</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>        task<span class="op">=</span><span class="st">"解释一下天为什么是蓝色的？"</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    ):</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># chunk 可能是多种事件类型</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">hasattr</span>(chunk, <span class="st">"content"</span>) <span class="kw">and</span> chunk.content:</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(chunk.content, end<span class="op">=</span><span class="st">""</span>, flush<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> model.close()</span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>asyncio.run(main())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" href="#cb13-1" tabindex="-1"></a><span class="im">import</span> asyncio</span>
+<span id="cb13-2"><a aria-hidden="true" href="#cb13-2" tabindex="-1"></a><span class="im">from</span> autogen_agentchat.agents <span class="im">import</span> AssistantAgent</span>
+<span id="cb13-3"><a aria-hidden="true" href="#cb13-3" tabindex="-1"></a><span class="im">from</span> autogen_ext.models.ollama <span class="im">import</span> OllamaChatCompletionClient</span>
+<span id="cb13-4"><a aria-hidden="true" href="#cb13-4" tabindex="-1"></a></span>
+<span id="cb13-5"><a aria-hidden="true" href="#cb13-5" tabindex="-1"></a></span>
+<span id="cb13-6"><a aria-hidden="true" href="#cb13-6" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> main():</span>
+<span id="cb13-7"><a aria-hidden="true" href="#cb13-7" tabindex="-1"></a>    model <span class="op">=</span> OllamaChatCompletionClient(</span>
+<span id="cb13-8"><a aria-hidden="true" href="#cb13-8" tabindex="-1"></a>        model<span class="op">=</span><span class="st">"llama3.1"</span>,</span>
+<span id="cb13-9"><a aria-hidden="true" href="#cb13-9" tabindex="-1"></a>    )</span>
+<span id="cb13-10"><a aria-hidden="true" href="#cb13-10" tabindex="-1"></a></span>
+<span id="cb13-11"><a aria-hidden="true" href="#cb13-11" tabindex="-1"></a>    assistant <span class="op">=</span> AssistantAgent(</span>
+<span id="cb13-12"><a aria-hidden="true" href="#cb13-12" tabindex="-1"></a>        name<span class="op">=</span><span class="st">"assistant"</span>,</span>
+<span id="cb13-13"><a aria-hidden="true" href="#cb13-13" tabindex="-1"></a>        model_client<span class="op">=</span>model,</span>
+<span id="cb13-14"><a aria-hidden="true" href="#cb13-14" tabindex="-1"></a>        system_message<span class="op">=</span><span class="st">"You are a concise assistant."</span></span>
+<span id="cb13-15"><a aria-hidden="true" href="#cb13-15" tabindex="-1"></a>    )</span>
+<span id="cb13-16"><a aria-hidden="true" href="#cb13-16" tabindex="-1"></a></span>
+<span id="cb13-17"><a aria-hidden="true" href="#cb13-17" tabindex="-1"></a>    <span class="co"># 使用 run_stream()</span></span>
+<span id="cb13-18"><a aria-hidden="true" href="#cb13-18" tabindex="-1"></a>    <span class="cf">async</span> <span class="cf">for</span> chunk <span class="kw">in</span> assistant.run_stream(</span>
+<span id="cb13-19"><a aria-hidden="true" href="#cb13-19" tabindex="-1"></a>        task<span class="op">=</span><span class="st">"解释一下天为什么是蓝色的？"</span></span>
+<span id="cb13-20"><a aria-hidden="true" href="#cb13-20" tabindex="-1"></a>    ):</span>
+<span id="cb13-21"><a aria-hidden="true" href="#cb13-21" tabindex="-1"></a>        <span class="co"># chunk 可能是多种事件类型</span></span>
+<span id="cb13-22"><a aria-hidden="true" href="#cb13-22" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">hasattr</span>(chunk, <span class="st">"content"</span>) <span class="kw">and</span> chunk.content:</span>
+<span id="cb13-23"><a aria-hidden="true" href="#cb13-23" tabindex="-1"></a>            <span class="bu">print</span>(chunk.content, end<span class="op">=</span><span class="st">""</span>, flush<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-24"><a aria-hidden="true" href="#cb13-24" tabindex="-1"></a></span>
+<span id="cb13-25"><a aria-hidden="true" href="#cb13-25" tabindex="-1"></a>    <span class="cf">await</span> model.close()</span>
+<span id="cb13-26"><a aria-hidden="true" href="#cb13-26" tabindex="-1"></a></span>
+<span id="cb13-27"><a aria-hidden="true" href="#cb13-27" tabindex="-1"></a></span>
+<span id="cb13-28"><a aria-hidden="true" href="#cb13-28" tabindex="-1"></a>asyncio.run(main())</span></code></pre></div><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></div>
 </section>
-<section id="稍复杂的例子" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="稍复杂的例子"><span class="header-section-number">5.2.3</span> 稍复杂的例子</h3>
+<section class="level3" data-number="5.2.3" id="稍复杂的例子">
+<h3 class="anchored" data-anchor-id="稍复杂的例子" data-number="5.2.3"><span class="header-section-number">5.2.3</span> 稍复杂的例子</h3>
 <pre><code>import asyncio
 from autogen_agentchat.agents import AssistantAgent
 from autogen_agentchat.teams import RoundRobinGroupChat
@@ -527,76 +534,76 @@ async def main():
 
 asyncio.run(main())</code></pre>
 <p>输出:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>[user] Write Python code to compute the <span class="bu">sum</span> of squares <span class="im">from</span> <span class="dv">1</span> to <span class="fl">100.</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>[Coder] ```python</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>sum_squares <span class="op">=</span> <span class="bu">sum</span>(i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">101</span>))</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_squares)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>[Reviewer] APPROVED</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>This code correctly uses a generator expression to calculate the <span class="bu">sum</span> of squares <span class="im">from</span> <span class="dv">1</span> to <span class="fl">100.</span> The `sum` function <span class="kw">is</span> used <span class="cf">with</span> the `range` function to iterate over the numbers <span class="im">from</span> <span class="dv">1</span> to <span class="dv">100</span>, <span class="kw">and</span> the `<span class="op">**</span><span class="dv">2</span>` operator <span class="kw">is</span> used to square each number before adding it to the total.</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>[Coder] ```python</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Using math library for a more mathematical approach</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>sum_squares <span class="op">=</span> <span class="bu">sum</span>(i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">101</span>))</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_squares)</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>Or </span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>```python</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>sum_squares <span class="op">=</span> n <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> (<span class="dv">2</span><span class="op">*</span>n <span class="op">+</span> <span class="dv">1</span>) <span class="op">//</span> <span class="dv">6</span></span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_squares)</span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>[Reviewer] You provided two code snippets.</span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a><span class="op">**</span>First snippet:<span class="op">**</span></span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>APPROVED</span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>This <span class="kw">is</span> the same code <span class="im">as</span> before, which was already approved. The math library <span class="im">import</span> <span class="kw">is</span> unnecessary <span class="kw">in</span> this case since the calculation <span class="kw">is</span> done using a generator expression <span class="kw">and</span> the `sum` function.</span>
-<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a><span class="op">**</span>Second snippet:<span class="op">**</span></span>
-<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>APPROVED</span>
-<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>However, I should note that there<span class="st">'s no need to calculate the sum of squares manually when you can use the first snippet with the generator expression, which is more readable and efficient for large ranges. But if you'</span>re looking <span class="cf">for</span> an mathematical formula<span class="op">-</span>based approach, this one <span class="kw">is</span> correct. The formula `n <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> (<span class="dv">2</span><span class="op">*</span>n <span class="op">+</span> <span class="dv">1</span>) <span class="op">//</span> <span class="dv">6</span>` <span class="kw">is</span> a well<span class="op">-</span>known identity <span class="cf">for</span> calculating the <span class="bu">sum</span> of squares of the first `n` natural numbers.</span>
-<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>[Coder] ```python</span>
-<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Formula based approach with memoization</span></span>
-<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_of_squares(n):</span>
-<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
-<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Input should be a positive integer"</span></span>
-<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> n <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> (<span class="dv">2</span><span class="op">*</span>n <span class="op">+</span> <span class="dv">1</span>) <span class="op">//</span> <span class="dv">6</span></span>
-<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_of_squares(<span class="dv">100</span>))</span>
-<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>[Reviewer] APPROVED</span>
-<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>This code <span class="kw">is</span> correct <span class="kw">and</span> well<span class="op">-</span>structured. It uses memoization to store the result of expensive function calls, which <span class="kw">in</span> this case are <span class="kw">not</span> necessary since the formula <span class="kw">is</span> a simple mathematical identity that can be computed directly.</span>
-<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>The addition of <span class="bu">input</span> validation (`n <span class="op">&lt;=</span> <span class="dv">0</span>`) <span class="kw">is</span> also a good practice, <span class="im">as</span> it ensures the function behaves correctly <span class="cf">for</span> invalid inputs.</span>
-<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>However, I would suggest adding a docstring to the `sum_of_squares` function to provide documentation <span class="kw">and</span> make the code more readable. For example:</span>
-<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a>```python</span>
-<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_of_squares(n):</span>
-<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a><span class="co">    Calculate the sum of squares of the first n natural numbers.</span></span>
-<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a><span class="co">        n (int): The number of terms in the sum.</span></span>
-<span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb15-62"><a href="#cb15-62" aria-hidden="true" tabindex="-1"></a><span class="co">        int: The sum of squares.</span></span>
-<span id="cb15-63"><a href="#cb15-63" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
-<span id="cb15-65"><a href="#cb15-65" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Input should be a positive integer"</span></span>
-<span id="cb15-66"><a href="#cb15-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb15-67"><a href="#cb15-67" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> n <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> (<span class="dv">2</span><span class="op">*</span>n <span class="op">+</span> <span class="dv">1</span>) <span class="op">//</span> <span class="dv">6</span></span>
-<span id="cb15-68"><a href="#cb15-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-69"><a href="#cb15-69" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_of_squares(<span class="dv">100</span>))</span>
-<span id="cb15-70"><a href="#cb15-70" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" href="#cb15-1" tabindex="-1"></a>[user] Write Python code to compute the <span class="bu">sum</span> of squares <span class="im">from</span> <span class="dv">1</span> to <span class="fl">100.</span></span>
+<span id="cb15-2"><a aria-hidden="true" href="#cb15-2" tabindex="-1"></a>[Coder] ```python</span>
+<span id="cb15-3"><a aria-hidden="true" href="#cb15-3" tabindex="-1"></a>sum_squares <span class="op">=</span> <span class="bu">sum</span>(i<span class="op"></span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">101</span>))</span>
+<span id="cb15-4"><a aria-hidden="true" href="#cb15-4" tabindex="-1"></a><span class="bu">print</span>(sum_squares)</span>
+<span id="cb15-5"><a aria-hidden="true" href="#cb15-5" tabindex="-1"></a>```</span>
+<span id="cb15-6"><a aria-hidden="true" href="#cb15-6" tabindex="-1"></a>[Reviewer] APPROVED</span>
+<span id="cb15-7"><a aria-hidden="true" href="#cb15-7" tabindex="-1"></a></span>
+<span id="cb15-8"><a aria-hidden="true" href="#cb15-8" tabindex="-1"></a>This code correctly uses a generator expression to calculate the <span class="bu">sum</span> of squares <span class="im">from</span> <span class="dv">1</span> to <span class="fl">100.</span> The `sum` function <span class="kw">is</span> used <span class="cf">with</span> the `range` function to iterate over the numbers <span class="im">from</span> <span class="dv">1</span> to <span class="dv">100</span>, <span class="kw">and</span> the `<span class="op"></span><span class="dv">2</span>` operator <span class="kw">is</span> used to square each number before adding it to the total.</span>
+<span id="cb15-9"><a aria-hidden="true" href="#cb15-9" tabindex="-1"></a>[Coder] ```python</span>
+<span id="cb15-10"><a aria-hidden="true" href="#cb15-10" tabindex="-1"></a><span class="co"># Using math library for a more mathematical approach</span></span>
+<span id="cb15-11"><a aria-hidden="true" href="#cb15-11" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb15-12"><a aria-hidden="true" href="#cb15-12" tabindex="-1"></a></span>
+<span id="cb15-13"><a aria-hidden="true" href="#cb15-13" tabindex="-1"></a>sum_squares <span class="op">=</span> <span class="bu">sum</span>(i<span class="op"></span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">101</span>))</span>
+<span id="cb15-14"><a aria-hidden="true" href="#cb15-14" tabindex="-1"></a><span class="bu">print</span>(sum_squares)</span>
+<span id="cb15-15"><a aria-hidden="true" href="#cb15-15" tabindex="-1"></a>```</span>
+<span id="cb15-16"><a aria-hidden="true" href="#cb15-16" tabindex="-1"></a></span>
+<span id="cb15-17"><a aria-hidden="true" href="#cb15-17" tabindex="-1"></a>Or </span>
+<span id="cb15-18"><a aria-hidden="true" href="#cb15-18" tabindex="-1"></a></span>
+<span id="cb15-19"><a aria-hidden="true" href="#cb15-19" tabindex="-1"></a>```python</span>
+<span id="cb15-20"><a aria-hidden="true" href="#cb15-20" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb15-21"><a aria-hidden="true" href="#cb15-21" tabindex="-1"></a>sum_squares <span class="op">=</span> n <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> (<span class="dv">2</span><span class="op">*</span>n <span class="op">+</span> <span class="dv">1</span>) <span class="op">//</span> <span class="dv">6</span></span>
+<span id="cb15-22"><a aria-hidden="true" href="#cb15-22" tabindex="-1"></a><span class="bu">print</span>(sum_squares)</span>
+<span id="cb15-23"><a aria-hidden="true" href="#cb15-23" tabindex="-1"></a>```</span>
+<span id="cb15-24"><a aria-hidden="true" href="#cb15-24" tabindex="-1"></a>[Reviewer] You provided two code snippets.</span>
+<span id="cb15-25"><a aria-hidden="true" href="#cb15-25" tabindex="-1"></a></span>
+<span id="cb15-26"><a aria-hidden="true" href="#cb15-26" tabindex="-1"></a><span class="op"></span>First snippet:<span class="op"></span></span>
+<span id="cb15-27"><a aria-hidden="true" href="#cb15-27" tabindex="-1"></a>APPROVED</span>
+<span id="cb15-28"><a aria-hidden="true" href="#cb15-28" tabindex="-1"></a></span>
+<span id="cb15-29"><a aria-hidden="true" href="#cb15-29" tabindex="-1"></a>This <span class="kw">is</span> the same code <span class="im">as</span> before, which was already approved. The math library <span class="im">import</span> <span class="kw">is</span> unnecessary <span class="kw">in</span> this case since the calculation <span class="kw">is</span> done using a generator expression <span class="kw">and</span> the `sum` function.</span>
+<span id="cb15-30"><a aria-hidden="true" href="#cb15-30" tabindex="-1"></a></span>
+<span id="cb15-31"><a aria-hidden="true" href="#cb15-31" tabindex="-1"></a><span class="op"></span>Second snippet:<span class="op"></span></span>
+<span id="cb15-32"><a aria-hidden="true" href="#cb15-32" tabindex="-1"></a>APPROVED</span>
+<span id="cb15-33"><a aria-hidden="true" href="#cb15-33" tabindex="-1"></a></span>
+<span id="cb15-34"><a aria-hidden="true" href="#cb15-34" tabindex="-1"></a>However, I should note that there<span class="st">'s no need to calculate the sum of squares manually when you can use the first snippet with the generator expression, which is more readable and efficient for large ranges. But if you'</span>re looking <span class="cf">for</span> an mathematical formula<span class="op">-</span>based approach, this one <span class="kw">is</span> correct. The formula `n <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> (<span class="dv">2</span><span class="op">*</span>n <span class="op">+</span> <span class="dv">1</span>) <span class="op">//</span> <span class="dv">6</span>` <span class="kw">is</span> a well<span class="op">-</span>known identity <span class="cf">for</span> calculating the <span class="bu">sum</span> of squares of the first `n` natural numbers.</span>
+<span id="cb15-35"><a aria-hidden="true" href="#cb15-35" tabindex="-1"></a>[Coder] ```python</span>
+<span id="cb15-36"><a aria-hidden="true" href="#cb15-36" tabindex="-1"></a><span class="co"># Formula based approach with memoization</span></span>
+<span id="cb15-37"><a aria-hidden="true" href="#cb15-37" tabindex="-1"></a><span class="kw">def</span> sum_of_squares(n):</span>
+<span id="cb15-38"><a aria-hidden="true" href="#cb15-38" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb15-39"><a aria-hidden="true" href="#cb15-39" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Input should be a positive integer"</span></span>
+<span id="cb15-40"><a aria-hidden="true" href="#cb15-40" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb15-41"><a aria-hidden="true" href="#cb15-41" tabindex="-1"></a>        <span class="cf">return</span> n <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> (<span class="dv">2</span><span class="op">*</span>n <span class="op">+</span> <span class="dv">1</span>) <span class="op">//</span> <span class="dv">6</span></span>
+<span id="cb15-42"><a aria-hidden="true" href="#cb15-42" tabindex="-1"></a></span>
+<span id="cb15-43"><a aria-hidden="true" href="#cb15-43" tabindex="-1"></a><span class="bu">print</span>(sum_of_squares(<span class="dv">100</span>))</span>
+<span id="cb15-44"><a aria-hidden="true" href="#cb15-44" tabindex="-1"></a>```</span>
+<span id="cb15-45"><a aria-hidden="true" href="#cb15-45" tabindex="-1"></a>[Reviewer] APPROVED</span>
+<span id="cb15-46"><a aria-hidden="true" href="#cb15-46" tabindex="-1"></a></span>
+<span id="cb15-47"><a aria-hidden="true" href="#cb15-47" tabindex="-1"></a>This code <span class="kw">is</span> correct <span class="kw">and</span> well<span class="op">-</span>structured. It uses memoization to store the result of expensive function calls, which <span class="kw">in</span> this case are <span class="kw">not</span> necessary since the formula <span class="kw">is</span> a simple mathematical identity that can be computed directly.</span>
+<span id="cb15-48"><a aria-hidden="true" href="#cb15-48" tabindex="-1"></a></span>
+<span id="cb15-49"><a aria-hidden="true" href="#cb15-49" tabindex="-1"></a>The addition of <span class="bu">input</span> validation (`n <span class="op">&lt;=</span> <span class="dv">0</span>`) <span class="kw">is</span> also a good practice, <span class="im">as</span> it ensures the function behaves correctly <span class="cf">for</span> invalid inputs.</span>
+<span id="cb15-50"><a aria-hidden="true" href="#cb15-50" tabindex="-1"></a></span>
+<span id="cb15-51"><a aria-hidden="true" href="#cb15-51" tabindex="-1"></a>However, I would suggest adding a docstring to the `sum_of_squares` function to provide documentation <span class="kw">and</span> make the code more readable. For example:</span>
+<span id="cb15-52"><a aria-hidden="true" href="#cb15-52" tabindex="-1"></a></span>
+<span id="cb15-53"><a aria-hidden="true" href="#cb15-53" tabindex="-1"></a>```python</span>
+<span id="cb15-54"><a aria-hidden="true" href="#cb15-54" tabindex="-1"></a><span class="kw">def</span> sum_of_squares(n):</span>
+<span id="cb15-55"><a aria-hidden="true" href="#cb15-55" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb15-56"><a aria-hidden="true" href="#cb15-56" tabindex="-1"></a><span class="co">    Calculate the sum of squares of the first n natural numbers.</span></span>
+<span id="cb15-57"><a aria-hidden="true" href="#cb15-57" tabindex="-1"></a></span>
+<span id="cb15-58"><a aria-hidden="true" href="#cb15-58" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb15-59"><a aria-hidden="true" href="#cb15-59" tabindex="-1"></a><span class="co">        n (int): The number of terms in the sum.</span></span>
+<span id="cb15-60"><a aria-hidden="true" href="#cb15-60" tabindex="-1"></a></span>
+<span id="cb15-61"><a aria-hidden="true" href="#cb15-61" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb15-62"><a aria-hidden="true" href="#cb15-62" tabindex="-1"></a><span class="co">        int: The sum of squares.</span></span>
+<span id="cb15-63"><a aria-hidden="true" href="#cb15-63" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb15-64"><a aria-hidden="true" href="#cb15-64" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb15-65"><a aria-hidden="true" href="#cb15-65" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Input should be a positive integer"</span></span>
+<span id="cb15-66"><a aria-hidden="true" href="#cb15-66" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb15-67"><a aria-hidden="true" href="#cb15-67" tabindex="-1"></a>        <span class="cf">return</span> n <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> (<span class="dv">2</span><span class="op">*</span>n <span class="op">+</span> <span class="dv">1</span>) <span class="op">//</span> <span class="dv">6</span></span>
+<span id="cb15-68"><a aria-hidden="true" href="#cb15-68" tabindex="-1"></a></span>
+<span id="cb15-69"><a aria-hidden="true" href="#cb15-69" tabindex="-1"></a><span class="bu">print</span>(sum_of_squares(<span class="dv">100</span>))</span>
+<span id="cb15-70"><a aria-hidden="true" href="#cb15-70" tabindex="-1"></a>```</span></code></pre></div><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></div>
 <p>重点看：</p>
 <pre><code>team = RoundRobinGroupChat(
     participants=[coder, reviewer],
@@ -608,15 +615,15 @@ asyncio.run(main())</code></pre>
 <p>习的时候可以注意一点，使用autogen最新版本的包可能出现一些bug，有些教程的代码使用的是老的比较稳定的包，但是上面用的是比较新的，agent发展有点快，代码可能经常变。</p>
 </section>
 </section>
-<section id="框架二agentscope" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="框架二agentscope"><span class="header-section-number">5.3</span> <strong>框架二：AgentScope</strong></h2>
+<section class="level2" data-number="5.3" id="框架二agentscope">
+<h2 class="anchored" data-anchor-id="框架二agentscope" data-number="5.3"><span class="header-section-number">5.3</span> <strong>框架二：AgentScope</strong></h2>
 <p>一个 Agentic App 逃不掉这条因果链：<code>输入（需求/对话） → 推理（LLM） → 决策（下一步做什么） → 行动（调用工具/发消息/写入状态） → 反馈（工具返回/他人回复） → 循环直到完成</code></p>
 <blockquote class="blockquote">
-<p><a href="https://github.com/agentscope-ai/agentscope" class="uri">https://github.com/agentscope-ai/agentscope</a></p>
+<p><a class="uri" href="https://github.com/agentscope-ai/agentscope">https://github.com/agentscope-ai/agentscope</a></p>
 <p>人家更新代码频率挺快的，有些教程代码报错的话问下ai，或者看看官网。</p>
 </blockquote>
-<section id="怎么安装" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="怎么安装"><span class="header-section-number">5.3.1</span> 1 怎么安装？</h3>
+<section class="level3" data-number="5.3.1" id="怎么安装">
+<h3 class="anchored" data-anchor-id="怎么安装" data-number="5.3.1"><span class="header-section-number">5.3.1</span> 1 怎么安装？</h3>
 <pre><code>uv pip install agentscope</code></pre>
 <p>AgentScope 本身不提供模型，它只是框架。</p>
 <p>你必须选择一个模型来源。</p>
@@ -624,8 +631,8 @@ asyncio.run(main())</code></pre>
 <pre><code>import agentscope
 print("OK")</code></pre>
 </section>
-<section id="最小可运行代码是什么" class="level3" data-number="5.3.2">
-<h3 data-number="5.3.2" class="anchored" data-anchor-id="最小可运行代码是什么"><span class="header-section-number">5.3.2</span> 2 最小可运行代码是什么？</h3>
+<section class="level3" data-number="5.3.2" id="最小可运行代码是什么">
+<h3 class="anchored" data-anchor-id="最小可运行代码是什么" data-number="5.3.2"><span class="header-section-number">5.3.2</span> 2 最小可运行代码是什么？</h3>
 <pre><code>from agentscope.agent import ReActAgent, UserAgent
 from agentscope.model import OllamaChatModel
 from agentscope.formatter import OllamaChatFormatter
@@ -663,22 +670,19 @@ asyncio.run(main())</code></pre>
 <p>有的模型不能通过agentscope调用工具。</p>
 </section>
 </section>
-<section id="框架三camel" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="框架三camel"><span class="header-section-number">5.4</span> <strong>框架三：CAMEL</strong></h2>
+<section class="level2" data-number="5.4" id="框架三camel">
+<h2 class="anchored" data-anchor-id="框架三camel" data-number="5.4"><span class="header-section-number">5.4</span> <strong>框架三：CAMEL</strong></h2>
 <p>CAMEL 实现自主协作的基石是两大核心概念：<strong>角色扮演 (Role-Playing)</strong> 和 <strong>引导性提示 (Inception Prompting)</strong>。</p>
 <p>1 安装</p>
 <pre><code>pip install camel-ai</code></pre>
 <p>2</p>
 </section>
-<section id="框架四langgraph" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="框架四langgraph"><span class="header-section-number">5.5</span> <strong>框架四：LangGraph</strong></h2>
+<section class="level2" data-number="5.5" id="框架四langgraph">
+<h2 class="anchored" data-anchor-id="框架四langgraph" data-number="5.5"><span class="header-section-number">5.5</span> <strong>框架四：LangGraph</strong></h2>
 </section>
-<section id="本章小结" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="本章小结"><span class="header-section-number">5.6</span> <strong>本章小结</strong></h2>
-
-
+<section class="level2" data-number="5.6" id="本章小结">
+<h2 class="anchored" data-anchor-id="本章小结" data-number="5.6"><span class="header-section-number">5.6</span> <strong>本章小结</strong></h2>
 </section>
-
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1081,20 +1085,8 @@ asyncio.run(main())</code></pre>
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./cp_4.html" class="pagination-link" aria-label="智能体经典范式构建">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">智能体经典范式构建</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./cp_8.html" class="pagination-link" aria-label="Memory **and** Retrieval">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Memory <strong>and</strong> Retrieval</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous"><a aria-label="基于低代码平台的智能体搭建" class="pagination-link" href="./cp_5.html"><i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>  <span class="chapter-title">基于低代码平台的智能体搭建</span></span></a></div>
+<div class="nav-page nav-page-next"><a aria-label="构建你的智能体框架" class="pagination-link" href="./cp_7.html"><span class="nav-page-text"><span class="chapter-number">7</span>  <span class="chapter-title">构建你的智能体框架</span></span> <i class="bi bi-arrow-right-short"></i></a></div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
 </body></html>

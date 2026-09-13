@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>5&nbsp; 基于低代码平台的智能体搭建 – Agent Book</title>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.8.25" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>5  基于低代码平台的智能体搭建 – Agent Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,28 +18,26 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./cp_6.html" rel="next">
-<link href="./cp_4.html" rel="prev">
+<meta content="./" name="quarto:offset"/>
+
+
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,261 +65,240 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-
-
-<link rel="stylesheet" href="styles.css">
-</head>
-
+<link href="styles.css" rel="stylesheet"/>
+<link href="./cp_6.html" rel="next"/><link href="./cp_4.html" rel="prev"/></head>
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>基于低代码平台的智能体搭建</strong></span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_5.html"><span class="chapter-number">5</span>  <span class="chapter-title">基于低代码平台的智能体搭建</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Agent Book</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+<a class="sidebar-logo-link" href="./index.html">
+</a>
+<div class="sidebar-title mb-0 py-0">
+<a href="./">Agent Book</a>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./index.html">
+<span class="menu-text">Preface</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">初识智能体</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_1.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">初识智能体</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title"><strong>智能体发展史</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_2.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">智能体发展史</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">大语言模型基础</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_3.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">大语言模型基础</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">智能体经典范式构建</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_4.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">智能体经典范式构建</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_5.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>基于低代码平台的智能体搭建</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="./cp_5.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">基于低代码平台的智能体搭建</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>框架开发实践</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_6.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">框架开发实践</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><strong>构建你的智能体框架</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_7.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">构建你的智能体框架</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><strong>记忆与检索</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_8.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">记忆与检索</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title"><strong>上下文工程</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_9.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">上下文工程</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title"><strong>智能体通信协议</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_10.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">智能体通信协议</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><strong>Agentic-RL</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_11.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Agentic-RL</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><strong>智能体性能评估</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_12.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">智能体性能评估</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title"><strong>智能旅行助手</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_13.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">智能旅行助手</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><strong>自动化深度研究智能体</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_14.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">自动化深度研究智能体</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./cp_15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title"><strong>构建赛博小镇</strong></span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_15.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">构建赛博小镇</span></span></a>
+</div>
 </li>
-    </ul>
-    </div>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#平台化构建的兴起" id="toc-平台化构建的兴起" class="nav-link active" data-scroll-target="#平台化构建的兴起"><span class="header-section-number">5.1</span> <strong>平台化构建的兴起</strong></a>
-  <ul class="collapse">
-  <li><a href="#为何需要低代码平台" id="toc-为何需要低代码平台" class="nav-link" data-scroll-target="#为何需要低代码平台"><span class="header-section-number">5.1.1</span> <strong>为何需要低代码平台</strong></a></li>
-  <li><a href="#低代码平台的选择" id="toc-低代码平台的选择" class="nav-link" data-scroll-target="#低代码平台的选择"><span class="header-section-number">5.1.2</span> <strong>低代码平台的选择</strong></a></li>
-  </ul></li>
-  <li><a href="#平台一coze" id="toc-平台一coze" class="nav-link" data-scroll-target="#平台一coze"><span class="header-section-number">5.2</span> <strong>平台一：Coze</strong></a>
-  <ul class="collapse">
-  <li><a href="#coze-的功能模块" id="toc-coze-的功能模块" class="nav-link" data-scroll-target="#coze-的功能模块"><span class="header-section-number">5.2.1</span> <strong>Coze 的功能模块</strong></a></li>
-  <li><a href="#构建每日ai简报助手" id="toc-构建每日ai简报助手" class="nav-link" data-scroll-target="#构建每日ai简报助手"><span class="header-section-number">5.2.2</span> <strong>构建“每日AI简报”助手</strong></a></li>
-  <li><a href="#coze-的优势与局限性分析" id="toc-coze-的优势与局限性分析" class="nav-link" data-scroll-target="#coze-的优势与局限性分析"><span class="header-section-number">5.2.3</span> <strong>Coze 的优势与局限性分析</strong></a></li>
-  </ul></li>
-  <li><a href="#平台二dify" id="toc-平台二dify" class="nav-link" data-scroll-target="#平台二dify"><span class="header-section-number">5.3</span> <strong>平台二：Dify</strong></a>
-  <ul class="collapse">
-  <li><a href="#dify-的介绍与生态" id="toc-dify-的介绍与生态" class="nav-link" data-scroll-target="#dify-的介绍与生态"><span class="header-section-number">5.3.1</span> <strong>Dify 的介绍与生态</strong></a></li>
-  <li><a href="#构建一个超级智能体个人助手" id="toc-构建一个超级智能体个人助手" class="nav-link" data-scroll-target="#构建一个超级智能体个人助手"><span class="header-section-number">5.3.2</span> <strong>构建一个超级智能体个人助手</strong></a></li>
-  <li><a href="#dify-的优势与局限性分析" id="toc-dify-的优势与局限性分析" class="nav-link" data-scroll-target="#dify-的优势与局限性分析"><span class="header-section-number">5.3.3</span> <strong>Dify 的优势与局限性分析</strong></a></li>
-  </ul></li>
-  <li><a href="#平台三n8n" id="toc-平台三n8n" class="nav-link" data-scroll-target="#平台三n8n"><span class="header-section-number">5.4</span> <strong>平台三：n8n</strong></a>
-  <ul class="collapse">
-  <li><a href="#n8n-的节点与工作流" id="toc-n8n-的节点与工作流" class="nav-link" data-scroll-target="#n8n-的节点与工作流"><span class="header-section-number">5.4.1</span> <strong>n8n 的节点与工作流</strong></a></li>
-  <li><a href="#搭建智能邮件助手" id="toc-搭建智能邮件助手" class="nav-link" data-scroll-target="#搭建智能邮件助手"><span class="header-section-number">5.4.2</span> <strong>搭建智能邮件助手</strong></a></li>
-  <li><a href="#构建-agent-的私有知识库" id="toc-构建-agent-的私有知识库" class="nav-link" data-scroll-target="#构建-agent-的私有知识库"><span class="header-section-number">5.4.3</span> <strong>构建 Agent 的私有知识库</strong></a></li>
-  <li><a href="#创建-agent-主工作流" id="toc-创建-agent-主工作流" class="nav-link" data-scroll-target="#创建-agent-主工作流"><span class="header-section-number">5.4.4</span> <strong>创建 Agent 主工作流</strong></a></li>
-  <li><a href="#n8n-的优势与局限性分析" id="toc-n8n-的优势与局限性分析" class="nav-link" data-scroll-target="#n8n-的优势与局限性分析"><span class="header-section-number">5.4.5</span> <strong>n8n 的优势与局限性分析</strong></a></li>
-  </ul></li>
-  <li><a href="#本章小结" id="toc-本章小结" class="nav-link" data-scroll-target="#本章小结"><span class="header-section-number">5.5</span> <strong>本章小结</strong></a></li>
-  </ul>
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+<nav class="toc-active" data-toc-expanded="2" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a class="nav-link active" data-scroll-target="#平台化构建的兴起" href="#平台化构建的兴起" id="toc-平台化构建的兴起"><span class="header-section-number">5.1</span> <strong>平台化构建的兴起</strong></a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#为何需要低代码平台" href="#为何需要低代码平台" id="toc-为何需要低代码平台"><span class="header-section-number">5.1.1</span> <strong>为何需要低代码平台</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#低代码平台的选择" href="#低代码平台的选择" id="toc-低代码平台的选择"><span class="header-section-number">5.1.2</span> <strong>低代码平台的选择</strong></a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#平台一coze" href="#平台一coze" id="toc-平台一coze"><span class="header-section-number">5.2</span> <strong>平台一：Coze</strong></a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#coze-的功能模块" href="#coze-的功能模块" id="toc-coze-的功能模块"><span class="header-section-number">5.2.1</span> <strong>Coze 的功能模块</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#构建每日ai简报助手" href="#构建每日ai简报助手" id="toc-构建每日ai简报助手"><span class="header-section-number">5.2.2</span> <strong>构建“每日AI简报”助手</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#coze-的优势与局限性分析" href="#coze-的优势与局限性分析" id="toc-coze-的优势与局限性分析"><span class="header-section-number">5.2.3</span> <strong>Coze 的优势与局限性分析</strong></a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#平台二dify" href="#平台二dify" id="toc-平台二dify"><span class="header-section-number">5.3</span> <strong>平台二：Dify</strong></a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#dify-的介绍与生态" href="#dify-的介绍与生态" id="toc-dify-的介绍与生态"><span class="header-section-number">5.3.1</span> <strong>Dify 的介绍与生态</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#构建一个超级智能体个人助手" href="#构建一个超级智能体个人助手" id="toc-构建一个超级智能体个人助手"><span class="header-section-number">5.3.2</span> <strong>构建一个超级智能体个人助手</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#dify-的优势与局限性分析" href="#dify-的优势与局限性分析" id="toc-dify-的优势与局限性分析"><span class="header-section-number">5.3.3</span> <strong>Dify 的优势与局限性分析</strong></a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#平台三n8n" href="#平台三n8n" id="toc-平台三n8n"><span class="header-section-number">5.4</span> <strong>平台三：n8n</strong></a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#n8n-的节点与工作流" href="#n8n-的节点与工作流" id="toc-n8n-的节点与工作流"><span class="header-section-number">5.4.1</span> <strong>n8n 的节点与工作流</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#搭建智能邮件助手" href="#搭建智能邮件助手" id="toc-搭建智能邮件助手"><span class="header-section-number">5.4.2</span> <strong>搭建智能邮件助手</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#构建-agent-的私有知识库" href="#构建-agent-的私有知识库" id="toc-构建-agent-的私有知识库"><span class="header-section-number">5.4.3</span> <strong>构建 Agent 的私有知识库</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#创建-agent-主工作流" href="#创建-agent-主工作流" id="toc-创建-agent-主工作流"><span class="header-section-number">5.4.4</span> <strong>创建 Agent 主工作流</strong></a></li>
+<li><a class="nav-link" data-scroll-target="#n8n-的优势与局限性分析" href="#n8n-的优势与局限性分析" id="toc-n8n-的优势与局限性分析"><span class="header-section-number">5.4.5</span> <strong>n8n 的优势与局限性分析</strong></a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#本章小结" href="#本章小结" id="toc-本章小结"><span class="header-section-number">5.5</span> <strong>本章小结</strong></a></li>
+</ul>
 </nav>
-    </div>
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<header class="quarto-title-block default" id="title-block-header">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title"><strong>基于低代码平台的智能体搭建</strong></span></h1>
+<h1 class="title"><span class="chapter-number">5</span>  <span class="chapter-title">基于低代码平台的智能体搭建</span></h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
-<section id="平台化构建的兴起" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="平台化构建的兴起"><span class="header-section-number">5.1</span> <strong>平台化构建的兴起</strong></h2>
-<section id="为何需要低代码平台" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="为何需要低代码平台"><span class="header-section-number">5.1.1</span> <strong>为何需要低代码平台</strong></h3>
+<section class="level2" data-number="5.1" id="平台化构建的兴起">
+<h2 class="anchored" data-anchor-id="平台化构建的兴起" data-number="5.1"><span class="header-section-number">5.1</span> <strong>平台化构建的兴起</strong></h2>
+<section class="level3" data-number="5.1.1" id="为何需要低代码平台">
+<h3 class="anchored" data-anchor-id="为何需要低代码平台" data-number="5.1.1"><span class="header-section-number">5.1.1</span> <strong>为何需要低代码平台</strong></h3>
 </section>
-<section id="低代码平台的选择" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="低代码平台的选择"><span class="header-section-number">5.1.2</span> <strong>低代码平台的选择</strong></h3>
+<section class="level3" data-number="5.1.2" id="低代码平台的选择">
+<h3 class="anchored" data-anchor-id="低代码平台的选择" data-number="5.1.2"><span class="header-section-number">5.1.2</span> <strong>低代码平台的选择</strong></h3>
 </section>
 </section>
-<section id="平台一coze" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="平台一coze"><span class="header-section-number">5.2</span> <strong>平台一：Coze</strong></h2>
-<section id="coze-的功能模块" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="coze-的功能模块"><span class="header-section-number">5.2.1</span> <strong>Coze 的功能模块</strong></h3>
+<section class="level2" data-number="5.2" id="平台一coze">
+<h2 class="anchored" data-anchor-id="平台一coze" data-number="5.2"><span class="header-section-number">5.2</span> <strong>平台一：Coze</strong></h2>
+<section class="level3" data-number="5.2.1" id="coze-的功能模块">
+<h3 class="anchored" data-anchor-id="coze-的功能模块" data-number="5.2.1"><span class="header-section-number">5.2.1</span> <strong>Coze 的功能模块</strong></h3>
 </section>
-<section id="构建每日ai简报助手" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="构建每日ai简报助手"><span class="header-section-number">5.2.2</span> <strong>构建“每日AI简报”助手</strong></h3>
+<section class="level3" data-number="5.2.2" id="构建每日ai简报助手">
+<h3 class="anchored" data-anchor-id="构建每日ai简报助手" data-number="5.2.2"><span class="header-section-number">5.2.2</span> <strong>构建“每日AI简报”助手</strong></h3>
 </section>
-<section id="coze-的优势与局限性分析" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="coze-的优势与局限性分析"><span class="header-section-number">5.2.3</span> <strong>Coze 的优势与局限性分析</strong></h3>
-</section>
-</section>
-<section id="平台二dify" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="平台二dify"><span class="header-section-number">5.3</span> <strong>平台二：Dify</strong></h2>
-<section id="dify-的介绍与生态" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="dify-的介绍与生态"><span class="header-section-number">5.3.1</span> <strong>Dify 的介绍与生态</strong></h3>
-</section>
-<section id="构建一个超级智能体个人助手" class="level3" data-number="5.3.2">
-<h3 data-number="5.3.2" class="anchored" data-anchor-id="构建一个超级智能体个人助手"><span class="header-section-number">5.3.2</span> <strong>构建一个超级智能体个人助手</strong></h3>
-</section>
-<section id="dify-的优势与局限性分析" class="level3" data-number="5.3.3">
-<h3 data-number="5.3.3" class="anchored" data-anchor-id="dify-的优势与局限性分析"><span class="header-section-number">5.3.3</span> <strong>Dify 的优势与局限性分析</strong></h3>
+<section class="level3" data-number="5.2.3" id="coze-的优势与局限性分析">
+<h3 class="anchored" data-anchor-id="coze-的优势与局限性分析" data-number="5.2.3"><span class="header-section-number">5.2.3</span> <strong>Coze 的优势与局限性分析</strong></h3>
 </section>
 </section>
-<section id="平台三n8n" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="平台三n8n"><span class="header-section-number">5.4</span> <strong>平台三：n8n</strong></h2>
-<section id="n8n-的节点与工作流" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="n8n-的节点与工作流"><span class="header-section-number">5.4.1</span> <strong>n8n 的节点与工作流</strong></h3>
+<section class="level2" data-number="5.3" id="平台二dify">
+<h2 class="anchored" data-anchor-id="平台二dify" data-number="5.3"><span class="header-section-number">5.3</span> <strong>平台二：Dify</strong></h2>
+<section class="level3" data-number="5.3.1" id="dify-的介绍与生态">
+<h3 class="anchored" data-anchor-id="dify-的介绍与生态" data-number="5.3.1"><span class="header-section-number">5.3.1</span> <strong>Dify 的介绍与生态</strong></h3>
 </section>
-<section id="搭建智能邮件助手" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="搭建智能邮件助手"><span class="header-section-number">5.4.2</span> <strong>搭建智能邮件助手</strong></h3>
+<section class="level3" data-number="5.3.2" id="构建一个超级智能体个人助手">
+<h3 class="anchored" data-anchor-id="构建一个超级智能体个人助手" data-number="5.3.2"><span class="header-section-number">5.3.2</span> <strong>构建一个超级智能体个人助手</strong></h3>
 </section>
-<section id="构建-agent-的私有知识库" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="构建-agent-的私有知识库"><span class="header-section-number">5.4.3</span> <strong>构建 Agent 的私有知识库</strong></h3>
-</section>
-<section id="创建-agent-主工作流" class="level3" data-number="5.4.4">
-<h3 data-number="5.4.4" class="anchored" data-anchor-id="创建-agent-主工作流"><span class="header-section-number">5.4.4</span> <strong>创建 Agent 主工作流</strong></h3>
-</section>
-<section id="n8n-的优势与局限性分析" class="level3" data-number="5.4.5">
-<h3 data-number="5.4.5" class="anchored" data-anchor-id="n8n-的优势与局限性分析"><span class="header-section-number">5.4.5</span> <strong>n8n 的优势与局限性分析</strong></h3>
+<section class="level3" data-number="5.3.3" id="dify-的优势与局限性分析">
+<h3 class="anchored" data-anchor-id="dify-的优势与局限性分析" data-number="5.3.3"><span class="header-section-number">5.3.3</span> <strong>Dify 的优势与局限性分析</strong></h3>
 </section>
 </section>
-<section id="本章小结" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="本章小结"><span class="header-section-number">5.5</span> <strong>本章小结</strong></h2>
-
-
+<section class="level2" data-number="5.4" id="平台三n8n">
+<h2 class="anchored" data-anchor-id="平台三n8n" data-number="5.4"><span class="header-section-number">5.4</span> <strong>平台三：n8n</strong></h2>
+<section class="level3" data-number="5.4.1" id="n8n-的节点与工作流">
+<h3 class="anchored" data-anchor-id="n8n-的节点与工作流" data-number="5.4.1"><span class="header-section-number">5.4.1</span> <strong>n8n 的节点与工作流</strong></h3>
 </section>
-
+<section class="level3" data-number="5.4.2" id="搭建智能邮件助手">
+<h3 class="anchored" data-anchor-id="搭建智能邮件助手" data-number="5.4.2"><span class="header-section-number">5.4.2</span> <strong>搭建智能邮件助手</strong></h3>
+</section>
+<section class="level3" data-number="5.4.3" id="构建-agent-的私有知识库">
+<h3 class="anchored" data-anchor-id="构建-agent-的私有知识库" data-number="5.4.3"><span class="header-section-number">5.4.3</span> <strong>构建 Agent 的私有知识库</strong></h3>
+</section>
+<section class="level3" data-number="5.4.4" id="创建-agent-主工作流">
+<h3 class="anchored" data-anchor-id="创建-agent-主工作流" data-number="5.4.4"><span class="header-section-number">5.4.4</span> <strong>创建 Agent 主工作流</strong></h3>
+</section>
+<section class="level3" data-number="5.4.5" id="n8n-的优势与局限性分析">
+<h3 class="anchored" data-anchor-id="n8n-的优势与局限性分析" data-number="5.4.5"><span class="header-section-number">5.4.5</span> <strong>n8n 的优势与局限性分析</strong></h3>
+</section>
+</section>
+<section class="level2" data-number="5.5" id="本章小结">
+<h2 class="anchored" data-anchor-id="本章小结" data-number="5.5"><span class="header-section-number">5.5</span> <strong>本章小结</strong></h2>
+</section>
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -727,20 +701,8 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./cp_4.html" class="pagination-link" aria-label="智能体经典范式构建">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">智能体经典范式构建</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./cp_6.html" class="pagination-link" aria-label="**框架开发实践**">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title"><strong>框架开发实践</strong></span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous"><a aria-label="智能体经典范式构建" class="pagination-link" href="./cp_4.html"><i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>  <span class="chapter-title">智能体经典范式构建</span></span></a></div>
+<div class="nav-page nav-page-next"><a aria-label="框架开发实践" class="pagination-link" href="./cp_6.html"><span class="nav-page-text"><span class="chapter-number">6</span>  <span class="chapter-title">框架开发实践</span></span> <i class="bi bi-arrow-right-short"></i></a></div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
 </body></html>

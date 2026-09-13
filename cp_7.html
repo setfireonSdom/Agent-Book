@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>cp_7</title>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.8.25" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>7  构建你的智能体框架 – Agent Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,112 +17,234 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-
-
-<script src="cp_7_files/libs/clipboard/clipboard.min.js"></script>
-<script src="cp_7_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="cp_7_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="cp_7_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="cp_7_files/libs/quarto-html/popper.min.js"></script>
-<script src="cp_7_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="cp_7_files/libs/quarto-html/anchor.min.js"></script>
-<link href="cp_7_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="cp_7_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="cp_7_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="cp_7_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="cp_7_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-
-
-</head>
-
-<body class="fullcontent quarto-light">
-
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
-<main class="content" id="quarto-document-content">
-
-
-
-
-<section id="构建你的智能体框架" class="level1">
-<h1><strong>构建你的智能体框架</strong></h1>
-<section id="框架整体架构设计" class="level2">
-<h2 class="anchored" data-anchor-id="框架整体架构设计"><strong>框架整体架构设计</strong></h2>
-<section id="为何需要自建agent框架" class="level3">
-<h3 class="anchored" data-anchor-id="为何需要自建agent框架"><strong>为何需要自建Agent框架</strong></h3>
-</section>
-<section id="helloagents框架的设计理念" class="level3">
-<h3 class="anchored" data-anchor-id="helloagents框架的设计理念"><strong>HelloAgents框架的设计理念</strong></h3>
-</section>
-<section id="本章学习目标" class="level3">
-<h3 class="anchored" data-anchor-id="本章学习目标"><strong>本章学习目标</strong></h3>
-</section>
-</section>
-<section id="helloagentsllm扩展" class="level2">
-<h2 class="anchored" data-anchor-id="helloagentsllm扩展"><strong>HelloAgentsLLM扩展</strong></h2>
-<section id="支持多提供商" class="level3">
-<h3 class="anchored" data-anchor-id="支持多提供商"><strong>支持多提供商</strong></h3>
-</section>
-<section id="本地模型调用" class="level3">
-<h3 class="anchored" data-anchor-id="本地模型调用"><strong>本地模型调用</strong></h3>
-</section>
-<section id="自动检测机制" class="level3">
-<h3 class="anchored" data-anchor-id="自动检测机制"><strong>自动检测机制</strong></h3>
-</section>
-</section>
-<section id="框架接口实现" class="level2">
-<h2 class="anchored" data-anchor-id="框架接口实现"><strong>框架接口实现</strong></h2>
-<section id="message-类" class="level3">
-<h3 class="anchored" data-anchor-id="message-类"><strong>Message 类</strong></h3>
-</section>
-<section id="config-类" class="level3">
-<h3 class="anchored" data-anchor-id="config-类"><strong>Config 类</strong></h3>
-</section>
-<section id="agent-抽象基类" class="level3">
-<h3 class="anchored" data-anchor-id="agent-抽象基类"><strong>Agent 抽象基类</strong></h3>
-</section>
-</section>
-<section id="agent范式的框架化实现" class="level2">
-<h2 class="anchored" data-anchor-id="agent范式的框架化实现"><strong>Agent范式的框架化实现</strong></h2>
-<section id="simpleagent" class="level3">
-<h3 class="anchored" data-anchor-id="simpleagent"><strong>SimpleAgent</strong></h3>
-</section>
-<section id="reactagent" class="level3">
-<h3 class="anchored" data-anchor-id="reactagent"><strong>ReActAgent</strong></h3>
-</section>
-<section id="reflectionagent" class="level3">
-<h3 class="anchored" data-anchor-id="reflectionagent"><strong>ReflectionAgent</strong></h3>
-</section>
-<section id="planandsolveagent" class="level3">
-<h3 class="anchored" data-anchor-id="planandsolveagent"><strong>PlanAndSolveAgent</strong></h3>
-</section>
-<section id="functioncallagent" class="level3">
-<h3 class="anchored" data-anchor-id="functioncallagent"><strong>FunctionCallAgent</strong></h3>
-</section>
-</section>
-<section id="工具系统" class="level2">
-<h2 class="anchored" data-anchor-id="工具系统"><strong>工具系统</strong></h2>
-<section id="工具基类与注册机制设计" class="level3">
-<h3 class="anchored" data-anchor-id="工具基类与注册机制设计"><strong>工具基类与注册机制设计</strong></h3>
-</section>
-<section id="自定义工具开发" class="level3">
-<h3 class="anchored" data-anchor-id="自定义工具开发"><strong>自定义工具开发</strong></h3>
-</section>
-<section id="多源搜索工具" class="level3">
-<h3 class="anchored" data-anchor-id="多源搜索工具"><strong>多源搜索工具</strong></h3>
-</section>
-<section id="工具系统的高级特性" class="level3">
-<h3 class="anchored" data-anchor-id="工具系统的高级特性"><strong>工具系统的高级特性</strong></h3>
-</section>
-</section>
-<section id="本章小结" class="level2">
-<h2 class="anchored" data-anchor-id="本章小结"><strong>本章小结</strong></h2>
-</section>
-</section>
-
-</main>
-<!-- /main column -->
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta content="./" name="quarto:offset"/>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="site_libs/bootstrap/bootstrap-5ea8f22911a6df30576a2a25a24cdd7a.min.css" id="quarto-bootstrap" rel="stylesheet"/>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="styles.css" rel="stylesheet"/>
+<link href="./cp_7.html" rel="next"/><link href="./cp_5.html" rel="prev"/></head>
+<body class="nav-sidebar floating quarto-light">
+<div id="quarto-search-results"></div>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cp_7.html"><span class="chapter-number">7</span>  <span class="chapter-title">构建你的智能体框架</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
+</header>
+<!-- content -->
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
+<!-- sidebar -->
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+<a class="sidebar-logo-link" href="./index.html">
+</a>
+<div class="sidebar-title mb-0 py-0">
+<a href="./">Agent Book</a>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./index.html">
+<span class="menu-text">Preface</span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_1.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">初识智能体</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_2.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">智能体发展史</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_3.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">大语言模型基础</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_4.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">智能体经典范式构建</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_5.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">基于低代码平台的智能体搭建</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_6.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">框架开发实践</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="./cp_7.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">构建你的智能体框架</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_8.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">记忆与检索</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_9.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">上下文工程</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_10.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">智能体通信协议</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_11.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Agentic-RL</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_12.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">智能体性能评估</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_13.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">智能旅行助手</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_14.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">自动化深度研究智能体</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="./cp_15.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">构建赛博小镇</span></span></a>
+</div>
+</li>
+</ul>
+</div>
+</nav>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+<nav class="toc-active" data-toc-expanded="2" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul></ul>
+</nav>
+</div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header class="quarto-title-block default" id="title-block-header"><div class="quarto-title"><h1 class="title"><span class="chapter-number">7</span>  <span class="chapter-title">构建你的智能体框架</span></h1></div><div class="quarto-title-meta"></div></header><header class="quarto-title-block default" id="title-block-header"><div class="quarto-title"><h1 class="title"><span class="chapter-number">7</span>  <span class="chapter-title">构建你的智能体框架</span></h1></div><div class="quarto-title-meta"></div></header><header class="quarto-title-block default" id="title-block-header"><div class="quarto-title"><h1 class="title"><span class="chapter-number">7</span>  <span class="chapter-title">构建你的智能体框架</span></h1></div><div class="quarto-title-meta"></div></header>
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -526,9 +645,9 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+<div class="nav-page nav-page-previous"><a aria-label="基于低代码平台的智能体搭建" class="pagination-link" href="./cp_5.html"><i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>  <span class="chapter-title">基于低代码平台的智能体搭建</span></span></a></div>
+<div class="nav-page nav-page-next"><a aria-label="构建你的智能体框架" class="sidebar-item-text sidebar-link active" href="./cp_7.html"><span class="nav-page-text"><span class="chapter-number">7</span>  <span class="chapter-title">构建你的智能体框架</span></span> <i class="bi bi-arrow-right-short"></i></a></div>
+</nav>
 </div> <!-- /content -->
-
-
-
-
 </body></html>
